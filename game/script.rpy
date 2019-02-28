@@ -130,7 +130,7 @@ label contpro2:
     green "Hey, why're you looking at me for?!"
     "Don't know. Why're you such an idiot?"
     green "Why you-"
-    rookie "It’s to investigate this mansion and the rumors of a witch that lives here."
+    rookie "It’s to investigate this mansion and to rid of any malicious spirits residing here."
     blue "At least one of you were paying attention to the briefing. Here, have a candy."
     "You’re not that much older than us. Stop treating us like children."
     green "That's not fair! I want candy!"
@@ -142,13 +142,15 @@ label contpro2:
         "Your code name is Red! That’s your name! How many times do I have to tell that to you?!"
         boss "T-that was a joke! Don’t be mad! I was just trying to make you laugh."
         "A joke should be funny. You have zero tact!"
-        boss "Don’t be like that! C’mon, just smile a little for me?"
+        boss "Don’t be like that! C’mon, just smile a little for me? Please, Silver?"
+        "My code name is Gray! You came up with it!"
+        boss "I'm telling you, it's a joke!"
 
         #turn nvl back on
         window show
         nvlmc "That’s right. It has always been lively like this, hasn’t it? Even before these guys all joined. When it was just him and me."
-        nvlmc "We struggled a lot back then. I had no patience for his jokes due to the situation at hand."
-        nvlmc "I wonder if that made him sad. But surely even he understood how dangerous what we were doing was? The fact that he wanted to laugh frustrated me often."
+        nvlmc "We struggled a lot back then. Not just because he's an idiot, but also because I had no patience for his jokes."
+        nvlmc "I wonder if that made him sad. But surely even he understood how dangerous what we were doing was? The fact that he wanted to laugh frustrated me."
         nvlmc "Things got easier once we met the others. But getting to that point was a slow and painful process."
         nvlmc "I wonder if he would have been happier if I smiled once in a while back then..."
 
