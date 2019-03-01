@@ -4,10 +4,13 @@ image target:
     "shootem/ghost.png"
     zoom 0.5
 
+image redstand:
+    "shootem/fightsprite.png"
+
 transform moving_target:
     ypos 275
-    linear 3.0 xpos 2000
-    xpos -300
+    xpos 1200
+    linear 3.0 xpos 10
     repeat
 
 label begin_hunt:
@@ -20,6 +23,7 @@ label begin_hunt:
 label hunting:
 
     scene black
+    show redstand at left
     show target at moving_target
     $ position = At(ImageReference("target"), moving_target)
     show expression position
@@ -31,7 +35,7 @@ label hunting:
     if position.xpos > 950:
         if position.xpos < 1100:
             with vpunch
-            "You Hit. "
+            "You Hit."
             $ shots_fired = shots_fired + 1
             $ targets_hit = targets_hit + 1
             if shots_fired >= 3:
@@ -39,7 +43,7 @@ label hunting:
             call hunting
 
     with vpunch
-    "You Missed. "
+    "You Missed."
     $ shots_fired = shots_fired + 1
     if shots_fired >= 3:
                 return
