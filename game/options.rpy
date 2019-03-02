@@ -30,6 +30,7 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+A group of Supernatural Investigators have been asked to look into the mystery behind a haunted mansion.
 """)
 
 

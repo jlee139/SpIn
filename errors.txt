@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 55: invalid syntax
-    rookieap++
-    
+File "game/shootem/shoot.rpy", line 11: expected 'comma or end of line' not found.
+    $ trans.ypos = renpy.random.randint(20,700)
+    ^
 
 Ren'Py Version: Ren'Py 7.1.3.1092
-Mon Feb 25 22:59:43 2019
+Sat Mar 02 11:46:31 2019

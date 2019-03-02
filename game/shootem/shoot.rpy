@@ -8,7 +8,8 @@ image redstand:
     "shootem/fightsprite.png"
 
 transform moving_target:
-    ypos 275
+    ypos renpy.random.randint(30,690)
+    #ypos 275
     xpos 1200
     linear 3.0 xpos 10
     repeat
