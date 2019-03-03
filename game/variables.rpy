@@ -11,16 +11,18 @@ define boss = Character('Boss', color="#A00303")
 define prewitch = Character('???', color="#BC4244")
 define witch = Character('Witch', color="#BC4244")
 
-#Whiteflash tweaked from code by Epadder (https://f95zone.com/threads/renpy-flash-and-punch-effects-how-to.18501/)
+#Whiteflash tweaked from code by Epadder (https://lemmasoft.renai.us/forums/viewtopic.php?t=16604)
 image whiteflash:
     Solid("#fff")
-    alpha 0.0
-    linear 0.25 alpha 0.3
-    linear 0.75 alpha 0.0
+    1.4
+    Null ()
+    0.05
+    repeat 2
+    Solid("#000")
 
 
 #Let's put together some Variables to be used
-init python:
+init -2 python:
     config.empty_window = nvl_show_core
     config.window_hide_transition = dissolve
     config.window_show_transition = dissolve
@@ -46,5 +48,5 @@ init python:
     #For Randomization of Shoot Mode
     #Tweaked code by Asceai (https://lemmasoft.renai.us/forums/viewtopic.php?t=27086)
     def randomyos(trans, st, at):
-        trans.ypos = renpy.random.randint(35, 700)
+        trans.ypos = renpy.random.randint(0, 600)
         return None

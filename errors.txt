@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 9: indentation mismatch.
+File "game/shootem/shoot.rpy", line 10: expected 'comma or end of line' not found.
+    show whiteflash zorder 50 with vpunch
+    ^
 
 Ren'Py Version: Ren'Py 7.1.3.1092
-Sat Mar 02 21:58:39 2019
+Sun Mar 03 00:19:15 2019
