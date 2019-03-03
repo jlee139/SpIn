@@ -6,8 +6,10 @@ image redstand:
 transform moving_target:
     xpos 1200
     function randomyos
+    #function slide_function
     easeout 2.0 xpos 20
-    repeat
+    alpha 0.0
+    #repeat
 
 label dodmg:
     if numjewels>0:
@@ -21,6 +23,7 @@ screen ghostspawn():
     text "Jewels: [numjewels]" xpos 20 ypos 10
     #text "Position: [position.xpos]" xpos 20 ypos 30
     text "Ghosts killed: [numturns]" xpos 20 ypos 650
+    timer 10.0 action Jump("testrpg")
     imagebutton:
         idle "shootem/ghost.png"
         hover "shootem/ghost_dead.png"
@@ -34,12 +37,16 @@ label begin_ShootMode:
 
 label shooter:
     show redstand at left #Add the player to the left
-    call createghost
+    #Add a countdown
+    show countdown at Position(xalign=.9, yalign=.9)
+
+    while countdown>0:
+        call createghost
 
 
 label createghost:
     #Add the imagebutton
-    #$ position = ghostspawn.xpos
+    #$ position = 0
     call screen ghostspawn
 
 label hitghost:
@@ -49,5 +56,9 @@ label hitghost:
 label gameover:
     scene black
     "You died."
+
+label testrpg:
+    scene black
+    "Rpg Battle Start"
 
     return

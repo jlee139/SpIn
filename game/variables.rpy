@@ -20,6 +20,8 @@ image whiteflash:
     repeat 2
     Solid("#000")
 
+# Show a countdown for 10 seconds.
+image countdown = DynamicDisplayable(countdown, length=10.0)
 
 #Let's put together some Variables to be used
 init -2 python:
@@ -50,3 +52,20 @@ init -2 python:
     def randomyos(trans, st, at):
         trans.ypos = renpy.random.randint(0, 600)
         return None
+
+    def slide_function(trans, st, at):
+        if st > 2.0:
+            trans.xalign -= 1.0
+            return None
+        else:
+            trans.xalign = st
+            return 0
+
+    def countdown(st, at, length=0.0):
+            remaining = length - st
+            if remaining > 5.0:
+                return Text("%.1f" % remaining, color="#fff", size=72), .1
+            elif remaining > 0.0:
+                return Text("%.1f" % remaining, color="#f00", size=72), .1
+            else:
+                return anim.Blink(Text("0.0", color="#f00", size=72)), None
