@@ -51,15 +51,8 @@ init -2 python:
     #Tweaked code by Asceai (https://lemmasoft.renai.us/forums/viewtopic.php?t=27086)
     def randomyos(trans, st, at):
         trans.ypos = renpy.random.randint(0, 600)
+        trans.xpos = renpy.random.randint(900, 1200)
         return None
-
-    def slide_function(trans, st, at):
-        if st > 2.0:
-            trans.xalign -= 1.0
-            return None
-        else:
-            trans.xalign = st
-            return 0
 
     def countdown(st, at, length=0.0):
             remaining = length - st
@@ -68,4 +61,4 @@ init -2 python:
             elif remaining > 0.0:
                 return Text("%.1f" % remaining, color="#f00", size=72), .1
             else:
-                return anim.Blink(Text("0.0", color="#f00", size=72)), None
+                renpy.jump('testrpg')
