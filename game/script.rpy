@@ -8,6 +8,8 @@ label start:
     #jump portrait #for debugging
 
 label prologue:
+    $ mcname = renpy.input("Enter your name")
+
     #nvl set up
     nvl clear
     window hide
@@ -39,7 +41,7 @@ label prologue:
     #show blue matteroffact at left with dissolve
     blue "Of course, it looks like that. It’s been abandoned for the better part of the century."
     #show rookie neutral at center with dissolve
-    rookie "Careful. This area is rocky, El-"
+    rookie "Careful. This area is rocky, [mcname]-"
     green "Hey! How many times do we have to say to use code names? You want to be cursed?"
     rookie "Sorry. I am still not used to this."
 

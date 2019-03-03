@@ -2,7 +2,7 @@
 # name of the character.
 define nvlmc = Character(None, kind=nvl)
 #for if we ever get sprites for Red
-#define advmc = Character(None, kind=adv)
+define advmc = Character('[mcname]', kind=adv)
 
 define green = Character('Green', color="#088329")
 define blue = Character('Blue', color="#0638A9")
