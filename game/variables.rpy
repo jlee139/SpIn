@@ -20,11 +20,44 @@ image whiteflash:
     repeat 2
     Solid("#000")
 
+#Shoot Mode Images
 # Show a countdown for 10 seconds.
 image countdown = DynamicDisplayable(countdown, length=10.0)
 
+#Green's Fog Particle Effect Code from EvilDragon (https://lemmasoft.renai.us/forums/viewtopic.php?t=4962)
+image particleFog1 = SnowBlossom("fog-particle.png", count=120, border=600, xspeed=(5, 200), yspeed=(5, -5), start=1, fast=True, horizontal=True)
+image particleFog2 = SnowBlossom("fog-particle.png", count=120, border=600, xspeed=(-5, -200), yspeed=(-5, 5), start=0, fast=True, horizontal=True)
+
+#Image of Blue's Shield
+image blueshield:
+    "shootem/shield.png"
+    alpha 1.0
+    0.2
+    alpha 0.8
+    0.2
+    alpha 0.5
+    0.2
+    alpha 0.3
+    0.2
+    alpha 0.5
+    0.2
+    alpha 0.8
+    0.2
+    repeat
+
+#Rookie's Grass
+image grassyrookie:
+    "shootem/grass1.png"
+    0.5
+    "shootem/grass2.png"
+    0.5
+    "shootem/grass3.png"
+    0.5
+    repeat
+
+
 #Let's put together some Variables to be used
-init -2 python:
+init python:
     config.empty_window = nvl_show_core
     config.window_hide_transition = dissolve
     config.window_show_transition = dissolve
@@ -33,6 +66,12 @@ init -2 python:
     hp = 100
     numjewels = 3
     numturns = 0
+    totghost = 0
+
+    #Battle Shoot Mode Helper
+    greenwith = True
+    bluewith = True
+    rookiewith = True
 
     #Ending Variables
     trueend = False #Activated when player has unlocked everything
@@ -51,7 +90,8 @@ init -2 python:
     #Tweaked code by Asceai (https://lemmasoft.renai.us/forums/viewtopic.php?t=27086)
     def randomyos(trans, st, at):
         trans.ypos = renpy.random.randint(0, 600)
-        trans.xpos = renpy.random.randint(900, 1200)
+        trans.xpos = renpy.random.randint(850, 1200)
+        #globals() ['totghost']+=1
         return None
 
     def countdown(st, at, length=0.0):
@@ -61,4 +101,4 @@ init -2 python:
             elif remaining > 0.0:
                 return Text("%.1f" % remaining, color="#f00", size=72), .1
             else:
-                renpy.jump('testrpg')
+                renpy.jump('battleready')

@@ -18,6 +18,8 @@ label start:
     call begin_ShootMode #Testing our shooter
     #jump portrait #for debugging
 
+    "That's the end of the Tutorial. Thank you!"
+
 
 # This ends the game.
 return

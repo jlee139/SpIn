@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/shootem/shoot.rpy", line 41: expected statement.
-    timer 10.0 action Jump("testrpg")
-            ^
+File "game/shootem/shoot.rpy", line 49: expected ':' not found.
+    else
+        ^
 
 Ren'Py Version: Ren'Py 7.1.3.1092
-Sun Mar 03 00:51:32 2019
+Sun Mar 03 14:35:11 2019
