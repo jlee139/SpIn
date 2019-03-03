@@ -42,3 +42,9 @@ init python:
     blueap = 0
     rookieap = 0
     bossap = 0
+
+    #For Randomization of Shoot Mode
+    #Tweaked code by Asceai (https://lemmasoft.renai.us/forums/viewtopic.php?t=27086)
+    def randomyos(trans, st, at):
+        trans.ypos = renpy.random.randint(35, 700)
+        return None

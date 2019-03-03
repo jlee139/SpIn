@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/shootem/shoot.rpy", line 11: expected 'comma or end of line' not found.
-    $ trans.ypos = renpy.random.randint(20,700)
-    ^
+File "game/shootem/shoot.rpy", line 29: expected statement.
+    imagebutton at moving_target
+                ^
 
 Ren'Py Version: Ren'Py 7.1.3.1092
-Sat Mar 02 11:46:31 2019
+Sat Mar 02 17:28:43 2019

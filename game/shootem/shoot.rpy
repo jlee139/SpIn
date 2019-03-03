@@ -1,54 +1,55 @@
 #Code tweaked from justcolorado's Simple Shooting Game (https://lemmasoft.renai.us/forums/viewtopic.php?f=51&t=41347#p435420)
 
-image target:
-    "shootem/ghost.png"
-    zoom 0.5
-
 image redstand:
     "shootem/fightsprite.png"
 
 transform moving_target:
-    ypos renpy.random.randint(30,690)
-    #ypos 275
     xpos 1200
     linear 3.0 xpos 10
     repeat
 
-label begin_hunt:
+screen imagebutton_test1:
+    imagebutton:
+        idle "shootem/ghost.png"
+        hover "shootem/ghost_dead.png"
+        ypos randomyos
+        action Jump('testing')
+        at moving_target
 
-    $ shots_fired = 0
+label begin_ShootMode:
     $ targets_hit = 0
-    call hunting
+    call shooter
     return
 
-label hunting:
+label shooter:
 
-    scene black
-    show redstand at left
-    show target at moving_target
-    $ position = At(ImageReference("target"), moving_target)
-    show expression position
+    #scene black
+    show redstand at left #Add the player to the left
+    #Add the imagebutton
+    show screen imagebutton_test1
 
-    $ ui.imagebutton("shootem/crosshair.png", "shootem/crosshair_focused.png", clicked = ui.returns("fired"), xpos= 996, ypos = 163)
+    #show imagebutton_test1
+
+    #imagebutton idle "shootem/ghost.png" hover "shootem/ghost_dead.png" xpos 80 ypos 500 focus_mask
+
+    #imagebutton auto "shootem/ghost.png" xpos 1200 ypos 500 focus_mask True action Start()
+
+    $ ui.imagebutton("shootem/ghost.png", "shootem/ghost_dead.png", clicked = ui.returns("fired"), xpos= 996, ypos = renpy.random.randint(35, 700))
     $ fired_gun = ui.interact()
 
-    show expression position
-    if position.xpos > 950:
-        if position.xpos < 1100:
-            with vpunch
-            "You Hit."
-            $ shots_fired = shots_fired + 1
-            $ targets_hit = targets_hit + 1
-            if shots_fired >= 3:
-                return
-            call hunting
+    #show expression position
+    #if position.xpos > 950:
+    #    if position.xpos < 1100:
+    #        with vpunch
+    #        "You Hit."
+    #        $ targets_hit = targets_hit + 1
+    #        call shooter
 
-    with vpunch
-    "You Missed."
-    $ shots_fired = shots_fired + 1
-    if shots_fired >= 3:
-                return
+    #with vpunch
+    #"You Missed."
+    #call shooter
 
-    call hunting
+label testing:
+    "Test text"
 
     return

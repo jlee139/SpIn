@@ -4,7 +4,7 @@
 label start:
     #jump prologue   #Start us up with the prologue of the story
 
-    call begin_hunt #Testing our shooter
+    call begin_ShootMode #Testing our shooter
     #jump portrait #for debugging
 
 label prologue:
@@ -407,7 +407,7 @@ label stayguard:
 
 label firstambushed:
 
-    call begin_hunt #Our Shoot Mode
+    call begin_ShootMode #Our Shoot Mode
     #call battle_mode_Tut #Our Battle Mode Tutorial version
 
 
