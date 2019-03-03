@@ -8,13 +8,13 @@ transform moving_target:
     linear 3.0 xpos 10
     repeat
 
-screen imagebutton_test1:
+screen imagebutton_test1():
     imagebutton:
         idle "shootem/ghost.png"
         hover "shootem/ghost_dead.png"
-        ypos randomyos
-        action Jump('testing')
+        xysize (300, 50)
         at moving_target
+        action Jump('testing')
 
 label begin_ShootMode:
     $ targets_hit = 0
@@ -26,16 +26,15 @@ label shooter:
     #scene black
     show redstand at left #Add the player to the left
     #Add the imagebutton
-    show screen imagebutton_test1
 
-    #show imagebutton_test1
+    call screen imagebutton_test1
 
     #imagebutton idle "shootem/ghost.png" hover "shootem/ghost_dead.png" xpos 80 ypos 500 focus_mask
 
     #imagebutton auto "shootem/ghost.png" xpos 1200 ypos 500 focus_mask True action Start()
 
-    $ ui.imagebutton("shootem/ghost.png", "shootem/ghost_dead.png", clicked = ui.returns("fired"), xpos= 996, ypos = renpy.random.randint(35, 700))
-    $ fired_gun = ui.interact()
+    #$ ui.imagebutton("shootem/ghost.png", "shootem/ghost_dead.png", clicked = ui.returns("fired"), xpos= 996, ypos = renpy.random.randint(35, 700))
+    #$ fired_gun = ui.interact()
 
     #show expression position
     #if position.xpos > 950:

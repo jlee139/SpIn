@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/shootem/shoot.rpy", line 29: expected statement.
-    imagebutton at moving_target
-                ^
+File "game/shootem/shoot.rpy", line 30: expected 'image_name_component' not found.
+    show scene imagebutton_test1()
+        ^
 
 Ren'Py Version: Ren'Py 7.1.3.1092
-Sat Mar 02 17:28:43 2019
+Sat Mar 02 20:41:00 2019
