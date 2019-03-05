@@ -117,7 +117,7 @@ label entermansion:
 
 label cafeteria:
     $ greenap+= 1
-    green "Ugh. Don’t make me spread my area so thinly. The furthest I can go is to the doorway… Hey, are you listening?!"
+    green "Ugh. Don’t make me spread my area so thinly. The furthest I can go is to the doorway... Hey, are you listening?!"
 
     #nvl set up
     #scene mansionentrance with fade
@@ -177,7 +177,7 @@ label portrait:
     rookie "..."
     "(Please, I can’t read your mind. Say something!)"
     rookie "I... I was happy that you asked me."
-    "(Did he read my mind…?)"
+    "(Did he read my mind...?)"
     rookie "Three years ago..."
     "Huh? Three years ago?"
     rookie "I-it is nothing. I will move this for you."
@@ -210,7 +210,7 @@ label stayguard:
 
     blue "You know you don’t have to stay here with me. If there’s trouble, Green will let you know."
     "Do you want me to leave?"
-    blue "No, no. I just… thought you’d rather explore."
+    blue "No, no. I just... thought you’d rather explore."
     "(It looked like he was going to say something else.)"
     "If I’m bothering you, I can go."
     blue "Now you’re just being petty."
@@ -236,7 +236,7 @@ label stayguard:
     blue "Is that supposed to be a compliment?"
     "Always is!"
     blue "Despite accusing me of treating you like a kid, you’re quite an offender yourself."
-    "I don’t treat you like a kid, Blue. At best, you’re more like… "
+    "I don’t treat you like a kid, Blue. At best, you’re more like... "
     blue "Like...?"
     "(That’s funny. I can see my breath? Tch. That means-)"
     green "Sorry to interrupt, but we’re being attacked!"
@@ -248,7 +248,236 @@ label firstambushed:
 
     call begin_ShootMode #Our Shoot Mode
     #call battle_mode_Tut #Our Battle Mode Tutorial version
+    jump introToWitch
 
+label introToWitch:
+    prewitch "You... What the hell are you people?"
+    blue "What a soft life you must have lived if a ghost such as yourself aren’t familiar with us."
+    green "I’m shocked as well. To think there exists spirits who do not know of us."
+    rookie "We are Supernatural Investigators. "
+    prewitch "Investigators? "
+    prewitch "Ha... haha... Hahahahahaha!"
+    prewitch "So you came to kill me? Is that it?"
+    "(What’s with this rising aura? Has she been hiding her power?)"
+    "Get back! She’s going to-"
 
+    show whiteflash zorder 50 with vpunch
+
+    #nvl set up
+    #scene mansionentrance with fade
+    window show
+
+    nvlmc "Not good. I underestimated her. I should have taken her seriously from the get-go."
+
+    if trueend:
+        #end nvl
+        #CG????
+        window hide
+        boss "Hehe... I guess I overestimated myself a bit."
+        "Shut up, you idiot! You knew I can take that blast! Why did you jump in front of it?"
+        boss "Well, it’s just... kind of rare for me to protect you, you know? Thought I’d take advantage of it."
+        "Hey, next time you get an opportunity like this?"
+        boss "Yeah?"
+        "Don’t."
+        boss "Hehe. That kind of rough side of you is cute, too."
+        "Didn’t I tell you to shut up?"
+        window show
+
+    nvlmc "Damn it. I thought she was just a spirit, but it seems that she has power behind her. Is she the ringleader here?"
+    nvlmc "First priority is to protect everyone. "
+    nvlmc "Unlike them, I’m durable enough that I can probably survive a blast or two if she starts flinging this dense energy at me. If the others got even scratched with something like this, they’d probably evaporate."
+    nvlmc "But can I take the hit without letting even a stray hit get near them? Then the only other way to perfectly protect everyone would be..."
+    nvl clear
+    nvlmc "I clutch the three jeweled necklace. Since this has a fairy’s blessing, it should work."
+    nvlmc "Without hesitation, I rush towards the spirit, the necklace clutched tightly in my hand. Seeing me move, the spirit turns her whole attention to me."
+    nvlmc "Good."
+    nvlmc "I hope this doesn’t hurt too much."
+
+    show whiteflash zorder 50 with vpunch
+    nvl clear
+
+    nvlmc "Unsurprisingly, she starts firing as soon as I get airborne to go after her. Makes perfect sense. People can’t change directions mid-air. I’ll have to allow myself to get hit."
+    nvlmc "But you know, she underestimated me quite a bit."
+    nvlmc "Did she really think that this is my best?"
+    nvlmc "There’s a crackle of power that envelops me just in time as her blasts hit. I’ve done this too often to mistime this."
+    nvlmc "My ability."
+    nvl clear
+    nvlmc "Well, to call it my ability is actually misleading. It’s a part of who I am, after all. But it’s not like there’s any better way to describe it. To any other Supernatural Investigators, it’ll be considered their ability."
+    nvlmc "In the Eastern sector, there’s a famous onmyouji (I suppose the closest translation would be an exorcist) by the name of Abe no Seimei. According to legends, his mother was a beast called the “Nine-tailed Fox.” A fox is supposed to gain an extra tail for every 100 years it lives. So to have nine of them, that fox must have lived for a long time while collecting wisdom and power. Because of his lineage, Abe no Seimei was an undefeatable man."
+    nvlmc "I’m not going to say something so grand like I am a descendent of Abe no Seimei. "
+    nvlmc "But there’s probably some traces of his blood in my vein."
+    nvlmc "Otherwise, I have no real words to describe this form of mine."
+
+    #end nvl
+    nvl clear
+    window hide
+
+    #FOX CG
+    prewitch "You think a little form change is enough? "
+    "(It looks like she’s gathering her energy for a bigger blast. Then I’ll just cut her off before she releases!)"
+
+    #nvl set up
+    #scene mansionentrance with fade
+    window show
+
+    nvlmc "I’m faster in this form. Stronger, too."
+    nvlmc "But somehow, it seems she still hasn’t shown her true powers yet. Because she manages to summon smaller blasts while still gathering energy for a larger one. That’ll be fine if not for the fact that I cannot allow my comrades to get hurt."
+    nvlmc "I guess my weakness was too obvious, seeing that she seems to be aiming for them now."
+    nvlmc "Like hell I’ll let her do what she wants!"
+    nvlmc "The three jewel necklace has been blessed by fairies. The typical usage of something like this is as a protection charm from a surprise attack. But there are other ways to use it, too."
+    nvlmc "For example, I can crush it in my hand for an extra boost of power. It also means that I won’t be able to rely on this any more, but if I can keep these guys safe..."
+    nvlmc "What’s a little sacrifice, right?"
+
+    show whiteflash zorder 50 with vpunch
+    nvl clear
+
+    nvlmc "Her screams of pain fill the air as I fall back into Green’s hold. He helps steady me as Blue finishes his seal. Rookie seems too frazzled to properly move. We’ll have to talk to him later to better protect himself in these situations."
+    nvlmc "At least with the seal finally finished, she won’t be able to run out of this mansion. If we finish her in here, that will be it."
+    nvlmc "I turn towards her. It looks like she’s struggling to hold this form together. Just a little more push should be enough to kill-"
+    nvlmc "My knees give out. Huh? Did I use more power than I realized? "
+    nvlmc "I stumble as both Blue and Green help steady me on either side. This is bad. If I don’t finish her off right now, she’ll get the chance to recover and come after us. We need to stop her here."
+
+    #end nvl
+    nvl clear
+    window hide
+
+    prewitch "Haha... looks like you’re at your limit."
+    green "Is she gathering another projectile? Wouldn’t that destroy her?"
+    blue "Looks like she plans on killing herself with us."
+    "Any chance you guys can kill her?"
+    green "Very encouraging to hear from our only fighter."
+    blue "Rookie looks terrified, too. Tch. We need to run."
+    prewitch "I won’t let you!"
+    "Heh. Got you."
+
+    show whiteflash zorder 50 with vpunch
+
+    green "How did you miss at that distance?!"
+    "(I didn’t! She pulled back at the last second. Is she prioritizing survival?)"
+    prewitch "Are you stupid? Why would I make it that easy for you to kill me?"
+
+    #nvl set up
+    window show
+
+    nvlmc "The wind kicks off. I must be really weakened, if that little is enough to knock me back into Blue’s arms. At least it looks like Blue has some kind of a minor seal up around us. But if she fires something at us, it won’t last. And I don’t have my necklace to protect me anymore."
+    nvlmc "With another cackle, the witch flies up the staircase and through the gaping hole of the second floor’s entrance. She doesn’t put up a seal to stop us from entering, which already tells me that the second floor must be filled with traps."
+    nvlmc "The gust dies down."
+    nvlmc "We seem to have returned to relative peace."
+
+    #end nvl
+    nvl clear
+    window hide
+
+    green "Oi Rookie, how long are you going to stand dumbly over there?"
+    rookie "..."
+    blue "You alright, Red? You look pale."
+    "Yeah. Just tired."
+    green "Hey Rookie, aren’t you our medic? Get to it."
+    rookie "R-right."
+    "(He looks shaken. Was too much for his first mission?)"
+    "Hey, sorry if I scared you. You probably didn’t expect that, right? I’m part… er… I suppose the best way to say is that I have some fox blood in me."
+    "Don’t worry; I don’t lose control or anything. That version is still me. Just… more powerful."
+    green "What’s with that? He has our files. It’s our own responsibility to read about our teammates’ abilities before a mission."
+    blue "Amazing. Have all of my lectures finally sunk in for you? Or are you just echoing them to look cool in front of a new member?"
+    green "Shut up, you."
+    rookie "I am not scared."
+    "Is that so? That’s a relief."
+    rookie "Just..."
+    green "Just?"
+    rookie "Three years ago, my village was attacked by a silver fox with two tails."
+    blue "Three years ago? Wasn’t that…?"
+    "If you were wondering if that was me, then yeah. It was. There haven’t been any other silver foxes, let alone two-tailed ones, in about half a century."
+    green "Urk. You couldn’t think of a kinder way to phrase that?"
+    "Look, I’m not a good person. I’ve done many things I’m not proud of. If that makes you uncomfortable, request that you never be put on the same team with me again."
+    "But for this mission, I need you to set aside whatever issues you have and work with me."
+    rookie "..."
+    "(Hey, say something!)"
+    blue "Or if you guys want, I can drop the seal right now. It would mean that our mission is a failure, but at least no one would be forced to work with someone they are uncomfortable with."
+    rookie "I... am fine."
+
+    menu:
+        "(You don’t look fine at all! Great. Now everyone’s looking at me to decide.)"
+        "Let’s call it quits":
+            jump storyendEmptyHands
+        "We can’t give up yet":
+            jump firstfloorcont
+
+label storyendEmptyHands:
+    "It’s clear that you’re uncomfortable, Rookie. It’d be better for a different team to take care of this mission."
+    green "But doesn’t that mean that the ghosts here might relocate?"
+    "(Look, I don’t like it either. But I’m not going to force Rookie here to spend time with a monster that wiped out his village. If he’s talking about {i}that incident{/i}  three years ago…)"
+    blue "At least the next group will have a better heads up about what’s here. "
+    rookie "If you decided this because of me, I ask that you reconsider."
+    "(You say that, but you look the most disturbed by the whole thing.)"
+    "It’s not because of you. I’m too tired to keep going. Not to mention, I broke my necklace. You want your only fighter to face against whatever else is in this mansion without any kind of protection?"
+    green "You’re a monster, so I’m sure you’ll be fine."
+    "(Get a hint, you idiot!)"
+    "What’s that? You want me to accidentally hit you?"
+    blue "If that’s how Red feels, then that’s how Red feels. Go ahead. Punch Green all you want."
+    green "H-huh?! Wait a minute!"
+
+    #nvl set up
+    window show
+
+    nvlmc "I feel a little guilty for abandoning the mission before it even started."
+    nvlmc "But I doubt Rookie wants to be stuck in here for however long it’ll take for us to complete the mission with me. Not to mention I’m not confident about fighting that spirit again without the help of any necklace."
+    nvlmc "I can’t allow any of these guys to get hurt. If I were to fight that spirit seriously, all of their lives would be at stake. "
+    nvlmc "It’s better like this."
+    nvlmc "Yeah, that’s right. This was the correct choice to make."
+
+    #end nvl
+    nvl clear
+    window hide
+
+    #Bad End CG
+    #End EmptyHands
+
+label firstfloorcont:
+    $ blueap+= 1
+    $ greenap+= 1
+    $ rookieap+= 1
+
+    "We can’t let a strong spirit like that relocate. That’d cause a bureaucratic mess that will doubtlessly end up with us pulling multiple all-nighters to handle."
+    green "Oh, please let’s not do that again."
+    blue "Whose fault was it that we were in that position to begin with?"
+    green "C-come on, we all suffered together. So don’t blame it all on me!"
+    "So if we can, I would really like to complete this mission. "
+    rookie "That is fine with me."
+    "(Are you really okay? You look pale.)"
+    "That spirit was really powerful. If you guys are near me when I fight her again, I can’t guarantee your safety. So-"
+    green "That’s fine. We’ll stay near the back. "
+    blue "I’ll be focused enough to set up a better seal around us this time. Don’t worry about us and go full out."
+    "(I’m saying if I do, you’ll die.)"
+    rookie "I will trust your judgement."
+    "(All of you suck.)"
+    "(But this is the first.)"
+
+    if trueend:
+        boss "Pwhahahaha! What expression is that supposed to be?"
+        "S-shut up! I don’t know! I don’t know what I’m feeling!"
+        boss "Tsk, tsk. You’ve spent this long with humans and still can’t figure out emotions? I thought you foxes are supposed to be smart!"
+        "Being smart and knowing your emotions are different things. "
+        boss "[mcname], emotions are simple. If it’s a positive feeling, you smile. If not, you cry. See?"
+        "I-I don’t know. Is this… positive? I can’t figure it out."
+        boss "Do you hate it?"
+        "N-no? I don’t think so? I don’t understand myself."
+        boss "Then what about this? If you don’t know what you’re feeling, then just laugh."
+        "What kind of logic is that?"
+        boss "Once you laugh, it gets easier, you know. If it was a negative feeling, you’ll suddenly feel a lot better. If it was a positive feeling, it’ll make you feel doubly better for sharing it."
+        "That… sounds fake."
+        boss "H-hey! I’m trying to give you some sound advice!"
+
+    "Pfft… Hahahahaha!"
+    green "Nice going, Rookie. Red’s lost it because of you."
+    blue "A-are you alright?"
+    rookie "..."
+    "I will make sure all of you get back safely. Until then, will you trust me?"
+    green "Were you hit on the head while fighting? What’s with such a gross question?"
+    blue "Did you forget, Red? We are a team. As much as we trust you, you should trust us."
+    rookie "... I... I will leave it to you."
+    "Good. Then our next objective is the floor above us. I have no idea what’s waiting for us up there, but I will keep you safe. If you can’t trust me, please feel free to stay here."
+    green "I’m telling you, stop being so gross! "
+    blue "I’ll layer so many seals around you that no one will be able to touch you. Heh."
+    rookie "Then shall we?"
 
 return #Back to story
