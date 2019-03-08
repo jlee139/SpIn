@@ -11,6 +11,17 @@ define boss = Character('Boss', color="#A00303")
 define prewitch = Character('???', color="#BC4244")
 define witch = Character('Witch', color="#BC4244")
 
+#Backgrounds To be Used
+image office = "office.png"
+image office memory = "office_memory.png"
+image mansionout = "mansionoutside.png"
+image mansionentrance = "mansionentrance.png"
+
+#Character Sprites
+image bluetemp = "bluetemp.png"
+image greentemp = "greentemp.png"
+image rookietemp = "rookietemp.png"
+
 #Whiteflash tweaked from code by Epadder (https://lemmasoft.renai.us/forums/viewtopic.php?t=16604)
 image whiteflash:
     Solid("#fff")

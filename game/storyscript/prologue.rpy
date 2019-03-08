@@ -2,7 +2,7 @@ label prologue:
     #nvl set up
     nvl clear
     window hide
-    #scene bg office with fade
+    scene office memory with fade
     window show
 
     nvlmc "Of all the things in the world, I probably miss his laugh the most."
@@ -23,13 +23,13 @@ label prologue:
     window hide
 
     #Now we get to the main cast
-    #scene bg outsidemansion with fade
+    scene mansionout with fade
 
-    #show green grin at right with dissolve
+    show greentemp at right with dissolve
     green "So this is the place? It definitely looks right. Yeesh, look at that. Looks like something straight out of a clichéd horror flick."
-    #show blue matteroffact at left with dissolve
+    show bluetemp at left with dissolve
     blue "Of course, it looks like that. It’s been abandoned for the better part of the century."
-    #show rookie neutral at center with dissolve
+    show rookietemp at center with dissolve
     rookie "Careful. This area is rocky, [mcname]-"
     green "Hey! How many times do we have to say to use code names? You want to be cursed?"
     rookie "Sorry. I am still not used to this."
@@ -128,6 +128,10 @@ label contpro2:
     blue "As you were saying, Red?"
     "... Are we going to be okay with this mission...?"
 
+    hide greentemp
+    hide bluetemp
+    hide rookietemp
+
     if trueend:
         boss "Hahahaha! Relax a bit, Red! If you’re that tense, you’ll end up hurting yourself."
         "Your code name is Red! That’s your name! How many times do I have to tell that to you?!"
@@ -149,5 +153,8 @@ label contpro2:
         nvl clear
         window hide
 
+
+    #Remember to erase this!!!
+    scene black
 
 return #Return to story

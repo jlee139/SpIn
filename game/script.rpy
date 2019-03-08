@@ -4,10 +4,10 @@
 label start:
 
     #First thing first, get the Player's name
-    #$ mcname = renpy.input("Enter your name")
+    $ mcname = renpy.input("Enter your name")
 
     #Then We start the story!
-    #call prologue      #Start us up with the prologue of the story
+    call prologue      #Start us up with the prologue of the story
     #call firstfloor    #After the prologue, we go to the first floor
     #call secondfloor   #Then the 2nd floor
     #call thirdfloor    #Then the 3rd floor
