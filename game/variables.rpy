@@ -22,6 +22,11 @@ image bluetemp = "bluetemp.png"
 image greentemp = "greentemp.png"
 image rookietemp = "rookietemp.png"
 
+#Boss Battle Sprites
+image tutorialwitchfull = "battlemode/witch_tut_beg.png"
+image tutorialwitchhalf = "battlemode/witch_tut_mid.png"
+image tutorialwitchno = "battlemode/witch_tut_final.png"
+
 #Whiteflash tweaked from code by Epadder (https://lemmasoft.renai.us/forums/viewtopic.php?t=16604)
 image whiteflash:
     Solid("#fff")

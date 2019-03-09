@@ -1,36 +1,74 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 10, in script call
-    call prologue      #Start us up with the prologue of the story
-  File "game/storyscript/prologue.rpy", line 33, in script
-    rookie "Careful. This area is rocky, [mcname]-"
-KeyError: u'mcname'
+  File "game/script.rpy", line 19, in script call
+    call begin_TutRPG #Testing our Battle Mode
+  File "game/rpgmode/battlemode.rpy", line 20, in script
+    call screen battleuiTut
+  File "renpy/common/000statements.rpy", line 519, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/rpgmode/battlemode.rpy", line 2, in execute
+    screen battleuiTut():
+  File "game/rpgmode/battlemode.rpy", line 2, in execute
+    screen battleuiTut():
+  File "game/rpgmode/battlemode.rpy", line 5, in execute
+    bar value VariableValue([bosshp], [bossmaxhp]):
+  File "renpy/common/00barvalues.rpy", line 265, in get_adjustment
+    value = getattr(self.object, self.field)
+TypeError: getattr(): attribute name must be string
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 10, in script call
-    call prologue      #Start us up with the prologue of the story
-  File "game/storyscript/prologue.rpy", line 33, in script
-    rookie "Careful. This area is rocky, [mcname]-"
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\ast.py", line 678, in execute
-    renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\exports.py", line 1229, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\character.py", line 1018, in __call__
-    what = what_pattern.replace("[what]", sub(what, translate=True))
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\character.py", line 1007, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\substitutions.py", line 244, in substitute
-    s = formatter.vformat(s, (), kwargs)
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 563, in vformat
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 585, in _vformat
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 646, in get_field
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 605, in get_value
-KeyError: u'mcname'
+  File "game/script.rpy", line 19, in script call
+    call begin_TutRPG #Testing our Battle Mode
+  File "game/rpgmode/battlemode.rpy", line 20, in script
+    call screen battleuiTut
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\ast.py", line 1861, in execute
+    self.call("execute")
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\ast.py", line 1849, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\statements.py", line 203, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 519, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\exports.py", line 2755, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\ui.py", line 289, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\core.py", line 2672, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\core.py", line 3059, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\core.py", line 531, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\core.py", line 531, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\core.py", line 531, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\screen.py", line 424, in visit_all
+    callback(self)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\core.py", line 3059, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\screen.py", line 434, in per_interact
+    self.update()
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\screen.py", line 619, in update
+    self.screen.function(**self.scope)
+  File "game/rpgmode/battlemode.rpy", line 2, in execute
+    screen battleuiTut():
+  File "game/rpgmode/battlemode.rpy", line 2, in execute
+    screen battleuiTut():
+  File "game/rpgmode/battlemode.rpy", line 5, in execute
+    bar value VariableValue([bosshp], [bossmaxhp]):
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\sl2\sldisplayables.py", line 240, in sl2bar
+    return renpy.display.behavior.Bar(range, value, width, height, vertical=False, **properties)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\behavior.py", line 1570, in __init__
+    adjustment = value.get_adjustment()
+  File "renpy/common/00barvalues.rpy", line 265, in get_adjustment
+    value = getattr(self.object, self.field)
+TypeError: getattr(): attribute name must be string
 
 Windows-8-6.2.9200
 Ren'Py 7.1.3.1092
 SpIn 1.0
-Thu Mar 07 22:52:48 2019
+Sat Mar 09 14:59:12 2019
