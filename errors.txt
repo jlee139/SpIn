@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/rpgmode/battlemode.rpy", line 5: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-        bar value StaticValue([bosshp], 100)"
+File "game/rpgmode/battlemode.rpy", line 31: end of line expected.
+    show tutorialwitchfull at xpos 480 ypos 100
+                                   ^
 
 Ren'Py Version: Ren'Py 7.1.3.1092
-Sat Mar 09 14:24:27 2019
+Sat Mar 09 18:24:10 2019

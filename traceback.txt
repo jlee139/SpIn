@@ -3,72 +3,28 @@
 While running game code:
   File "game/script.rpy", line 19, in script call
     call begin_TutRPG #Testing our Battle Mode
-  File "game/rpgmode/battlemode.rpy", line 20, in script
-    call screen battleuiTut
-  File "renpy/common/000statements.rpy", line 519, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/rpgmode/battlemode.rpy", line 2, in execute
-    screen battleuiTut():
-  File "game/rpgmode/battlemode.rpy", line 2, in execute
-    screen battleuiTut():
-  File "game/rpgmode/battlemode.rpy", line 5, in execute
-    bar value VariableValue([bosshp], [bossmaxhp]):
-  File "renpy/common/00barvalues.rpy", line 265, in get_adjustment
-    value = getattr(self.object, self.field)
-TypeError: getattr(): attribute name must be string
+  File "game/rpgmode/battlemode.rpy", line 19, in script
+    $renpy.pause (normal_settings.dialogue_pause)    #So we don't start doing dialogues
+  File "game/rpgmode/battlemode.rpy", line 19, in <module>
+    $renpy.pause (normal_settings.dialogue_pause)    #So we don't start doing dialogues
+NameError: name 'normal_settings' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/script.rpy", line 19, in script call
     call begin_TutRPG #Testing our Battle Mode
-  File "game/rpgmode/battlemode.rpy", line 20, in script
-    call screen battleuiTut
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\ast.py", line 1861, in execute
-    self.call("execute")
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\ast.py", line 1849, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\statements.py", line 203, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 519, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\exports.py", line 2755, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\ui.py", line 289, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\core.py", line 2672, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\core.py", line 3059, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\core.py", line 531, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\core.py", line 531, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\core.py", line 531, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\screen.py", line 424, in visit_all
-    callback(self)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\core.py", line 3059, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\screen.py", line 434, in per_interact
-    self.update()
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\screen.py", line 619, in update
-    self.screen.function(**self.scope)
-  File "game/rpgmode/battlemode.rpy", line 2, in execute
-    screen battleuiTut():
-  File "game/rpgmode/battlemode.rpy", line 2, in execute
-    screen battleuiTut():
-  File "game/rpgmode/battlemode.rpy", line 5, in execute
-    bar value VariableValue([bosshp], [bossmaxhp]):
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\sl2\sldisplayables.py", line 240, in sl2bar
-    return renpy.display.behavior.Bar(range, value, width, height, vertical=False, **properties)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\behavior.py", line 1570, in __init__
-    adjustment = value.get_adjustment()
-  File "renpy/common/00barvalues.rpy", line 265, in get_adjustment
-    value = getattr(self.object, self.field)
-TypeError: getattr(): attribute name must be string
+  File "game/rpgmode/battlemode.rpy", line 19, in script
+    $renpy.pause (normal_settings.dialogue_pause)    #So we don't start doing dialogues
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\ast.py", line 881, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\python.py", line 1913, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/rpgmode/battlemode.rpy", line 19, in <module>
+    $renpy.pause (normal_settings.dialogue_pause)    #So we don't start doing dialogues
+NameError: name 'normal_settings' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.1.3.1092
 SpIn 1.0
-Sat Mar 09 14:59:12 2019
+Sat Mar 09 18:15:33 2019
