@@ -31,8 +31,8 @@ screen battleui():
         action Call('magicdmg')
     imagebutton: #Beserk Button
         xpos 870 ypos 480
-        idle "battlemode/heal_up.png"
-        hover "battlemode/heal_down.png"
+        idle "battlemode/beast_up.png"
+        hover "battlemode/beast_down.png"
         action If(numturns >10, Call('zerker'), None)
     imagebutton: #Heal Button
         xpos 1070 ypos 480
@@ -51,19 +51,37 @@ label begin_TutRPG:
     #Set up variables for the upcoming battle
     $bossatk = 10
     $redatk = 10
+    $beastmode = False #To keep track of damages in beast mode
 
 
     #First place the enemy sprite in front of us
     show tutorialwitchfull at top
 
     #While we have turns, go through the battleui
-    while numturns>1:
+    while numturns>=1:
+        #Checks happen here before we start the battles
+        #If witch's HP is 0, go straight to winning stance
+        if bosshp <1:
+            jump wincondition
+
+        #If player's HP is 0, go straight to game over
+        if hp < 1:
+            jump healthgameover
+
         #Display our health and numturns
         call screen battleui
         $numturns-=1
         $turnnum+=1
         $bossatk = 10
         $redatk = 10
+
+    #If witch's HP is 0, go straight to winning stance
+    if bosshp <1:
+        jump wincondition
+
+    #if we have ran out of turns, go straight to game over
+    if numturns<1:
+        jump turngameover
 
     return
 
@@ -91,7 +109,7 @@ label magicdmg:
     $redatk = redatk * 1.5
     "By using up 3 of your turns, you fired a magic spell that does [redatk] damage."
     $bosshp -= redatk
-    if witchdef <4: #There's 60% chance she'll attack
+    if witchdef <6: #There's 60% chance she'll attack
         call witchturn
     return
 
@@ -103,8 +121,10 @@ label healdmg:
     return
 
 label zerker:
-    "In return for 10 of your turns, all damage is multiplied by 3 for the next 3 turns."
-    $numturns -=10
+    "In return for 10 of your turns, damage done is increased and damage received is decreased for the next 3 turns."
+    $numturns -=9
+    $beastmode = True
+    $turnnum = 0 #
     return
 
 label witchdef:
@@ -114,13 +134,27 @@ label witchdef:
 
 label witchturn:
     $ witchmagic = renpy.random.randint(1,10)
-    if witchdef >=6: #There's 40% chance she'll use magic
+    if witchmagic >=6: #There's 40% chance she'll use magic
         $bossatk = bossatk*1.5
         "The enemy fired a magic spell that does [bossatk] damage"
         $hp-=bossatk
     else:
         "The enemy did [bossatk] damage!"
         $hp-=bossatk
+    return
+
+label healthgameover:
+    "You have ran out of health. Keep a better eye on your health next time!"
+    "Game Over."
+    return
+
+label turngameover:
+    "You have ran out of turns. Try shooting more ghosts down next time!"
+    "Game Over."
+    return
+
+label wincondition:
+    "You have defeated the enemy!"
     return
 
 return

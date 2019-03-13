@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/rpgmode/battlemode.rpy", line 32: u'if' is not a keyword argument or valid child for the imagebutton statement.
-    imagebutton if jewel >1: 
-                  ^
+File "game/rpgmode/battlemode.rpy", line 143: expected statement.
+    nvl "Game Over."
+       ^
+
+File "game/rpgmode/battlemode.rpy", line 150: expected statement.
+    nvl "Game Over."
+       ^
 
 Ren'Py Version: Ren'Py 7.1.3.1092
-Mon Mar 11 23:05:27 2019
+Tue Mar 12 21:31:36 2019
