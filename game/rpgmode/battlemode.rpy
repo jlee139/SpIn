@@ -59,6 +59,14 @@ label begin_TutRPG:
 
     #While we have turns, go through the battleui
     while numturns>=1:
+        #Change the Sprite accordingly
+        if bosshp<=50:
+            hide tutorialwitchfull
+            show tutorialwitchhalf at top
+        if bosshp<=20:
+            hide tutorialwitchhalf
+            show tutorialwitchno at top
+
         #Checks happen here before we start the battles
         #If witch's HP is 0, go straight to winning stance
         if bosshp <1:
@@ -68,12 +76,22 @@ label begin_TutRPG:
         if hp < 1:
             jump healthgameover
 
+        #if the turn is 3, then reset
+        if turnnum == 3:
+            $turnnum=0
+            $beastmode = False
+
         #Display our health and numturns
         call screen battleui
         $numturns-=1
         $turnnum+=1
-        $bossatk = 10
-        $redatk = 10
+        #If we're in beastmode, put up the attack
+        if beastmode:
+            $bossatk = 7
+            $redatk = 30
+        else:
+            $bossatk = 10
+            $redatk = 10
 
     #If witch's HP is 0, go straight to winning stance
     if bosshp <1:
@@ -91,6 +109,9 @@ label attackdmg:
         call witchdef
     $bosshp -= redatk
     "You did [redatk] damage!"
+    #If witch's HP is 0, go straight to winning stance
+    if bosshp <1:
+        jump wincondition
     if witchdef <8: #There's 80% chance she'll attack
         call witchturn
     return
@@ -109,6 +130,9 @@ label magicdmg:
     $redatk = redatk * 1.5
     "By using up 3 of your turns, you fired a magic spell that does [redatk] damage."
     $bosshp -= redatk
+    #If witch's HP is 0, go straight to winning stance
+    if bosshp <1:
+        jump wincondition
     if witchdef <6: #There's 60% chance she'll attack
         call witchturn
     return
@@ -124,7 +148,7 @@ label zerker:
     "In return for 10 of your turns, damage done is increased and damage received is decreased for the next 3 turns."
     $numturns -=9
     $beastmode = True
-    $turnnum = 0 #
+    $turnnum = 0 #Once this turns 3, we need to turn off beastmode
     return
 
 label witchdef:
@@ -144,16 +168,19 @@ label witchturn:
     return
 
 label healthgameover:
+    scene black
     "You have ran out of health. Keep a better eye on your health next time!"
     "Game Over."
     return
 
 label turngameover:
+    scene black
     "You have ran out of turns. Try shooting more ghosts down next time!"
     "Game Over."
     return
 
 label wincondition:
+    scene black
     "You have defeated the enemy!"
     return
 
