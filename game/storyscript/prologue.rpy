@@ -133,6 +133,8 @@ label contpro2:
     hide rookietemp
 
     if trueend:
+        scene office memory with fade
+
         boss "Hahahaha! Relax a bit, Red! If you’re that tense, you’ll end up hurting yourself."
         "Your code name is Red! That’s your name! How many times do I have to tell that to you?!"
         boss "T-that was a joke! Don’t be mad! I was just trying to make you laugh."
@@ -155,6 +157,6 @@ label contpro2:
 
 
     #Remember to erase this!!!
-    scene black
+    #scene black
 
 return #Return to story

@@ -1,6 +1,6 @@
 label firstfloor: #set up of the rest of the story
     #nvl set up
-    #scene mansionentrance with fade
+    scene mansionentrance with fade
     window show
     nvlmc "There is no door to the mansion for us to open. Where the door should be is a tattered cloth that might have once been a curtain."
     nvlmc "The entrance way creak under our weights. I don't feel any wind, but the makeshift curtain seems to be swaying."
@@ -36,10 +36,17 @@ label firstfloor: #set up of the rest of the story
     nvl clear
     window hide
 
+    #Turn on our fog
+    show particleFog1:
+        alpha 0.5
+
     #children being cute now
     "Ready?"
+    show bluetemp at left with dissolve
     blue "Want a candy? It’ll help you with your nerves."
+    show greentemp at right with dissolve
     green "Don’t tell me you’re getting cold feet? Jeesh, what will we do with you? If you’re like this, how’d you think Rookie here feels?"
+    show rookietemp at center with dissolve
     rookie "I feel fine. But if you are in need of rest, I can carry you."
 
     menu:
@@ -72,7 +79,11 @@ label entermansion:
     "Let's go!"
 
     #nvl set up
-    #scene mansionentrance with fade
+    scene fronthall with fade
+    #Turn on our fog
+    show particleFog1:
+        alpha 0.5
+
     window show
     nvlmc "I can see why the previous owners tried so hard to restore the mansion."
     nvlmc "The entrance area is huge. The broken chandelier hanging looks to be one of the newer addition. There’s a spiral staircase against the wall leading up to the second floor. The chandelier looks to be at eye-level with it. Perhaps one of the previous owners broke the ceiling to put the chandelier like that?"
@@ -84,9 +95,13 @@ label entermansion:
     window hide
 
     "It feels like it’s bigger on the inside than out."
+    show greentemp at right with dissolve
     green "I... hate to say this, but it’s too large of an area for my ability to cover."
+    show bluetemp at left with dissolve
     blue "I’ll put up a seal."
+    show rookietemp at center with dissolve
     rookie "Seal? In this big of an area? Would it be effective?"
+
     green "Jeesh, and I thought Red here was pretty air-headed. Pay more attention to others’ abilities, won’t you?"
     "Hilarious coming from you. You thought my ability was to make tea!"
     green "Whua-?! How many times do I have to say that it was a joke?"
@@ -160,7 +175,7 @@ label portrait:
     $ rookieap+= 1
 
     #nvl set up
-    #scene mansionentrance with fade
+    scene portrait with fade
     window show
 
     nvlmc "The portrait on the wall below the staircase seems to be that of a woman. Her face has been ripped off, but the dress looks like something from the victorian times, dark colors with somber laces and everything else covered."
@@ -208,6 +223,8 @@ label portrait:
 label stayguard:
     $ blueap+= 1
 
+    scene fronthall with fade
+
     blue "You know you don’t have to stay here with me. If there’s trouble, Green will let you know."
     "Do you want me to leave?"
     blue "No, no. I just... thought you’d rather explore."
@@ -245,12 +262,15 @@ label stayguard:
     jump firstambushed
 
 label firstambushed:
+    scene fronthall with fade
 
     call begin_ShootMode #Our Shoot Mode
-    #call battle_mode_Tut #Our Battle Mode Tutorial version
+    call begin_TutRPG #Our Battle Mode Tutorial version
     jump introToWitch
 
 label introToWitch:
+    scene fronthall with fade
+
     prewitch "You... What the hell are you people?"
     blue "What a soft life you must have lived if a ghost such as yourself aren’t familiar with us."
     green "I’m shocked as well. To think there exists spirits who do not know of us."
@@ -264,7 +284,7 @@ label introToWitch:
     show whiteflash zorder 50 with vpunch
 
     #nvl set up
-    #scene mansionentrance with fade
+    scene fronthall with fade
     window show
 
     nvlmc "Not good. I underestimated her. I should have taken her seriously from the get-go."

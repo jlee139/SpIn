@@ -107,7 +107,6 @@ init python:
     def randomyos(trans, st, at):
         trans.ypos = renpy.random.randint(0, 600)
         trans.xpos = renpy.random.randint(850, 1200)
-        #globals() ['totghost']+=1
         return None
 
     def countdown(st, at, length=0.0):

@@ -40,7 +40,7 @@ screen ghostspawn():
     text "Jewels: [numjewels]" xpos 20 ypos 10
     #text "Ghosts Created: [totghost]" xpos 20 ypos 35
     text "Ghosts killed: [numturns]" xpos 20 ypos 650
-    timer 10.0 action Jump("battleready") #this only works if you don't click anything :\
+    timer 15.0 action Jump("battleready") #this only works if you don't click anything :\
     imagebutton:
         idle "shootem/ghost.png"
         hover "shootem/ghost_dead.png"
@@ -95,7 +95,7 @@ label battleready:
     window show
 
     nvlmc "Your information for the upcoming battle:"
-    nvlmc "You have [numturns] turns to defeat the enemy."
+    nvlmc "You have [numturns] amount of energy to defeat the enemy."
     nvlmc "You have [numjewels] jewels protecting you."
     nvlmc "You currently have [hp] amount of health left."
     nvlmc "Battle Start"

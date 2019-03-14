@@ -1,7 +1,7 @@
 #RPG Set up
 screen battleui():
     text "Jewels: [numjewels]" xpos 20 ypos 500
-    text "Turns Left: [numturns]" xpos 20 ypos 520
+    text "Energy Left: [numturns]" xpos 20 ypos 520
     bar: #Enemy's HP Bar
         range bossmaxhp
         value bosshp
@@ -44,7 +44,7 @@ screen battleui():
 
 #For Tutorial Battle
 label begin_TutRPG:
-    $numturns = 20 #This is for debugging. Remember to turn this off!!
+    #$numturns = 20 #This is for debugging. Remember to turn this off!!
     $bosshp = 100
     $bossmaxhp = 100
     $turnnum = 0 #To determine whose turn it is
@@ -128,7 +128,7 @@ label magicdmg:
         call witchdef
     $numturns-=2
     $redatk = redatk * 1.5
-    "By using up 3 of your turns, you fired a magic spell that does [redatk] damage."
+    "By using up 3 of your energy, you fired a magic spell that does [redatk] damage."
     $bosshp -= redatk
     #If witch's HP is 0, go straight to winning stance
     if bosshp <1:
@@ -145,7 +145,7 @@ label healdmg:
     return
 
 label zerker:
-    "In return for 10 of your turns, damage done is increased and damage received is decreased for the next 3 turns."
+    "In return for 10 of your energy, damage done is increased and damage received is decreased for the next 3 turns."
     $numturns -=9
     $beastmode = True
     $turnnum = 0 #Once this turns 3, we need to turn off beastmode
@@ -175,7 +175,7 @@ label healthgameover:
 
 label turngameover:
     scene black
-    "You have ran out of turns. Try shooting more ghosts down next time!"
+    "You have ran out of energy. Try shooting more ghosts down next time!"
     "Game Over."
     return
 
