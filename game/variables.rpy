@@ -16,6 +16,13 @@ image office = "office.png"
 image office memory = "office_memory.png"
 image mansionout = "mansionoutside.png"
 image mansionentrance = "mansionentrance.png"
+image fronthall = "fronthall.png"
+image portrait = "portrait.png"
+
+#Character Approval Sprites
+image blueapprove = "blueapprove.png"
+image greenapprove = "greenapprove.png"
+image rookieapprove = "rookieapprove.png"
 
 #Character Sprites
 image bluetemp = "bluetemp.png"
@@ -43,6 +50,54 @@ image countdown = DynamicDisplayable(countdown, length=10.0)
 #Green's Fog Particle Effect Code from EvilDragon (https://lemmasoft.renai.us/forums/viewtopic.php?t=4962)
 image particleFog1 = SnowBlossom("fog-particle.png", count=120, border=600, xspeed=(5, 200), yspeed=(5, -5), start=1, fast=True, horizontal=True)
 image particleFog2 = SnowBlossom("fog-particle.png", count=120, border=600, xspeed=(-5, -200), yspeed=(-5, 5), start=0, fast=True, horizontal=True)
+
+#Transform for the approval sprites
+transform appsprite:
+    xalign 0.6 yalign 0.4
+    alpha 1.0
+    0.2
+    alpha 0.8
+    0.2
+    alpha 0.5
+    0.2
+    alpha 0.3
+    0.2
+    alpha 0
+
+image allappsprite:
+    "blueapprove.png"
+    xalign 0.6 yalign 0.4
+    alpha 1.0
+    0.2
+    alpha 0.8
+    0.2
+    alpha 0.5
+    0.2
+    alpha 0.3
+    0.2
+    alpha 0
+    "greenapprove.png"
+    xalign 0.6 yalign 0.4
+    alpha 1.0
+    0.2
+    alpha 0.8
+    0.2
+    alpha 0.5
+    0.2
+    alpha 0.3
+    0.2
+    alpha 0
+    "rookieapprove.png"
+    xalign 0.6 yalign 0.4
+    alpha 1.0
+    0.2
+    alpha 0.8
+    0.2
+    alpha 0.5
+    0.2
+    alpha 0.3
+    0.2
+    alpha 0
 
 #Image of Blue's Shield
 image blueshield:

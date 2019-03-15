@@ -17,7 +17,7 @@ label start:
     #Debugging Things:
     #call shootfix #Testing our shooter
     #call begin_TutRPG #Testing our Battle Mode
-    #jump portrait #for debugging
+    #jump firstfloorcont #for debugging
 
     "That's the end of the Tutorial. Thank you!"
 

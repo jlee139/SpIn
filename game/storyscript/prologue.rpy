@@ -44,22 +44,25 @@ label prologue:
             jump green1
 
 label rookie1:
+    show rookieapprove at appsprite
     $ rookieap+= 1
     "If you want, we can go over everyone's code names again. I'm Red."
     jump procont
 
 label blue1:
+    show blueapprove at appsprite
     $ blueap+= 1
     "Don't forget that these code names exist to protect us. Until this mission is over, I'm Red."
     jump procont
 
 label green1:
+    show greenapprove at appsprite
     $ greenap+= 1
     "Until we get back, remember that I’m Red. And you, stop laughing! You couldn’t keep the code names straight on your first mission."
     jump procont
 
 label procont:
-    green "I'm Green. In case you couldn't tell from my jacket."
+    green "I'm Green. In case you couldn't tell from my hair."
     blue "Don’t be a jackass. I’m Blue. Do you remember your code name?"
     rookie "Yes. It is Pur-"
     green "Rookie. You haven't earned your color yet. Until you can prove yourself, you'll be Rookie."
@@ -83,6 +86,7 @@ label procont:
             jump boss1
 
 label rookie2:
+    show rookieapprove at appsprite
     $ rookieap+= 1
     "Something like that. Don't worry. You'll fit in in no time."
     rookie "I see."
@@ -90,6 +94,7 @@ label rookie2:
     jump contpro2
 
 label green2:
+    show greenapprove at appsprite
     $ greenap+= 1
     "I guess? I don't really remember."
     green "Maybe you should stop getting hit on the head so often, eh?"
@@ -97,6 +102,7 @@ label green2:
     jump contpro2
 
 label blue2:
+    show blueapprove at appsprite
     $ blueap+= 1
     "I think so. My memory's a bit fuzzy on the details, but I think it's nearing five years now?"
     blue "Yes. Nearly five years is correct."

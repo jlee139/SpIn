@@ -18,13 +18,7 @@ label firstfloor: #set up of the rest of the story
     nvlmc "Each of us have a special ability that makes us viable Supernatural Investigators. "
     nvlmc "Green’s ability is to turn a small area around himself into his \"Zone.\" He doesn’t need to smoke to mark that area, but he likes to give us a physical representation of where it is. He can detect any outside influences the minute they enter his Zone, and to an extent limit the outsiders’ abilities."
     nvl clear
-    #Run this part if this is our first runthrough
-    if endingct<1:
-        nvlmc "My ability isn’t anything much. At the very least, it won’t be able to do much right now. It’s a bit vexing, but I suppose I can show off some other time."
-    #Otherwise, run this
-    else:
-        nvlmc "Once Green gives us the clear and Blue sets up a seal, I’ll be able to use my ability. It’s been a while since I’ve been able to do this. I wonder if you can get rusty from not using it."
-    #Now back to our regular program
+    nvlmc "My ability isn’t anything much. At the very least, it won’t be able to do much right now. It’s a bit vexing, but I suppose I can show off some other time."
     nvlmc "Whatever. It’s not like I need my ability to get through missions."
     nvlmc "Unlike the others, I wasn’t recruited because of it. I can hold my own without extra help. Granted, that’s also because my previous partner struggled to function normally, so I just learned to take care of myself without relying on anything."
     nvlmc "It also helps that I have a fairy’s blessing in the form of a three-jeweled necklace. As long as I wear this necklace and the jewels shine bright, I’ll be protected from an malicious attack three times."
@@ -58,18 +52,21 @@ label firstfloor: #set up of the rest of the story
             jump green3
 
 label blue3:
+    show blueapprove at appsprite
     $ blueap+= 1
     "I’m not nervous. Just wanted to cover my bases."
     blue "Got it. But if you change your mind, I have strawberry flavor."
     jump entermansion
 
 label rookie3:
+    show rookieapprove at appsprite
     $ rookieap+= 1
     "But thank you for offering anyways. I’ll be fine."
     rookie "You push yourself too much."
     jump entermansion
 
 label green3:
+    show greenapprove at appsprite
     $ greenap+= 1
     "I’ve taken care of harder missions than this plenty of times!"
     green "Hah! I’m sure you have!"
@@ -125,12 +122,13 @@ label entermansion:
         "Sorry about that!"
         "Green, I want to check out that room.":
             jump cafeteria
-        "Rookie, I’m curious about the portrait over there. Come with me?" if endingct>1:
+        "Rookie, I’m curious about the portrait over there. Come with me?":
             jump portrait
-        "I’ll stay and guard you, Blue." if endingct>1:
+        "I’ll stay and guard you, Blue.":
             jump stayguard
 
 label cafeteria:
+    show greenapprove at appsprite
     $ greenap+= 1
     green "Ugh. Don’t make me spread my area so thinly. The furthest I can go is to the doorway... Hey, are you listening?!"
 
@@ -172,7 +170,11 @@ label cafeteria:
     jump firstambushed
 
 label portrait:
+    show rookieapprove at appsprite
     $ rookieap+= 1
+    rookie "Understood."
+    "Green, I'll leave it to you to protect Blue."
+    green "Yeah, yeah. So annoying."
 
     #nvl set up
     scene portrait with fade
@@ -221,7 +223,9 @@ label portrait:
     jump firstambushed
 
 label stayguard:
+    show blueapprove at appsprite
     $ blueap+= 1
+    "Green, Rookie, look around and make sure we won't be ambushed."
 
     scene fronthall with fade
 
@@ -263,8 +267,60 @@ label stayguard:
 
 label firstambushed:
     scene fronthall with fade
+    menu:
+        "Would you like to skip the tutorial battle?"
+        "Yes":
+            jump introToWitch
+        "No":
+            jump firstambushedcont
+
+label firstambushedcont:
+    show rookietemp at center with dissolve
+    rookie "There's so many of them..."
+    show bluetemp at left with dissolve
+    blue "Sorry guys. The seal isn't ready yet. Until it is, I won't be able to put up defensive seals around us."
+    show greentemp at right with dissolve
+    green "What a pain. I'll slow them down with my Zone."
+    "Please do. Blue, concentrate on your seal. That's our number one priority. Rookie, stay close to Blue and protect him the best you can."
+    rookie "What are you going to do?"
+    "I'm... going to eat."
+
+    hide rookietemp
+    hide bluetemp
+    hide greentemp
+
+    #Explain Shoot Mode
+    #NVL Mode
+    window show
+    nvlmc "How lucky for us there's so many for me to eat. But from the way they're swarming, it feels like there's going to be a big boss that'll appear soon."
+    nvlmc "Guess I better eat as much as I can before they appear. It's always good to reduce enemy numbers. Besides, eating them will also boost my own strength, too. Win-win, if you will."
+    nvlmc "Make sure to click as many ghosts as you can before the boss appears, alright?"
+
+    #end nvl
+    nvl clear
+    window hide
 
     call begin_ShootMode #Our Shoot Mode
+    scene fronthall with fade
+
+    #Explain Battle Mode
+    #NVL Mode
+    window show
+    nvlmc "And now the boss shows up. Good thing I'm charged up and ready to go."
+    nvlmc "I have five moves I can make. The first is attack. It takes 1 energy to use, and I do a flat 10 damage."
+    nvlmc "The second is defend. It also takes 1 energy, and it reduces all incoming attacks by 30%."
+    nvlmc "The third is magical attack. It takes up 3 energy to use, but it does 3 times the damage my normal attack does."
+    nvlmc "The fourth is my 'beast' mode. It takes up 10 energy, so it's not something I can use without thought. But for a short while, I'll at least be able to do even more damage while taking less damage."
+    nvlmc "The last, obviously, is healing. Note that I can only use this if I have at least one jewel. It allows me to sacrifice a jewel on my necklace to fully heal myself."
+    nvl clear
+    nvlmc "It's a lot to take in at once. So just try different things. No need to worry. I'm super strong and sturdy, so I won't go down that easily."
+    nvlmc "Just be mindful of my health and how much energy I have left. The minute those numbers hit zero, we'll be in big trouble. But if we can defeat the enemy before that happens, then that'll be enough."
+    nvlmc "Then I'll be relying on you!"
+
+    #end nvl
+    nvl clear
+    window hide
+
     call begin_TutRPG #Our Battle Mode Tutorial version
     jump introToWitch
 
@@ -453,6 +509,7 @@ label storyendEmptyHands:
     #End EmptyHands
 
 label firstfloorcont:
+    show allappsprite
     $ blueap+= 1
     $ greenap+= 1
     $ rookieap+= 1
@@ -496,7 +553,7 @@ label firstfloorcont:
     blue "Did you forget, Red? We are a team. As much as we trust you, you should trust us."
     rookie "... I... I will leave it to you."
     "Good. Then our next objective is the floor above us. I have no idea what’s waiting for us up there, but I will keep you safe. If you can’t trust me, please feel free to stay here."
-    green "I’m telling you, stop being so gross! "
+    green "I’m telling you, stop being so gross!"
     blue "I’ll layer so many seals around you that no one will be able to touch you. Heh."
     rookie "Then shall we?"
 

@@ -2,13 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/rpgmode/battlemode.rpy", line 64: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
-    show tutorialwitchhalf at top
-    ^
+File "game/storyscript/firstchpt.rpy", line 461: expected statement.
+    0.5
+       ^
 
-File "game/rpgmode/battlemode.rpy", line 66: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
-    show tutorialwitchno at top
-    ^
+File "game/storyscript/firstchpt.rpy", line 463: expected statement.
+    0.5
+       ^
+
+File "game/storyscript/firstchpt.rpy", line 465: expected statement.
+    0.5
+       ^
 
 Ren'Py Version: Ren'Py 7.1.3.1092
-Tue Mar 12 22:31:12 2019
+Thu Mar 14 22:34:53 2019
