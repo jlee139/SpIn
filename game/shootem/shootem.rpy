@@ -2,12 +2,32 @@
 
 transform ghostmove:
     function randomyos
+    alpha 1.0 zoom 1.0
+    easein_circ 1.0 zoom 2.0
+    linear 0.2 alpha 0
+    repeat
 
 transform skelemove:
     function randomyos
+    parallel:
+        xalign 0.5 yalign 0.5
+        linear 3.0 xalign 0.75 yalign 0.75
+        linear 6.0 xalign 0.25 yalign 0.25
+        linear 3.0 xalign 0.5 yalign 0.5
+    parallel:
+        rotate 0
+        linear 5 rotate 360
+        repeat
+    #
+    #linear .5 xalign 0.5 yalign 0.5
+    #linear 2.0 clockwise circles 3
+    #repeat
 
 transform wispmove:
     function randomyos
+    alpha 1.0
+    linear 1.0 alpha 0
+    repeat
 
 
 

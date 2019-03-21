@@ -55,76 +55,18 @@ image particleFog2 = SnowBlossom("fog-particle.png", count=120, border=600, xspe
 transform appsprite:
     xalign 0.6 yalign 0.4
     alpha 1.0
-    0.2
-    alpha 0.8
-    0.2
-    alpha 0.5
-    0.2
-    alpha 0.3
-    0.2
-    alpha 0
+    linear 1.0 alpha 0
 
 image allappsprite:
     "blueapprove.png"
     xalign 0.6 yalign 0.4
-    alpha 1.0
-    0.2
-    alpha 0.8
-    0.2
-    alpha 0.5
-    0.2
-    alpha 0.3
-    0.2
-    alpha 0
+    linear 1.0 alpha 0
     "greenapprove.png"
     xalign 0.6 yalign 0.4
-    alpha 1.0
-    0.2
-    alpha 0.8
-    0.2
-    alpha 0.5
-    0.2
-    alpha 0.3
-    0.2
-    alpha 0
+    linear 1.0 alpha 0
     "rookieapprove.png"
     xalign 0.6 yalign 0.4
-    alpha 1.0
-    0.2
-    alpha 0.8
-    0.2
-    alpha 0.5
-    0.2
-    alpha 0.3
-    0.2
-    alpha 0
-
-#Image of Blue's Shield
-image blueshield:
-    "shootem/shield.png"
-    alpha 1.0
-    0.2
-    alpha 0.8
-    0.2
-    alpha 0.5
-    0.2
-    alpha 0.3
-    0.2
-    alpha 0.5
-    0.2
-    alpha 0.8
-    0.2
-    repeat
-
-#Rookie's Grass
-image grassyrookie:
-    "shootem/grass1.png"
-    0.5
-    "shootem/grass2.png"
-    0.5
-    "shootem/grass3.png"
-    0.5
-    repeat
+    linear 1.0 alpha 0
 
 
 #Let's put together some Variables to be used
