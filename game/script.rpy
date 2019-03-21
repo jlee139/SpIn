@@ -16,10 +16,11 @@ label start:
 
     #Debugging Things:
     call shootfix #Testing our shooter
-    #call begin_TutRPG #Testing our Battle Mode
+    scene black
+    call begin_TutRPG #Testing our Battle Mode
     #jump firstfloorcont #for debugging
 
-    "That's the end of the Tutorial. Thank you!"
+    #"That's the end of the Tutorial. Thank you!"
 
 
 # This ends the game.

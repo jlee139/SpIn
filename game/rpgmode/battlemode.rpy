@@ -45,8 +45,8 @@ screen battleui():
 #For Tutorial Battle
 label begin_TutRPG:
     #$numturns = 20 #This is for debugging. Remember to turn this off!!
-    $bosshp = 100
-    $bossmaxhp = 100
+    $bosshp = 50
+    $bossmaxhp = 50
     $turnnum = 0 #To determine whose turn it is
     #Set up variables for the upcoming battle
     $bossatk = 10
@@ -161,9 +161,11 @@ label witchturn:
     if witchmagic >=6: #There's 40% chance she'll use magic
         $bossatk = bossatk*1.5
         "The enemy fired a magic spell that does [bossatk] damage"
+        with vpunch
         $hp-=bossatk
     else:
         "The enemy did [bossatk] damage!"
+        with vpunch
         $hp-=bossatk
     return
 

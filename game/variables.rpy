@@ -45,7 +45,7 @@ image whiteflash:
 
 #Shoot Mode Images
 # Show a countdown for 10 seconds.
-image countdown = DynamicDisplayable(countdown, length=10.0)
+image countdown = DynamicDisplayable(countdown, length=15.0)
 
 #Green's Fog Particle Effect Code from EvilDragon (https://lemmasoft.renai.us/forums/viewtopic.php?t=4962)
 image particleFog1 = SnowBlossom("fog-particle.png", count=120, border=600, xspeed=(5, 200), yspeed=(5, -5), start=1, fast=True, horizontal=True)
@@ -160,8 +160,8 @@ init python:
     #For Randomization of Shoot Mode
     #Tweaked code by Asceai (https://lemmasoft.renai.us/forums/viewtopic.php?t=27086)
     def randomyos(trans, st, at):
-        trans.ypos = renpy.random.randint(0, 600)
-        trans.xpos = renpy.random.randint(850, 1200)
+        trans.ypos = renpy.random.randint(10, 600)
+        trans.xpos = renpy.random.randint(10, 1100)
         return None
 
     def countdown(st, at, length=0.0):
