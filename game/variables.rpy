@@ -1,6 +1,6 @@
 #To make it clear who is speaking. PyTom's code (https://lemmasoft.renai.us/forums/viewtopic.php?t=31501)
 transform speak:
-    linear .05 zoom 1.0
+    linear 0.05 zoom 1.0
 
 transform nospeak:
     linear .05 zoom 0.9
@@ -10,6 +10,7 @@ init python:
     config.empty_window = nvl_show_core
     config.window_hide_transition = dissolve
     config.window_show_transition = dissolve
+
 
     #Cont of PyTom's code for making it clear who is speaking (https://lemmasoft.renai.us/forums/viewtopic.php?t=31501)
     class RaiseImage(object):
@@ -140,7 +141,7 @@ image torchitall:
 #Whiteflash tweaked from code by Epadder (https://lemmasoft.renai.us/forums/viewtopic.php?t=16604)
 image whiteflash:
     Solid("#fff")
-    1.4
+    0.5
     Null ()
     0.05
     repeat 2

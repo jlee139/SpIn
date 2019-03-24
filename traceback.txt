@@ -1,30 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/variables.rpy", line 2, in script
-    # name of the character.
-  File "game/variables.rpy", line 8, in <module>
-    define blue = Character('Blue', color="#0638A9", callback=RaiseImage("bl"))
-  File "game/variables.rpy", line 9, in RaiseImage
-    define rookie = Character('Rookie', color="#6B0B94", callback=RaiseImage("r"))
-NameError: name 'speak' is not defined
+  File "game/script.rpy", line 11, in script call
+    call firstfloor    #After the prologue, we go to the first floor
+  File "game/storyscript/firstchpt.rpy", line 227, in script
+    show bl temp at center with dissolves
+  File "game/storyscript/firstchpt.rpy", line 227, in <module>
+    show bl temp at center with dissolves
+NameError: name 'dissolves' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/variables.rpy", line 2, in script
-    # name of the character.
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\ast.py", line 881, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\python.py", line 1913, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/variables.rpy", line 8, in <module>
-    define blue = Character('Blue', color="#0638A9", callback=RaiseImage("bl"))
-  File "game/variables.rpy", line 9, in RaiseImage
-    define rookie = Character('Rookie', color="#6B0B94", callback=RaiseImage("r"))
-NameError: name 'speak' is not defined
+  File "game/script.rpy", line 11, in script call
+    call firstfloor    #After the prologue, we go to the first floor
+  File "game/storyscript/firstchpt.rpy", line 227, in script
+    show bl temp at center with dissolves
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\ast.py", line 1352, in execute
+    paired = renpy.python.py_eval(self.paired)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\python.py", line 1944, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\python.py", line 1937, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/storyscript/firstchpt.rpy", line 227, in <module>
+    show bl temp at center with dissolves
+NameError: name 'dissolves' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.1.3.1092
 SpIn 1.0
-Sun Mar 24 11:29:42 2019
+Sun Mar 24 13:46:06 2019

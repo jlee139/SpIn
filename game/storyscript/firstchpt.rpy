@@ -34,48 +34,33 @@ label firstfloor: #set up of the rest of the story
     show particleFog1:
         alpha 0.5
 
-
     #children being cute now
     "Ready?"
-    show bluetemp at left with dissolve
+    show bl temp at left with dissolve
     blue "Want a candy? It’ll help you with your nerves."
-    show greentemp at right with dissolve
+    show g temp at right with dissolve
     green "Don’t tell me you’re getting cold feet? Jeesh, what will we do with you? If you’re like this, how’d you think Rookie here feels?"
-    show rookietemp at center with dissolve
-    show particleFog2:
-        alpha 0.3
+    show r temp at center with dissolve
     rookie "I feel fine. But if you are in need of rest, I can carry you."
 
     menu:
+        "(Even Rookie has joined in on making fun of me. Just how pathetic do I look?)"
         "No to both candy and being carried.":
-            jump blue3
+            show blueapprove at appsprite
+            $ blueap+= 1
+            "I’m not nervous. Just wanted to cover my bases."
+            blue "Got it. But if you change your mind, I have strawberry flavor."
         "I think I’m too nervous to be carried or to eat something.":
-            jump rookie3
+            show rookieapprove at appsprite
+            $ rookieap+= 1
+            "But thank you for offering anyways. I’ll be fine."
+            rookie "You push yourself too much."
         "I’m fine! Like hell I’m getting cold feet!":
-            jump green3
+            show greenapprove at appsprite
+            $ greenap+= 1
+            "I’ve taken care of harder missions than this plenty of times!"
+            green "Hah! I’m sure you have!"
 
-label blue3:
-    show blueapprove at appsprite
-    $ blueap+= 1
-    "I’m not nervous. Just wanted to cover my bases."
-    blue "Got it. But if you change your mind, I have strawberry flavor."
-    jump entermansion
-
-label rookie3:
-    show rookieapprove at appsprite
-    $ rookieap+= 1
-    "But thank you for offering anyways. I’ll be fine."
-    rookie "You push yourself too much."
-    jump entermansion
-
-label green3:
-    show greenapprove at appsprite
-    $ greenap+= 1
-    "I’ve taken care of harder missions than this plenty of times!"
-    green "Hah! I’m sure you have!"
-    jump entermansion
-
-label entermansion:
     "Let's go!"
 
     #nvl set up
@@ -95,11 +80,11 @@ label entermansion:
     window hide
 
     "It feels like it’s bigger on the inside than out."
-    show greentemp at right with dissolve
+    show g temp at right with dissolve
     green "I... hate to say this, but it’s too large of an area for my ability to cover."
-    show bluetemp at left with dissolve
+    show bl temp at left with dissolve
     blue "I’ll put up a seal."
-    show rookietemp at center with dissolve
+    show r temp at center with dissolve
     rookie "Seal? In this big of an area? Would it be effective?"
 
     green "Jeesh, and I thought Red here was pretty air-headed. Pay more attention to others’ abilities, won’t you?"
@@ -136,7 +121,11 @@ label cafeteria:
     green "Ugh. Don’t make me spread my area so thinly. The furthest I can go is to the doorway... Hey, are you listening?!"
 
     #nvl set up
-    #scene mansionentrance with fade
+    scene diningroom with fade
+    #Turn on our fog
+    show particleFog1:
+        alpha 0.5
+
     window show
 
     nvlmc "I ignore him and walk into the dining hall area. After a quick glance around, I turn to Green, who is fuming against the doorway."
@@ -149,6 +138,7 @@ label cafeteria:
     window hide
 
     "Hey, you don’t have to move your Zone. Keep it concentrated around Blue."
+    show g temp at center with dissolve
     green "And if you get ambushed? You’re our best fighter. If you go down, none of us have a chance once Blue’s seal goes up. So shut up and let me do my job."
     "Heh. Surprisingly, even you have a soft side, huh?"
     green "If you’re done looking, then we should leave!"
@@ -181,6 +171,10 @@ label portrait:
 
     #nvl set up
     scene portrait with fade
+    #Turn on our fog
+    show particleFog1:
+        alpha 0.5
+
     window show
 
     nvlmc "The portrait on the wall below the staircase seems to be that of a woman. Her face has been ripped off, but the dress looks like something from the victorian times, dark colors with somber laces and everything else covered."
@@ -192,6 +186,7 @@ label portrait:
     window hide
 
     "Hey, can you help me move the portrait?"
+    show r temp at center with dissolve
     rookie "Is that why you asked me to come?"
     "Who else can I depend on?"
     rookie "..."
@@ -231,7 +226,11 @@ label stayguard:
     "Green, Rookie, look around and make sure we won't be ambushed."
 
     scene fronthall with fade
+    #Turn on our fog
+    show particleFog1:
+        alpha 0.5
 
+    show bl temp at center with dissolve
     blue "You know you don’t have to stay here with me. If there’s trouble, Green will let you know."
     "Do you want me to leave?"
     blue "No, no. I just... thought you’d rather explore."
@@ -263,6 +262,7 @@ label stayguard:
     "I don’t treat you like a kid, Blue. At best, you’re more like... "
     blue "Like...?"
     "(That’s funny. I can see my breath? Tch. That means-)"
+    show g temp at left with dissolve
     green "Sorry to interrupt, but we’re being attacked!"
     "Blue, get that seal up. I’ll deal with this!"
 
@@ -270,6 +270,10 @@ label stayguard:
 
 label firstambushed:
     scene fronthall with fade
+    #Turn on our fog
+    show particleFog1:
+        alpha 0.5
+
     menu:
         "Would you like to skip the tutorial battle?"
         "Yes":
@@ -278,19 +282,19 @@ label firstambushed:
             jump firstambushedcont
 
 label firstambushedcont:
-    show rookietemp at center with dissolve
+    show r temp at center with dissolve
     rookie "There's so many of them..."
-    show bluetemp at left with dissolve
+    show bl temp at left with dissolve
     blue "Sorry guys. The seal isn't ready yet. Until it is, I won't be able to put up defensive seals around us."
-    show greentemp at right with dissolve
+    show g temp at right with dissolve
     green "What a pain. I'll slow them down with my Zone."
     "Please do. Blue, concentrate on your seal. That's our number one priority. Rookie, stay close to Blue and protect him the best you can."
     rookie "What are you going to do?"
     "I'm... going to eat."
 
-    hide rookietemp
-    hide bluetemp
-    hide greentemp
+    hide r temp
+    hide bl temp
+    hide g temp
 
     #Explain Shoot Mode
     #NVL Mode
@@ -305,6 +309,9 @@ label firstambushedcont:
 
     call shootfix #Our Shoot Mode
     scene fronthall with fade
+    #Turn on our fog
+    show particleFog1:
+        alpha 0.5
 
     #Explain Battle Mode
     #NVL Mode
@@ -329,17 +336,32 @@ label firstambushedcont:
 
 label introToWitch:
     scene fronthall with fade
+    #Turn on our fog
+    show particleFog1:
+        alpha 0.5
 
+    #gotta call everyone now
+    show w temp at center with dissolve
     prewitch "You... What the hell are you people?"
+    hide w temp
+    show bl temp at left with dissolve
     blue "What a soft life you must have lived if a ghost such as yourself aren’t familiar with us."
+    show g temp at right with dissolve
     green "I’m shocked as well. To think there exists spirits who do not know of us."
+    show r temp at center with dissolve
     rookie "We are Supernatural Investigators. "
+    hide r temp
+    hide bl temp
+    hide g temp
+
+    show w temp at center with dissolve
     prewitch "Investigators? "
     prewitch "Ha... haha... Hahahahahaha!"
     prewitch "So you came to kill me? Is that it?"
     "(What’s with this rising aura? Has she been hiding her power?)"
     "Get back! She’s going to-"
 
+    hide w temp
     show whiteflash zorder 50 with vpunch
 
     #nvl set up
@@ -392,6 +414,11 @@ label introToWitch:
     window hide
 
     #FOX CG
+    show w temp at center with dissolve
+    #Turn on our fog
+    show particleFog1:
+        alpha 0.5
+
     prewitch "You think a little form change is enough? "
     "(It looks like she’s gathering her energy for a bigger blast. Then I’ll just cut her off before she releases!)"
 
@@ -408,6 +435,10 @@ label introToWitch:
     nvlmc "What’s a little sacrifice, right?"
 
     show whiteflash zorder 50 with vpunch
+    #Turn on our fog
+    show particleFog1:
+        alpha 0.5
+
     nvl clear
 
     nvlmc "Her screams of pain fill the air as I fall back into Green’s hold. He helps steady me as Blue finishes his seal. Rookie seems too frazzled to properly move. We’ll have to talk to him later to better protect himself in these situations."
@@ -420,19 +451,34 @@ label introToWitch:
     nvl clear
     window hide
 
+    show w temp at center with dissolve
     prewitch "Haha... looks like you’re at your limit."
+    hide w temp
+    show g temp at right with dissolve
     green "Is she gathering another projectile? Wouldn’t that destroy her?"
+    show bl temp at left with dissolve
     blue "Looks like she plans on killing herself with us."
     "Any chance you guys can kill her?"
     green "Very encouraging to hear from our only fighter."
     blue "Rookie looks terrified, too. Tch. We need to run."
+    hide bl temp
+    hide g temp
+    show w temp at center with dissolve
     prewitch "I won’t let you!"
     "Heh. Got you."
 
     show whiteflash zorder 50 with vpunch
+    #Turn on our fog
+    show particleFog1:
+        alpha 0.5
 
+    hide w temp
+
+    show g temp at right with dissolve
     green "How did you miss at that distance?!"
+    hide g temp
     "(I didn’t! She pulled back at the last second. Is she prioritizing survival?)"
+    show w temp at center with dissolve
     prewitch "Are you stupid? Why would I make it that easy for you to kill me?"
 
     #nvl set up
@@ -440,6 +486,7 @@ label introToWitch:
 
     nvlmc "The wind kicks off. I must be really weakened, if that little is enough to knock me back into Blue’s arms. At least it looks like Blue has some kind of a minor seal up around us. But if she fires something at us, it won’t last. And I don’t have my necklace to protect me anymore."
     nvlmc "With another cackle, the witch flies up the staircase and through the gaping hole of the second floor’s entrance. She doesn’t put up a seal to stop us from entering, which already tells me that the second floor must be filled with traps."
+    hide w temp
     nvlmc "The gust dies down."
     nvlmc "We seem to have returned to relative peace."
 
@@ -447,8 +494,11 @@ label introToWitch:
     nvl clear
     window hide
 
+    show g temp at right with dissolve
     green "Oi Rookie, how long are you going to stand dumbly over there?"
+    show r temp at center with dissolve
     rookie "..."
+    show bl temp at left with dissolve
     blue "You alright, Red? You look pale."
     "Yeah. Just tired."
     green "Hey Rookie, aren’t you our medic? Get to it."
@@ -495,6 +545,10 @@ label storyendEmptyHands:
     blue "If that’s how Red feels, then that’s how Red feels. Go ahead. Punch Green all you want."
     green "H-huh?! Wait a minute!"
 
+    hide bl temp
+    hide g temp
+    hide r temp
+
     #nvl set up
     window show
 
@@ -508,9 +562,10 @@ label storyendEmptyHands:
     nvl clear
     window hide
 
+    #Bad End CG
+
     return
 
-    #Bad End CG
     #End EmptyHands
 
 label firstfloorcont:
