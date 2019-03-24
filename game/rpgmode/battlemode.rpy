@@ -45,8 +45,8 @@ screen battleui():
 #For Tutorial Battle
 label begin_TutRPG:
     #$numturns = 20 #This is for debugging. Remember to turn this off!!
-    $bosshp = 50
-    $bossmaxhp = 50
+    $bosshp = 80
+    $bossmaxhp = 80
     $turnnum = 0 #To determine whose turn it is
     #Set up variables for the upcoming battle
     $bossatk = 10
@@ -60,7 +60,7 @@ label begin_TutRPG:
     #While we have turns, go through the battleui
     while numturns>=1:
         #Change the Sprite accordingly
-        if bosshp<=50:
+        if bosshp<=40:
             hide tutorialwitchfull
             show tutorialwitchhalf at top
         if bosshp<=20:

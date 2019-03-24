@@ -34,6 +34,7 @@ label firstfloor: #set up of the rest of the story
     show particleFog1:
         alpha 0.5
 
+
     #children being cute now
     "Ready?"
     show bluetemp at left with dissolve
@@ -41,6 +42,8 @@ label firstfloor: #set up of the rest of the story
     show greentemp at right with dissolve
     green "Don’t tell me you’re getting cold feet? Jeesh, what will we do with you? If you’re like this, how’d you think Rookie here feels?"
     show rookietemp at center with dissolve
+    show particleFog2:
+        alpha 0.3
     rookie "I feel fine. But if you are in need of rest, I can carry you."
 
     menu:
@@ -300,7 +303,7 @@ label firstambushedcont:
     nvl clear
     window hide
 
-    call begin_ShootMode #Our Shoot Mode
+    call shootfix #Our Shoot Mode
     scene fronthall with fade
 
     #Explain Battle Mode
@@ -308,7 +311,7 @@ label firstambushedcont:
     window show
     nvlmc "And now the boss shows up. Good thing I'm charged up and ready to go."
     nvlmc "I have five moves I can make. The first is attack. It takes 1 energy to use, and I do a flat 10 damage."
-    nvlmc "The second is defend. It also takes 1 energy, and it reduces all incoming attacks by 30%."
+    nvlmc "The second is defend. It also takes 1 energy, and it reduces all incoming attacks by 30 percent."
     nvlmc "The third is magical attack. It takes up 3 energy to use, but it does 3 times the damage my normal attack does."
     nvlmc "The fourth is my 'beast' mode. It takes up 10 energy, so it's not something I can use without thought. But for a short while, I'll at least be able to do even more damage while taking less damage."
     nvlmc "The last, obviously, is healing. Note that I can only use this if I have at least one jewel. It allows me to sacrifice a jewel on my necklace to fully heal myself."
@@ -504,6 +507,8 @@ label storyendEmptyHands:
     #end nvl
     nvl clear
     window hide
+
+    return
 
     #Bad End CG
     #End EmptyHands

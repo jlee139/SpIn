@@ -25,11 +25,11 @@ label prologue:
     #Now we get to the main cast
     scene mansionout with fade
 
-    show greentemp at right with dissolve
+    show g temp at right with dissolve
     green "So this is the place? It definitely looks right. Yeesh, look at that. Looks like something straight out of a clichéd horror flick."
-    show bluetemp at left with dissolve
+    show bl temp at left with dissolve
     blue "Of course, it looks like that. It’s been abandoned for the better part of the century."
-    show rookietemp at center with dissolve
+    show r temp at center with dissolve
     rookie "Careful. This area is rocky, [mcname]-"
     green "Hey! How many times do we have to say to use code names? You want to be cursed?"
     rookie "Sorry. I am still not used to this."
@@ -37,31 +37,19 @@ label prologue:
     menu:
         "Thanks for watching out for me."
         "Offer to reiterate code names":
-            jump rookie1
+            show allappsprite
+            #show rookieapprove at appsprite
+            $ rookieap+= 1
+            "If you want, we can go over everyone's code names again. I'm Red."
         "Gently but firmly reiterate the importance of code names":
-            jump blue1
+            show blueapprove at appsprite
+            $ blueap+= 1
+            "Don't forget that these code names exist to protect us. Until this mission is over, I'm Red."
         "Get annoyed":
-            jump green1
+            show greenapprove at appsprite
+            $ greenap+= 1
+            "Until we get back, remember that I’m Red. And you, stop laughing! You couldn’t keep the code names straight on your first mission."
 
-label rookie1:
-    show rookieapprove at appsprite
-    $ rookieap+= 1
-    "If you want, we can go over everyone's code names again. I'm Red."
-    jump procont
-
-label blue1:
-    show blueapprove at appsprite
-    $ blueap+= 1
-    "Don't forget that these code names exist to protect us. Until this mission is over, I'm Red."
-    jump procont
-
-label green1:
-    show greenapprove at appsprite
-    $ greenap+= 1
-    "Until we get back, remember that I’m Red. And you, stop laughing! You couldn’t keep the code names straight on your first mission."
-    jump procont
-
-label procont:
     green "I'm Green. In case you couldn't tell from my hair."
     blue "Don’t be a jackass. I’m Blue. Do you remember your code name?"
     rookie "Yes. It is Pur-"
@@ -76,53 +64,37 @@ label procont:
     rookie "Have you guys been together long?"
 
     menu:
+        "(Together, huh? What a sore topic to ask.)"
         "Reassure him":
-            jump rookie2
+            show rookieapprove at appsprite
+            $ rookieap+= 1
+            "Something like that. Don't worry. You'll fit in in no time."
+            rookie "I see."
+            "(He got really quiet. Did I say the wrong thing?)"
         "Dodge the question":
-            jump green2
+            show greenapprove at appsprite
+            $ greenap+= 1
+            "I guess? I don't really remember."
+            green "Maybe you should stop getting hit on the head so often, eh?"
+            "No one asked you!"
         "Answer what you remember":
-            jump blue2
+            show blueapprove at appsprite
+            $ blueap+= 1
+            "I think so. My memory's a bit fuzzy on the details, but I think it's nearing five years now?"
+            blue "Yes. Nearly five years is correct."
+            "(He looks happy about something.)"
         "Answer honestly" if trueend:
-            jump boss1
+            $ bossap+= 1
+            "About five years with these guys. But before that, I worked together with Boss. He’s the one who recruited me."
+            rookie "Is that…?"
+            blue "Yup. Both myself and Green here have been recruited by him, too. I think you’re the only one who wasn’t. You haven’t even met him, have you?"
+            rookie "I’ve seen him in brief passing."
+            green "Ugh. He was such a creep, always laughing like some idiot."
+            "Yeah, he laughed a lot, didn’t he?"
+            blue "..."
+            green "..."
+            rookie "?"
 
-label rookie2:
-    show rookieapprove at appsprite
-    $ rookieap+= 1
-    "Something like that. Don't worry. You'll fit in in no time."
-    rookie "I see."
-    "(He got really quiet. Did I say the wrong thing?)"
-    jump contpro2
-
-label green2:
-    show greenapprove at appsprite
-    $ greenap+= 1
-    "I guess? I don't really remember."
-    green "Maybe you should stop getting hit on the head so often, eh?"
-    "No one asked you!"
-    jump contpro2
-
-label blue2:
-    show blueapprove at appsprite
-    $ blueap+= 1
-    "I think so. My memory's a bit fuzzy on the details, but I think it's nearing five years now?"
-    blue "Yes. Nearly five years is correct."
-    "(He looks happy about something.)"
-    jump contpro2
-
-label boss1:
-    $ bossap+= 1
-    "About five years with these guys. But before that, I worked together with Boss. He’s the one who recruited me."
-    rookie "Is that…?"
-    blue "Yup. Both myself and Green here have been recruited by him, too. I think you’re the only one who wasn’t. You haven’t even met him, have you?"
-    rookie "I’ve seen him in brief passing."
-    green "Ugh. He was such a creep, always laughing like some idiot."
-    "Yeah, he laughed a lot, didn’t he?"
-    blue "..."
-    green "..."
-    rookie "?"
-    jump contpro2
-
-label contpro2:
     blue "Now that we’ve reiterated the importance of code names, do we need to go over what the mission is?"
     green "Hey, why're you looking at me for?!"
     "Don't know. Why're you such an idiot?"
@@ -134,9 +106,9 @@ label contpro2:
     blue "As you were saying, Red?"
     "... Are we going to be okay with this mission...?"
 
-    hide greentemp
-    hide bluetemp
-    hide rookietemp
+    hide g temp
+    hide bl temp
+    hide r temp
 
     if trueend:
         scene office memory with fade
@@ -161,8 +133,5 @@ label contpro2:
         nvl clear
         window hide
 
-
-    #Remember to erase this!!!
-    #scene black
 
 return #Return to story

@@ -10,18 +10,14 @@ transform ghostmove:
 transform skelemove:
     function randomyos
     parallel:
-        xalign 0.5 yalign 0.5
-        linear 3.0 xalign 0.75 yalign 0.75
-        linear 6.0 xalign 0.25 yalign 0.25
-        linear 3.0 xalign 0.5 yalign 0.5
+        linear 0.5 xoffset 100 yoffset 100
+        linear 0.5 xoffset -100 yoffset 100
+        linear 0.5 xoffset 100 yoffset -100
+        linear 0.5 xoffset -100 yoffset -100
     parallel:
         rotate 0
-        linear 5 rotate 360
-        repeat
-    #
-    #linear .5 xalign 0.5 yalign 0.5
-    #linear 2.0 clockwise circles 3
-    #repeat
+        linear 2.0 rotate 360
+    repeat
 
 transform wispmove:
     function randomyos
@@ -38,17 +34,32 @@ screen ghoster():
         idle "shootem/ghost.png"
         hover "shootem/ghost_dead.png"
         at ghostmove
-        action Jump('ghosthit')
+        action [get_mouse(), Jump('ghosthit')]
+    imagebutton:
+        idle "shootem/ghost.png"
+        hover "shootem/ghost_dead.png"
+        at ghostmove
+        action [get_mouse(), Jump('ghosthit')]
     imagebutton:
         idle "shootem/skeleton.png"
         hover "shootem/skeleton_injured.png"
         at skelemove
-        action Jump('ghosthit')
+        action [get_mouse(), Jump('ghosthit')]
     imagebutton:
         idle "shootem/wisp.png"
         hover "shootem/wisp_red.png"
         at wispmove
-        action Jump('ghosthit')
+        action [get_mouse(), Jump('ghosthit')]
+    imagebutton:
+        idle "shootem/wisp.png"
+        hover "shootem/wisp_red.png"
+        at wispmove
+        action [get_mouse(), Jump('ghosthit')]
+    imagebutton:
+        idle "shootem/wisp.png"
+        hover "shootem/wisp_red.png"
+        at wispmove
+        action [get_mouse(), Jump('ghosthit')]
 
 label shootfix:
     "Hi. We're going to try this again."
@@ -69,11 +80,13 @@ label createghosts:
     #call screen skele
 
 label ghosthit:
+    #show torchitall at Position(xpos=mouse_xy[0],ypos=mouse_xy[1])
     $ numturns += 1
     jump createghosts
     return
 
 label battleready:
+    hide screen ghostspawn
     scene black
 
     #nvl set up
