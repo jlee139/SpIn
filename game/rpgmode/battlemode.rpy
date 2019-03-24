@@ -1,7 +1,7 @@
 #RPG Set up
 screen battleui():
-    text "Jewels: [numjewels]" xpos 20 ypos 500
-    text "Energy Left: [numturns]" xpos 20 ypos 520
+    text "Jewels: [numjewels]" xpos 20 ypos 500 outlines [ (1, "#fff") ]
+    text "Energy Left: [numturns]" xpos 20 ypos 520 outlines [ (1, "#fff") ]
     bar: #Enemy's HP Bar
         range bossmaxhp
         value bosshp
@@ -28,7 +28,7 @@ screen battleui():
         xpos 670 ypos 480
         idle "battlemode/magic_up.png"
         hover "battlemode/magic_down.png"
-        action Call('magicdmg')
+        action If(numturns >2, Call('magicdmg'), None)
     imagebutton: #Beserk Button
         xpos 870 ypos 480
         idle "battlemode/beast_up.png"
@@ -44,7 +44,7 @@ screen battleui():
 
 #For Tutorial Battle
 label begin_TutRPG:
-    #$numturns = 20 #This is for debugging. Remember to turn this off!!
+    $numturns = 20 #This is for debugging. Remember to turn this off!!
     $bosshp = 80
     $bossmaxhp = 80
     $turnnum = 0 #To determine whose turn it is
@@ -89,9 +89,11 @@ label begin_TutRPG:
         if beastmode:
             $bossatk = 7
             $redatk = 30
+            show beastoverlay
         else:
             $bossatk = 10
             $redatk = 10
+            hide beastoverlay
 
     #If witch's HP is 0, go straight to winning stance
     if bosshp <1:
@@ -108,6 +110,8 @@ label attackdmg:
     if witchdef >=8: #There's 20% chance she'll defend
         call witchdef
     $bosshp -= redatk
+    show scratch:
+        xalign 0.5 yalign 0.3
     "You did [redatk] damage!"
     #If witch's HP is 0, go straight to winning stance
     if bosshp <1:
@@ -117,6 +121,8 @@ label attackdmg:
     return
 
 label defenddmg:
+    show shield:
+        xalign 0.5 yalign 0.3
     "You defended. All damage reduced."
     $bossatk = bossatk*0.7
     call witchturn
@@ -128,6 +134,8 @@ label magicdmg:
         call witchdef
     $numturns-=2
     $redatk = redatk * 1.5
+    show torchitall:
+        xalign 0.5 yalign 0.3
     "By using up 3 of your energy, you fired a magic spell that does [redatk] damage."
     $bosshp -= redatk
     #If witch's HP is 0, go straight to winning stance
@@ -138,6 +146,8 @@ label magicdmg:
     return
 
 label healdmg:
+    show healing:
+        xalign 0.5 yalign 0.3
     "By crushing a jewel, you fully healed yourself."
     $numjewels -= 1
     $hp = 100

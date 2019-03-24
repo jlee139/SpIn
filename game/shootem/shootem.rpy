@@ -28,7 +28,7 @@ transform wispmove:
 
 
 screen ghostspawn():
-    text "Ghosts killed: [numturns]" xpos 20 ypos 650
+    text "Ghosts killed: [numturns]" xpos 20 ypos 650 outlines [ (1, "#fff") ]
 screen ghoster():
     imagebutton:
         idle "shootem/ghost.png"
@@ -80,7 +80,7 @@ label createghosts:
     #call screen skele
 
 label ghosthit:
-    #show torchitall at Position(xpos=mouse_xy[0],ypos=mouse_xy[1])
+    #show dustparticle at Position(xpos=mouse_xy[0],ypos=mouse_xy[1])
     $ numturns += 1
     jump createghosts
     return
