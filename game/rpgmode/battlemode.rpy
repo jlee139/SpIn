@@ -56,17 +56,16 @@ label begin_TutRPG:
 
 
     #First place the enemy sprite in front of us
-    show tutorialwitchfull at top
+    show battlew full at top
 
     #While we have turns, go through the battleui
     while numturns>0 and bosshp>0 and hp>0:
         #Change the Sprite accordingly
+        show battlew full at top
         if bosshp<=40:
-            hide tutorialwitchfull
-            show tutorialwitchhalf at top
+            show battlew half at top
         if bosshp<=20:
-            hide tutorialwitchhalf
-            show tutorialwitchno at top
+            show battlew no at top
 
         #Checks happen here before we start the battles
         #If witch's HP is 0, go straight to winning stance
@@ -153,9 +152,17 @@ label magicdmg:
     return
 
 label healdmg:
-    show healing:
-        xalign 0.5 yalign 0.3
-    "By crushing a jewel, you fully healed yourself."
+    scene black
+    menu:
+        "You can crush 1 jewel to fully heal yourself."
+        "Crush jewel":
+            show healing:
+                xalign 0.5 yalign 0.3
+
+        "Nevermind.":
+            $numturns +=1
+            return
+    "You're fully healed."
     hide healing
     $numjewels -= 1
     $hp = 100
@@ -164,12 +171,15 @@ label healdmg:
 
 label zerker:
     menu:
-        "In return for 10 of your energy or 3 of my jewels, damage done is increased and damage received is decreased for the next 3 turns."
+        "Damage done is increased and damage received is decreased for the next 3 turns."
         "Use 10 energy" if numturns>10:
             $numturns -=9
         "Use 3 jewels" if numjewels==3:
             $numjewels = 0
             $numturns +=1
+        "Nevermind.":
+            $numturns +=1
+            return
 
     $beastmode = True
     $turnnum = 0 #Once this turns 3, we need to turn off beastmode
@@ -181,6 +191,11 @@ label witchdef:
     return
 
 label witchturn:
+    show battlew full at top
+    if bosshp<=40:
+        show battlew half at top
+    if bosshp<=20:
+        show battlew no at top
     $ witchmagic = renpy.random.randint(1,10)
     if witchmagic >=6: #There's 40% chance she'll use magic
         $bossatk = bossatk*1.5
@@ -194,18 +209,21 @@ label witchturn:
     return
 
 label healthgameover:
+    hide beastoverlay
     scene black
     "You have ran out of health. Keep a better eye on your health next time!"
     "Game Over."
     return
 
 label turngameover:
+    hide beastoverlay
     scene black
     "You have ran out of energy. Try shooting more ghosts down next time!"
     "Game Over."
     return
 
 label wincondition:
+    hide beastoverlay
     $showwincond = True
     scene black
     "You have defeated the enemy!"

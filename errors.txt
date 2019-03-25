@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/rpgmode/battlemode.rpy", line 111: expected 'comma or end of line' not found.
-    zorder 5
-    ^
+File "game/rpgmode/battlemode.rpy", line 157: choice menuitem expects a non-empty block.
+    "You can crush 1 jewel to fully heal yourself.":
+                                                    ^
 
 Ren'Py Version: Ren'Py 7.1.3.1092
-Sun Mar 24 20:35:59 2019
+Sun Mar 24 20:52:26 2019

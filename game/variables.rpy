@@ -127,9 +127,9 @@ image r temp = "rookietemp.png"
 image w temp = "witchsprite.png"
 
 #Boss Battle Sprites
-image tutorialwitchfull = "battlemode/witch_tut_beg.png"
-image tutorialwitchhalf = "battlemode/witch_tut_mid.png"
-image tutorialwitchno = "battlemode/witch_tut_final.png"
+image battlew full = "battlemode/witch_tut_beg.png"
+image battlew half = "battlemode/witch_tut_mid.png"
+image battlew no = "battlemode/witch_tut_final.png"
 
 #Fire Effect
 image torchitall:
