@@ -313,6 +313,10 @@ label firstambushedcont:
     show particleFog1:
         alpha 0.5
 
+    show w temp at center with dissolve
+    prewitch "What's this? It's been so long since we had guests."
+    hide w temp
+
     #Explain Battle Mode
     #NVL Mode
     window show
@@ -320,7 +324,7 @@ label firstambushedcont:
     nvlmc "I have five moves I can make. The first is attack. It takes 1 energy to use, and I do a flat 10 damage."
     nvlmc "The second is defend. It also takes 1 energy, and it reduces all incoming attacks by 30 percent."
     nvlmc "The third is magical attack. It takes up 3 energy to use, but it does 3 times the damage my normal attack does."
-    nvlmc "The fourth is my 'beast' mode. It takes up 10 energy, so it's not something I can use without thought. But for a short while, I'll at least be able to do even more damage while taking less damage."
+    nvlmc "The fourth is my 'beast' mode. It takes up 10 energy or all three of my jewels, so it's not something I can use without thought. But for a short while, I'll at least be able to do even more damage while taking less damage."
     nvlmc "The last, obviously, is healing. Note that I can only use this if I have at least one jewel. It allows me to sacrifice a jewel on my necklace to fully heal myself."
     nvl clear
     nvlmc "It's a lot to take in at once. So just try different things. No need to worry. I'm super strong and sturdy, so I won't go down that easily."

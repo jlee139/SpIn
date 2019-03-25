@@ -33,7 +33,7 @@ screen battleui():
         xpos 870 ypos 480
         idle "battlemode/beast_up.png"
         hover "battlemode/beast_down.png"
-        action If(numturns >10, Call('zerker'), None)
+        action If(numturns>10 or numjewels==3, Call('zerker'), None)
     imagebutton: #Heal Button
         xpos 1070 ypos 480
         idle "battlemode/heal_up.png"
@@ -52,13 +52,14 @@ label begin_TutRPG:
     $bossatk = 10
     $redatk = 10
     $beastmode = False #To keep track of damages in beast mode
+    $showwincond = False #Keep track of whether or not we've seen the win condition
 
 
     #First place the enemy sprite in front of us
     show tutorialwitchfull at top
 
     #While we have turns, go through the battleui
-    while numturns>=1:
+    while numturns>0 and bosshp>0 and hp>0:
         #Change the Sprite accordingly
         if bosshp<=40:
             hide tutorialwitchfull
@@ -69,7 +70,8 @@ label begin_TutRPG:
 
         #Checks happen here before we start the battles
         #If witch's HP is 0, go straight to winning stance
-        if bosshp <1:
+        if bosshp <1 and showwincond==False:
+            $showwincond = True
             jump wincondition
 
         #If player's HP is 0, go straight to game over
@@ -96,13 +98,15 @@ label begin_TutRPG:
             hide beastoverlay
 
     #If witch's HP is 0, go straight to winning stance
-    if bosshp <1:
+    if bosshp <1 and showwincond==False:
+        $showwincond = True
         jump wincondition
+        return
 
     #if we have ran out of turns, go straight to game over
     if numturns<1:
         jump turngameover
-
+        return
     return
 
 label attackdmg:
@@ -113,6 +117,7 @@ label attackdmg:
     show scratch:
         xalign 0.5 yalign 0.3
     "You did [redatk] damage!"
+    hide scratch
     #If witch's HP is 0, go straight to winning stance
     if bosshp <1:
         jump wincondition
@@ -124,6 +129,7 @@ label defenddmg:
     show shield:
         xalign 0.5 yalign 0.3
     "You defended. All damage reduced."
+    hide shield
     $bossatk = bossatk*0.7
     call witchturn
     return
@@ -137,6 +143,7 @@ label magicdmg:
     show torchitall:
         xalign 0.5 yalign 0.3
     "By using up 3 of your energy, you fired a magic spell that does [redatk] damage."
+    hide torchitall
     $bosshp -= redatk
     #If witch's HP is 0, go straight to winning stance
     if bosshp <1:
@@ -149,14 +156,21 @@ label healdmg:
     show healing:
         xalign 0.5 yalign 0.3
     "By crushing a jewel, you fully healed yourself."
+    hide healing
     $numjewels -= 1
     $hp = 100
     call witchturn
     return
 
 label zerker:
-    "In return for 10 of your energy, damage done is increased and damage received is decreased for the next 3 turns."
-    $numturns -=9
+    menu:
+        "In return for 10 of your energy or 3 of my jewels, damage done is increased and damage received is decreased for the next 3 turns."
+        "Use 10 energy" if numturns>10:
+            $numturns -=9
+        "Use 3 jewels" if numjewels==3:
+            $numjewels = 0
+            $numturns +=1
+
     $beastmode = True
     $turnnum = 0 #Once this turns 3, we need to turn off beastmode
     return
@@ -192,6 +206,7 @@ label turngameover:
     return
 
 label wincondition:
+    $showwincond = True
     scene black
     "You have defeated the enemy!"
     return
