@@ -211,15 +211,19 @@ label witchturn:
 label healthgameover:
     hide beastoverlay
     scene black
-    "You have ran out of health. Keep a better eye on your health next time!"
-    "Game Over."
+    "You have ran out of health. You are unable to keep your promise of keeping your comrades safe and die."
+    "Keep a better eye on your health next time!"
+    scene end dead with fade
+    pause 2.0
     return
 
 label turngameover:
     hide beastoverlay
     scene black
-    "You have ran out of energy. Try shooting more ghosts down next time!"
-    "Game Over."
+    "You have ran out of energy. You are unable to keep your promise of keeping your comrades safe and die"
+    "Try shooting more ghosts down next time!"
+    scene end dead with fade
+    pause 2.0
     return
 
 label wincondition:

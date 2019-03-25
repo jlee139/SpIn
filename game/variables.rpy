@@ -57,6 +57,9 @@ init python:
     rookiened = False #Activated when player has unlocked rookie's happy end
     endingct = 0    #num of time player has played through
 
+    #For Ending CGs
+    badend1 = False #The very first ending we can get. "Empty Hands"
+
     #Affection points
     greenap = 0
     blueap = 0

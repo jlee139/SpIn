@@ -2,7 +2,7 @@ label prologue:
     #nvl set up
     nvl clear
     window hide
-    scene office memory with fade
+    scene bg office memory with fade
     window show
 
     nvlmc "Of all the things in the world, I probably miss his laugh the most."
@@ -23,7 +23,7 @@ label prologue:
     window hide
 
     #Now we get to the main cast
-    scene mansionout with fade
+    scene bg mansionout with fade
 
     show g temp at right with dissolve
     green "So this is the place? It definitely looks right. Yeesh, look at that. Looks like something straight out of a clichéd horror flick."
@@ -111,7 +111,7 @@ label prologue:
     hide r temp
 
     if trueend:
-        scene office memory with fade
+        scene bg office memory with fade
 
         boss "Hahahaha! Relax a bit, Red! If you’re that tense, you’ll end up hurting yourself."
         "Your code name is Red! That’s your name! How many times do I have to tell that to you?!"
@@ -133,5 +133,5 @@ label prologue:
         nvl clear
         window hide
 
-
-return #Return to story
+jump firstfloor #After this, go to the first chapter
+#return #Return to story

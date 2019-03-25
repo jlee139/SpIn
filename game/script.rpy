@@ -8,6 +8,9 @@ label start:
 
     #Then We start the story!
     #call prologue      #Start us up with the prologue of the story
+
+
+    #Debugging each chapter
     #call firstfloor    #After the prologue, we go to the first floor
     #call secondfloor   #Then the 2nd floor
     #call thirdfloor    #Then the 3rd floor
@@ -17,8 +20,8 @@ label start:
     #Debugging Things:
     #call shootfix #Testing our shooter
     #scene black
-    call begin_TutRPG #Testing our Battle Mode
-    #jump firstambushedcont #for debugging
+    #call begin_TutRPG #Testing our Battle Mode
+    #jump healthgameover #for debugging
 
     "That's the end of the Tutorial. Thank you!"
 

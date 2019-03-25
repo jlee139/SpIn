@@ -1,6 +1,6 @@
 label firstfloor: #set up of the rest of the story
     #nvl set up
-    scene mansionentrance with fade
+    scene bg mansionentrance with fade
     window show
     nvlmc "There is no door to the mansion for us to open. Where the door should be is a tattered cloth that might have once been a curtain."
     nvlmc "The entrance way creak under our weights. I don't feel any wind, but the makeshift curtain seems to be swaying."
@@ -13,7 +13,7 @@ label firstfloor: #set up of the rest of the story
     nvlmc "Someone’s lingering spirit that was unable to pass on."
     nvlmc "The way you deal with lingering spirits is the hardest out of the three, which is why we came here prepared for the last option."
     nvl clear
-    nvlmc "Green lights up his cigarette. He takes a moment to breathe in deeply before he slowly lets it out. Thick smoke surrounds us within seconds. "
+    nvlmc "Green lights up his cigarette. He takes a moment to breathe in deeply before he slowly lets it out. Thick smoke surrounds us within seconds."
     nvlmc "This is the part that I hate the most about Green’s ability. It’s bad enough that the smoke reduces visibility, but it also smells bad, too. But this is for the sake of our safety. Yet another precaution we take on top of our code names."
     nvlmc "Each of us have a special ability that makes us viable Supernatural Investigators. "
     nvlmc "Green’s ability is to turn a small area around himself into his \"Zone.\" He doesn’t need to smoke to mark that area, but he likes to give us a physical representation of where it is. He can detect any outside influences the minute they enter his Zone, and to an extent limit the outsiders’ abilities."
@@ -64,7 +64,7 @@ label firstfloor: #set up of the rest of the story
     "Let's go!"
 
     #nvl set up
-    scene fronthall with fade
+    scene bg fronthall with fade
     #Turn on our fog
     show particleFog1:
         alpha 0.5
@@ -121,7 +121,7 @@ label cafeteria:
     green "Ugh. Don’t make me spread my area so thinly. The furthest I can go is to the doorway... Hey, are you listening?!"
 
     #nvl set up
-    scene diningroom with fade
+    scene bg diningroom with fade
     #Turn on our fog
     show particleFog1:
         alpha 0.5
@@ -170,7 +170,7 @@ label portrait:
     green "Yeah, yeah. So annoying."
 
     #nvl set up
-    scene portrait with fade
+    scene bg portrait with fade
     #Turn on our fog
     show particleFog1:
         alpha 0.5
@@ -199,7 +199,6 @@ label portrait:
     "(Is he hiding something?)"
 
     #nvl set up
-    #scene mansionentrance with fade
     window show
 
     nvlmc "Rookie’s ability is to control plants. He insists that he can’t actually control them. Rather, he just asks them for help and they respond. As long as the job gets done, I figure it’s not my business what the distinction is."
@@ -225,7 +224,7 @@ label stayguard:
     $ blueap+= 1
     "Green, Rookie, look around and make sure we won't be ambushed."
 
-    scene fronthall with fade
+    scene bg fronthall with fade
     #Turn on our fog
     show particleFog1:
         alpha 0.5
@@ -241,7 +240,6 @@ label stayguard:
     blue "I’m sure you are."
 
     #nvl set up
-    #scene mansionentrance with fade
     window show
 
     nvlmc "To be honest, I stayed because I like watching Blue’s ability."
@@ -269,7 +267,7 @@ label stayguard:
     jump firstambushed
 
 label firstambushed:
-    scene fronthall with fade
+    scene bg fronthall with fade
     #Turn on our fog
     show particleFog1:
         alpha 0.5
@@ -299,33 +297,34 @@ label firstambushedcont:
     #Explain Shoot Mode
     #NVL Mode
     window show
-    nvlmc "How lucky for us there's so many for me to eat. But from the way they're swarming, it feels like there's going to be a big boss that'll appear soon."
+    nvlmc "How lucky for us there's so many creatures for me to eat. But from the way they're swarming, it feels like there's going to be a big boss that'll appear soon."
     nvlmc "Guess I better eat as much as I can before they appear. It's always good to reduce enemy numbers. Besides, eating them will also boost my own strength, too. Win-win, if you will."
-    nvlmc "Make sure to click as many ghosts as you can before the boss appears, alright?"
+    nvlmc "Make sure to click as many creatures as you can before the boss appears, alright?"
 
     #end nvl
     nvl clear
     window hide
 
     call shootfix #Our Shoot Mode
-    scene fronthall with fade
+    scene bg fronthall with fade
     #Turn on our fog
     show particleFog1:
         alpha 0.5
 
     show w temp at center with dissolve
-    prewitch "What's this? It's been so long since we had guests."
+    prewitch "What's this? It's been so long since we had guests!"
+    prewitch "Welcome, welcome! And now die!"
     hide w temp
 
     #Explain Battle Mode
     #NVL Mode
     window show
     nvlmc "And now the boss shows up. Good thing I'm charged up and ready to go."
-    nvlmc "I have five moves I can make. The first is attack. It takes 1 energy to use, and I do a flat 10 damage."
-    nvlmc "The second is defend. It also takes 1 energy, and it reduces all incoming attacks by 30 percent."
+    nvlmc "I have five moves I can make. The first is attack. It takes 1 energy to use, and I do flat damage."
+    nvlmc "The second is defend. It also takes 1 energy, and it reduces all incoming attacks."
     nvlmc "The third is magical attack. It takes up 3 energy to use, but it does 3 times the damage my normal attack does."
     nvlmc "The fourth is my 'beast' mode. It takes up 10 energy or all three of my jewels, so it's not something I can use without thought. But for a short while, I'll at least be able to do even more damage while taking less damage."
-    nvlmc "The last, obviously, is healing. Note that I can only use this if I have at least one jewel. It allows me to sacrifice a jewel on my necklace to fully heal myself."
+    nvlmc "The last, obviously, is healing. Note that I can only use this if I have at least one jewel. By sacrificing one of my jewel, I can fully heal myself."
     nvl clear
     nvlmc "It's a lot to take in at once. So just try different things. No need to worry. I'm super strong and sturdy, so I won't go down that easily."
     nvlmc "Just be mindful of my health and how much energy I have left. The minute those numbers hit zero, we'll be in big trouble. But if we can defeat the enemy before that happens, then that'll be enough."
@@ -339,7 +338,7 @@ label firstambushedcont:
     jump introToWitch
 
 label introToWitch:
-    scene fronthall with fade
+    scene bg fronthall with fade
     #Turn on our fog
     show particleFog1:
         alpha 0.5
@@ -369,7 +368,7 @@ label introToWitch:
     show whiteflash zorder 50 with vpunch
 
     #nvl set up
-    scene fronthall with fade
+    scene bg fronthall with fade
     window show
 
     nvlmc "Not good. I underestimated her. I should have taken her seriously from the get-go."
@@ -427,7 +426,6 @@ label introToWitch:
     "(It looks like she’s gathering her energy for a bigger blast. Then I’ll just cut her off before she releases!)"
 
     #nvl set up
-    #scene mansionentrance with fade
     window show
 
     nvlmc "I’m faster in this form. Stronger, too."
@@ -509,7 +507,8 @@ label introToWitch:
     rookie "R-right."
     "(He looks shaken. Was too much for his first mission?)"
     "Hey, sorry if I scared you. You probably didn’t expect that, right? I’m part… er… I suppose the best way to say is that I have some fox blood in me."
-    "Don’t worry; I don’t lose control or anything. That version is still me. Just… more powerful."
+    "Don’t worry; I don’t lose control or anything. That version is still me. Just… more powerful. Like taking off seals or something, you know?"
+    "(What am I saying? I'm making less sense trying to explain it.)"
     green "What’s with that? He has our files. It’s our own responsibility to read about our teammates’ abilities before a mission."
     blue "Amazing. Have all of my lectures finally sunk in for you? Or are you just echoing them to look cool in front of a new member?"
     green "Shut up, you."
@@ -517,9 +516,9 @@ label introToWitch:
     "Is that so? That’s a relief."
     rookie "Just..."
     green "Just?"
-    rookie "Three years ago, my village was attacked by a silver fox with two tails."
+    rookie "Three years ago, my village was attacked by a silver fox with four tails."
     blue "Three years ago? Wasn’t that…?"
-    "If you were wondering if that was me, then yeah. It was. There haven’t been any other silver foxes, let alone two-tailed ones, in about half a century."
+    "If you were wondering if that was me, then yeah. It was. There haven’t been any other silver foxes, let alone four-tailed ones, in about half a century."
     green "Urk. You couldn’t think of a kinder way to phrase that?"
     "Look, I’m not a good person. I’ve done many things I’m not proud of. If that makes you uncomfortable, request that you never be put on the same team with me again."
     "But for this mission, I need you to set aside whatever issues you have and work with me."
@@ -545,7 +544,7 @@ label storyendEmptyHands:
     "It’s not because of you. I’m too tired to keep going. Not to mention, I broke my necklace. You want your only fighter to face against whatever else is in this mansion without any kind of protection?"
     green "You’re a monster, so I’m sure you’ll be fine."
     "(Get a hint, you idiot!)"
-    "What’s that? You want me to accidentally hit you?"
+    "What’s that? You want me to accidentally kill you?"
     blue "If that’s how Red feels, then that’s how Red feels. Go ahead. Punch Green all you want."
     green "H-huh?! Wait a minute!"
 
@@ -556,7 +555,7 @@ label storyendEmptyHands:
     #nvl set up
     window show
 
-    nvlmc "I feel a little guilty for abandoning the mission before it even started."
+    nvlmc "I feel a little guilty for abandoning the mission before it even starts."
     nvlmc "But I doubt Rookie wants to be stuck in here for however long it’ll take for us to complete the mission with me. Not to mention I’m not confident about fighting that spirit again without the help of any necklace."
     nvlmc "I can’t allow any of these guys to get hurt. If I were to fight that spirit seriously, all of their lives would be at stake. "
     nvlmc "It’s better like this."
@@ -567,7 +566,9 @@ label storyendEmptyHands:
     window hide
 
     #Bad End CG
-
+    $ persistent.badend1 = True
+    scene end bad with fade
+    pause 2.0
     return
 
     #End EmptyHands
@@ -588,7 +589,7 @@ label firstfloorcont:
     "That spirit was really powerful. If you guys are near me when I fight her again, I can’t guarantee your safety. So-"
     green "That’s fine. We’ll stay near the back. "
     blue "I’ll be focused enough to set up a better seal around us this time. Don’t worry about us and go full out."
-    "(I’m saying if I do, you’ll die.)"
+    "(I’m saying if I do, you’ll die!)"
     rookie "I will trust your judgement."
     "(All of you suck.)"
     "(But this is the first.)"
