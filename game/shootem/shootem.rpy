@@ -62,7 +62,7 @@ screen ghoster():
         action [get_mouse(), Jump('ghosthit')]
 
 label shootfix:
-    "Hi. We're going to try this again."
+    #"Hi. We're going to try this again."
     call startshootem
     return
 
