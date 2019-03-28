@@ -21,7 +21,7 @@ label start:
     #call shootfix #Testing our shooter
     scene black
     #call begin_TutRPG #Testing our Battle Mode
-    #jump healthgameover #for debugging
+    #jump introToWitch #for debugging
 
     "That's the end of the demo. Thank you!"
 

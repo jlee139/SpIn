@@ -22,6 +22,9 @@ image bg fronthall = "fronthall.png"
 image bg portrait = "portrait.png"
 image bg diningroom = "diningroom.png"
 
+#CGs to be Used
+image cg foxreveal = "fox.png"
+
 #Character Approval Sprites
 image blueapprove = "blueapprove.png"
 image greenapprove = "greenapprove.png"

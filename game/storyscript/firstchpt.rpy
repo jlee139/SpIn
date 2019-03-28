@@ -417,6 +417,9 @@ label introToWitch:
     window hide
 
     #FOX CG
+    scene cg foxreveal with fade
+    pause 1.0
+    scene bg fronthall with fade
     show w temp at center with dissolve
     #Turn on our fog
     show particleFog1:
