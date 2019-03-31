@@ -14,34 +14,34 @@ image end rookiegood = "ending/rookiegoodend.png"
 
 #Backgrounds To be Used
 image beastoverlay = "battlemode/overlay.png"
-image bg office = "office.png"
-image bg office memory = "office_memory.png"
-image bg mansionout = "mansionoutside.png"
-image bg mansionentrance = "mansionentrance.png"
-image bg fronthall = "fronthall.png"
-image bg portrait = "portrait.png"
-image bg diningroom = "diningroom.png"
+image bg office = "background/office.png"
+image bg office memory = "background/office_memory.png"
+image bg mansionout = "background/mansionoutside.png"
+image bg mansionentrance = "background/mansionentrance.png"
+image bg fronthall = "background/fronthall.png"
+image bg portrait = "background/portrait.png"
+image bg diningroom = "background/diningroom.png"
 
 #CGs to be Used
-image cg foxreveal = "fox.png"
+image cg foxreveal = "cg/fox.png"
 
 #Character Approval Sprites
-image blueapprove = "blueapprove.png"
-image greenapprove = "greenapprove.png"
-image rookieapprove = "rookieapprove.png"
+image blueapprove = "blue/blueapprove.png"
+image greenapprove = "green/greenapprove.png"
+image rookieapprove = "rookie/rookieapprove.png"
 
 #Character Sprites
 #blue
-image bl temp = "bluetemp.png"
+image bl temp = "blue/bluetemp.png"
 
 #green
-image g temp = "greentemp.png"
+image g temp = "green/greentemp.png"
 
 #rookie
-image r temp = "rookietemp.png"
+image r temp = "rookie/rookietemp.png"
 
 #witch
-image w temp = "witchsprite.png"
+image w temp = "witch/witchsprite.png"
 
 #Boss Battle Sprites
 image battlew full = "battlemode/witch_tut_beg.png"

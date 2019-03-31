@@ -4,10 +4,10 @@
 label start:
 
     #First thing first, get the Player's name
-    $ mcname = renpy.input("Enter your name")
+    #$ mcname = renpy.input("Enter your name")
 
     #Then We start the story!
-    call prologue      #Start us up with the prologue of the story
+    #call prologue      #Start us up with the prologue of the story
 
 
     #Debugging each chapter
@@ -18,8 +18,8 @@ label start:
     #Tada! Story is done!
 
     #Debugging Things:
-    #call shootfix #Testing our shooter
-    scene black
+    call huntmode #Testing our hunt mode
+    #scene black
     #call begin_TutRPG #Testing our Battle Mode
     #jump introToWitch #for debugging
 

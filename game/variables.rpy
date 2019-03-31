@@ -92,11 +92,11 @@ define nvlmc = Character(None, kind=nvl)
 #for if we ever get sprites for Red
 define advmc = Character('[mcname]', kind=adv)
 
-define green = Character('Green', color="#088329", callback=RaiseImage("g"))
-define blue = Character('Blue', color="#0638A9", callback=RaiseImage("bl"))
-define rookie = Character('Rookie', color="#6B0B94", callback=RaiseImage("r"))
-define boss = Character('Boss', color="#A00303", callback=RaiseImage("bs"))
-define prewitch = Character('???', color="#BC4244", callback=RaiseImage("w"))
-define witch = Character('Witch', color="#BC4244", callback=RaiseImage("w"))
+define green = Character('Green', color="#088329", callback=RaiseImage("g"), window_background="gui/textbox-green.png")
+define blue = Character('Blue', color="#0638A9", callback=RaiseImage("bl"), window_background="gui/textbox-blue.png")
+define rookie = Character('Rookie', color="#6B0B94", callback=RaiseImage("r"), window_background="gui/textbox-rookie.png")
+define boss = Character('Boss', color="#A00303", callback=RaiseImage("bs"), window_background="gui/textbox-red.png")
+define prewitch = Character('???', color="#555555", callback=RaiseImage("w"), window_background="gui/textbox-witch.png")
+define witch = Character('Witch', color="#555555", callback=RaiseImage("w"), window_background="gui/textbox-witch.png")
 
 default mouse_xy = (0, 0)

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/storyscript/firstchpt.rpy", line 568: expected statement.
-    2.0
-       ^
+File "game/huntmode/hunt.rpy", line 1: expected statement.
+    huntmode:
+            ^
 
 Ren'Py Version: Ren'Py 7.1.3.1092
-Mon Mar 25 18:33:31 2019
+Sun Mar 31 09:39:59 2019
