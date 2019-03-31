@@ -1,11 +1,19 @@
 #RPG Set up
 screen battleui():
-    bar: #Enemy's HP Bar
-        range bossmaxhp
-        value bosshp
-        xmaximum 230
-        xpos 850 ypos 200
-        #label _("Enemy HP") xpos 850 ypos 170
+    frame:
+        xpadding 10
+        ypadding 10
+        xalign 0.8
+        yalign 0.2
+    #    ymaximum 50
+    #    xmaximum 250
+
+        vbox:
+            bar: #Enemy's HP Bar
+                range bossmaxhp
+                value bosshp
+                xmaximum 230
+            label _("Enemy HP ([bosshp]/[bossmaxhp])")
     frame:
         xpadding 10
         ypadding 10
@@ -13,37 +21,34 @@ screen battleui():
         xalign 0.5
         yalign 0.95
 
-        vbox:
-            text "Jewels: [numjewels]" xpos 20 ypos 500 outlines [ (1, "#fff") ]
-            text "Energy Left: [numturns]" xpos 20 ypos 520 outlines [ (1, "#fff") ]
-            bar: #Red's HP
-                range 100
-                value hp
-                xmaximum 230
-                xpos 20 ypos 580
-                #    label _("Your HP") xpos 20 ypos 550
+        hbox:
+            vbox:
+                text "Jewels: [numjewels]"
+                text "Energy Left: [numturns]"
+                bar: #Red's HP
+                    range 300
+                    value hp
+                    xmaximum 230
+                    left_bar Frame("gui/bar/green.png", gui.bar_borders, tile=gui.bar_tile)
+                    right_bar Frame("gui/bar/green_dry.png", gui.bar_borders, tile=gui.bar_tile)
+                label _("Your HP ([hp]/300)")
             imagebutton: #Attack Button
-                xpos 270 ypos 480
                 idle "battlemode/attack_up.png"
                 hover "battlemode/attack_down.png"
                 action Call('attackdmg')
             imagebutton: #Defend Button
-                xpos 470 ypos 480
                 idle "battlemode/defend_up.png"
                 hover "battlemode/defend_down.png"
                 action Call('defenddmg')
             imagebutton: #Magic Attack Button
-                xpos 670 ypos 480
                 idle "battlemode/magic_up.png"
                 hover "battlemode/magic_down.png"
                 action If(numturns >2, Call('magicdmg'), None)
             imagebutton: #Beserk Button
-                xpos 870 ypos 480
                 idle "battlemode/beast_up.png"
                 hover "battlemode/beast_down.png"
                 action If(numturns>10 or numjewels==3, Call('zerker'), None)
             imagebutton: #Heal Button
-                xpos 1070 ypos 480
                 idle "battlemode/heal_up.png"
                 hover "battlemode/heal_down.png"
                 action If(numjewels >=1, Call('healdmg'), None)
@@ -173,7 +178,7 @@ label healdmg:
     "You're fully healed."
     hide healing
     $numjewels -= 1
-    $hp = 100
+    $hp = 300
     call witchturn
     return
 

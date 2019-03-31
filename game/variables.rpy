@@ -40,7 +40,7 @@ init python:
                 renpy.show(self.tag, zorder=self.low, at_list=at_list + [ self.nospeak ])
 
     #Variables for Player during battle
-    hp = 100
+    hp = 300
     numjewels = 3
     numturns = 0
     totghost = 0

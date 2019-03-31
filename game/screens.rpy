@@ -39,7 +39,6 @@ style label_text is gui_text:
 style prompt_text is gui_text:
     properties gui.text_properties("prompt")
 
-
 style bar:
     ysize gui.bar_size
     left_bar Frame("gui/bar/left.png", gui.bar_borders, tile=gui.bar_tile)
