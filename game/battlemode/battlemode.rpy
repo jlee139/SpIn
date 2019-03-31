@@ -54,6 +54,7 @@ label begin_TutRPG:
     $beastmode = False #To keep track of damages in beast mode
     $showwincond = False #Keep track of whether or not we've seen the win condition
 
+    window hide
 
     #First place the enemy sprite in front of us
     show battlew full at top

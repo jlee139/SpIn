@@ -48,6 +48,12 @@ image battlew full = "battlemode/witch_tut_beg.png"
 image battlew half = "battlemode/witch_tut_mid.png"
 image battlew no = "battlemode/witch_tut_final.png"
 
+#Investigation Sprites
+image ghostdis = "huntmode/ghost_dead.png"
+image skeledis = "huntmode/skeleton_injured.png"
+image wispdis = "huntmode/wisp_red.png"
+
+
 #Fire Effect
 image torchitall:
     "shootem/fire.png"

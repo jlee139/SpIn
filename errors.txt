@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/huntmode/hunt.rpy", line 1: expected statement.
-    huntmode:
-            ^
+File "game/huntmode/hunt.rpy", line 103: if statement expects a non-empty block.
+    if randchance >98:
+                      ^
 
 Ren'Py Version: Ren'Py 7.1.3.1092
-Sun Mar 31 09:39:59 2019
+Sun Mar 31 14:26:27 2019

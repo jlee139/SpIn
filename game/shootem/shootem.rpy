@@ -68,6 +68,7 @@ label shootfix:
 
 label startshootem:
     show countdown at Position(xalign=.9, yalign=.9)
+    window hide
     call createghosts
     return
 

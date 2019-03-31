@@ -87,6 +87,8 @@ init python:
         mouse_xy = renpy.get_mouse_pos()
 
 # Declare characters used by this game. The color argument colorizes the
+#For all our blank textbox needs
+define blanktxt = Character(None, kind=adv)
 # name of the character.
 define nvlmc = Character(None, kind=nvl)
 #for if we ever get sprites for Red

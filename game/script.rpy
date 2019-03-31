@@ -18,9 +18,10 @@ label start:
     #Tada! Story is done!
 
     #Debugging Things:
-    call huntmode #Testing our hunt mode
+    scene bg fronthall with fade
+    #call huntmodestart #Testing our hunt mode
     #scene black
-    #call begin_TutRPG #Testing our Battle Mode
+    call begin_TutRPG #Testing our Battle Mode
     #jump introToWitch #for debugging
 
     "That's the end of the demo. Thank you!"
