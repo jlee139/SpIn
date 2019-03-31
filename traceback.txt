@@ -1,52 +1,34 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/huntmode/hunt.rpy", line 1, in prepare_screen
-    screen huntmodeset():
-  File "game/huntmode/hunt.rpy", line 1, in prepare
-    screen huntmodeset():
-  File "game/huntmode/hunt.rpy", line 2, in prepare
-    grid 4 3:
-  File "game/huntmode/hunt.rpy", line 2, in prepare
-    grid 4 3:
-  File "game/huntmode/hunt.rpy", line 6, in prepare
-    imagebutton:
-  File "game/huntmode/hunt.rpy", line 6, in prepare
-    imagebutton:
-SyntaxError: invalid syntax (game/huntmode/hunt.rpy, line 9)
+While running game code:
+  File "game/script.rpy", line 22, in script call
+    call huntmodestart #Testing our hunt mode
+  File "game/huntmode/hunt.rpy", line 124, in script call
+    call huntmode
+  File "game/huntmode/hunt.rpy", line 105, in script
+    $calcchest = chest*10
+  File "game/huntmode/hunt.rpy", line 105, in <module>
+    $calcchest = chest*10
+NameError: name 'chest' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\bootstrap.py", line 313, in bootstrap
-    renpy.main.main()
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\main.py", line 513, in main
-    run(restart)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\main.py", line 90, in run
-    renpy.display.screen.prepare_screens()
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\screen.py", line 909, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/huntmode/hunt.rpy", line 1, in prepare_screen
-    screen huntmodeset():
-  File "game/huntmode/hunt.rpy", line 1, in prepare
-    screen huntmodeset():
-  File "game/huntmode/hunt.rpy", line 2, in prepare
-    grid 4 3:
-  File "game/huntmode/hunt.rpy", line 2, in prepare
-    grid 4 3:
-  File "game/huntmode/hunt.rpy", line 6, in prepare
-    imagebutton:
-  File "game/huntmode/hunt.rpy", line 6, in prepare
-    imagebutton:
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\pyanalysis.py", line 700, in ast_eval
-    return self.ast_eval_literal(expr)[0]
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\pyanalysis.py", line 684, in ast_eval_literal
-    expr = py_compile(expr, 'eval', ast_node=True)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\python.py", line 674, in py_compile
-    raise e
-SyntaxError: invalid syntax (game/huntmode/hunt.rpy, line 9)
+  File "game/script.rpy", line 22, in script call
+    call huntmodestart #Testing our hunt mode
+  File "game/huntmode/hunt.rpy", line 124, in script call
+    call huntmode
+  File "game/huntmode/hunt.rpy", line 105, in script
+    $calcchest = chest*10
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\ast.py", line 881, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\python.py", line 1913, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/huntmode/hunt.rpy", line 105, in <module>
+    $calcchest = chest*10
+NameError: name 'chest' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.1.3.1092
 SpIn 1.0
-Sun Mar 31 14:42:33 2019
+Sun Mar 31 18:12:38 2019

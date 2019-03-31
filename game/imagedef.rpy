@@ -52,7 +52,7 @@ image battlew no = "battlemode/witch_tut_final.png"
 image ghostdis = "huntmode/ghost_dead.png"
 image skeledis = "huntmode/skeleton_injured.png"
 image wispdis = "huntmode/wisp_red.png"
-
+image chestfound = "huntmode/chest.png"
 
 #Fire Effect
 image torchitall:

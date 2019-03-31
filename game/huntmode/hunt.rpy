@@ -7,6 +7,15 @@ transform disappeardeath:
     parallel:
         linear 0.3 alpha 0
 
+transform celebrationchest:
+    xalign 0.5
+    yalign 0.3
+    alpha 0
+    parallel:
+        linear 0.3 yoffset 100
+    parallel:
+        linear 0.3 alpha 1
+
 screen huntmodeset():
     grid 4 3:
         xalign 0.5
@@ -74,10 +83,10 @@ screen huntmodeset():
             vbox:
                 text "[numoftries] tries left."
             vbox:
-                text "You have found [numwisps] wisp(s)."
-                text "You have found [numghosts] ghost(s)."
-                text "You have found [numskele] skeleton(s)."
-                text "You have found [numchests] chest(s)."
+                text "You found [numwisps] wisp(s)."
+                text "You found [numghosts] ghost(s)."
+                text "You found [numskele] skeleton(s)."
+                text "You found [numchests] chest(s)."
 
 label endhuntreport:
     hide screen huntmodeset
@@ -88,10 +97,15 @@ label endhuntreport:
     window show
 
     nvlmc "Your Progress Report:"
-    nvlmc "You found [numwisps] wisp(s)."
-    nvlmc "You found [numghosts] ghost(s)."
-    nvlmc "You found [numskele] skeleton(s)."
-    nvlmc "You found [numchests] chest(s)."
+    nvlmc "You found [numwisps] wisp(s). That gives you [numwisps] turns."
+    $calcghost = numghosts*2
+    nvlmc "You found [numghosts] ghost(s). That gives you [calcghost] more turns."
+    $calcskele = numskele*5
+    nvlmc "You found [numskele] skeleton(s). That gives you [calcskele] more turns."
+    $calcchest = numchests*10
+    nvlmc "You found [numchests] chest(s). That gives you [calcchest] more turns."
+    $numturns = numwisps + calcghost + calcskele+calcchest
+    nvlmc "You have total of [numturns] turns for the upcoming battle."
 
     #escape nvl mode
     nvl clear
@@ -127,7 +141,7 @@ label calcperct:
         scene black
         show wispdis at disappeardeath
         "You have found a wisp!"
-    elif  randchance <70:
+    elif  randchance <80:
         #You found a ghost
         $numghosts+=1
         scene black
@@ -143,6 +157,7 @@ label calcperct:
         #You found a chest!
         $numchests+=1
         scene black
+        show chestfound at celebrationchest
         "You have found a chest!"
 
     $numoftries -=1
