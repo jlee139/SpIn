@@ -123,7 +123,7 @@ label begin_TutRPG:
 
 label attackdmg:
     $ witchdef = renpy.random.randint(1,10)
-    if witchdef >=8: #There's 20% chance she'll defend
+    if witchdef >=9: #There's 10% chance she'll defend
         call witchdef
     $bosshp -= redatk
     show scratch:
@@ -133,14 +133,14 @@ label attackdmg:
     #If witch's HP is 0, go straight to winning stance
     if bosshp <1:
         jump wincondition
-    if witchdef <8: #There's 80% chance she'll attack
+    if witchdef <9: #There's 90% chance she'll attack
         call witchturn
     return
 
 label defenddmg:
     show shield:
         xalign 0.5 yalign 0.3
-    "You brace for impact. All damage reduced."
+    "You brace for impact. Damage taken is reduced."
     hide shield
     $bossatk = bossatk*0.7
     call witchturn
@@ -148,19 +148,19 @@ label defenddmg:
 
 label magicdmg:
     $ witchdef = renpy.random.randint(1,10)
-    if witchdef >=6: #There's 40% chance she'll defend
+    if witchdef >=8: #There's 20% chance she'll defend
         call witchdef
     $numturns-=2
     $redatk = redatk * 1.5
     show torchitall:
         xalign 0.5 yalign 0.3
-    "By using up 3 of your energy, you fired a magic spell that does [redatk] damage."
+    "By using 3 energy, you fire a magic spell that does [redatk] damage."
     hide torchitall
     $bosshp -= redatk
     #If witch's HP is 0, go straight to winning stance
     if bosshp <1:
         jump wincondition
-    if witchdef <6: #There's 60% chance she'll attack
+    if witchdef <8: #There's 80% chance she'll attack
         call witchturn
     return
 
@@ -199,7 +199,7 @@ label zerker:
     return
 
 label witchdef:
-    "The witch braced for impact. All damage to her is reduced."
+    "The witch braces for impact. Your attack does less damage."
     $redatk = redatk*0.7 #Reduce Red's attack to 7
     return
 
@@ -210,13 +210,13 @@ label witchturn:
     if bosshp<=20:
         show battlew no at top
     $ witchmagic = renpy.random.randint(1,10)
-    if witchmagic >=6: #There's 40% chance she'll use magic
+    if witchmagic >=5: #There's 50% chance she'll use magic
         $bossatk = bossatk*1.5
-        "The enemy fired a magic spell that does [bossatk] damage"
+        "The enemy fires a magic spell that does [bossatk] damage."
         with vpunch
         $hp-=bossatk
     else:
-        "The enemy did [bossatk] damage!"
+        "The enemy does [bossatk] damage."
         with vpunch
         $hp-=bossatk
     return
@@ -224,7 +224,7 @@ label witchturn:
 label healthgameover:
     hide beastoverlay
     scene black
-    "You have ran out of health. You are unable to keep your promise of keeping your comrades safe and die."
+    "You ran out of health. You are unable to keep your promise of keeping your comrades safe and die."
     "Keep a better eye on your health next time!"
     scene end dead with fade
     pause 2.0
@@ -233,8 +233,8 @@ label healthgameover:
 label turngameover:
     hide beastoverlay
     scene black
-    "You have ran out of energy. You are unable to keep your promise of keeping your comrades safe and die"
-    "Try shooting more ghosts down next time!"
+    "You have ran out of energy. You are unable to keep your promise of keeping your comrades safe and die."
+    "Budget your energy more carefully!"
     scene end dead with fade
     pause 2.0
     return
@@ -243,7 +243,7 @@ label wincondition:
     hide beastoverlay
     $showwincond = True
     scene black
-    "You have defeated the enemy!"
+    "You defeated the enemy!"
     return
 
 return

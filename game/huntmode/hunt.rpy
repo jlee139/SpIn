@@ -97,13 +97,13 @@ label endhuntreport:
     window show
 
     nvlmc "Your Progress Report:"
-    nvlmc "You found [numwisps] wisp(s). That gives you [numwisps] turns."
+    nvlmc "You found [numwisps] wisp(s). That gives you [numwisps] turn(s)."
     $calcghost = numghosts*2
-    nvlmc "You found [numghosts] ghost(s). That gives you [calcghost] more turns."
+    nvlmc "You found [numghosts] ghost(s). That gives you [calcghost] more turn(s)."
     $calcskele = numskele*5
-    nvlmc "You found [numskele] skeleton(s). That gives you [calcskele] more turns."
+    nvlmc "You found [numskele] skeleton(s). That gives you [calcskele] more turn(s)."
     $calcchest = numchests*10
-    nvlmc "You found [numchests] chest(s). That gives you [calcchest] more turns."
+    nvlmc "You found [numchests] chest(s). That gives you [calcchest] more turn(s)."
     $numturns = numwisps + calcghost + calcskele+calcchest
     nvlmc "You have total of [numturns] turns for the upcoming battle."
 
@@ -140,25 +140,25 @@ label calcperct:
         $numwisps+=1
         scene black
         show wispdis at disappeardeath
-        "You have found a wisp!"
+        "You found a wisp!"
     elif  randchance <80:
         #You found a ghost
         $numghosts+=1
         scene black
         show ghostdis at disappeardeath
-        "You have found a ghost!"
+        "You found a ghost!"
     elif  randchance <=98:
         #You found a skeleton
         $numskele+=1
         scene black
         show skeledis at disappeardeath
-        "You have found a skeleton!"
+        "You found a skeleton!"
     elif  randchance >98:
         #You found a chest!
         $numchests+=1
         scene black
         show chestfound at celebrationchest
-        "You have found a chest!"
+        "You found a chest!"
 
     $numoftries -=1
     return

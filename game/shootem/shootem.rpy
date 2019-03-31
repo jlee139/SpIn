@@ -28,7 +28,13 @@ transform wispmove:
 
 
 screen ghostspawn():
-    text "Ghosts killed: [numturns]" xpos 20 ypos 650 outlines [ (1, "#fff") ]
+    frame:
+        xpadding 10
+        ypadding 10
+        xalign 0.05
+        yalign 0.95
+        vbox:
+            text "Ghosts killed: [numturns]"
 screen ghoster():
     imagebutton:
         idle "shootem/ghost.png"
@@ -63,12 +69,12 @@ screen ghoster():
 
 label shootfix:
     #"Hi. We're going to try this again."
+    window hide
     call startshootem
     return
 
 label startshootem:
     show countdown at Position(xalign=.9, yalign=.9)
-    window hide
     call createghosts
     return
 
@@ -97,9 +103,9 @@ label battleready:
     window show
 
     nvlmc "Your information for the upcoming battle:"
-    nvlmc "You have [numturns] amount of energy to defeat the enemy."
+    nvlmc "You have [numturns] energy to defeat the enemy."
     nvlmc "You have [numjewels] jewels protecting you."
-    nvlmc "You currently have [hp] amount of health."
+    nvlmc "You health is currently at [hp]."
     nvlmc "Battle Start"
 
     #escape nvl mode

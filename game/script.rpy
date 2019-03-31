@@ -19,11 +19,13 @@ label start:
 
     #Debugging Things:
     scene bg fronthall with fade
-    #call huntmodestart #Testing our hunt mode
-    #scene black
-    call begin_TutRPG #Testing our Battle Mode
+    call huntmodestart #Testing our hunt mode
+    #call shootfix #Testing our hunt mode
+    #call begin_TutRPG #Testing our Battle Mode
     #jump introToWitch #for debugging
 
+
+    scene black
     "That's the end of the demo. Thank you!"
 
 
