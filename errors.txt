@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/battlemode/battlemode.rpy", line 32: u'xpadding' is not a keyword argument or valid child for the bar statement.
-    xpadding 10
-            ^
+The label secondfloor is defined twice, at
+  File "game/storyscript/secchpt.rpy", line 1 and
+  File "game/storyscript/secchpt-blue.rpy", line 1.
+
+The label secondfloor is defined twice, at
+  File "game/storyscript/secchpt-blue.rpy", line 1 and
+  File "game/storyscript/secchpt-green.rpy", line 1.
+
+The label secondfloor is defined twice, at
+  File "game/storyscript/secchpt-green.rpy", line 1 and
+  File "game/storyscript/secchpt-rookie.rpy", line 1.
 
 Ren'Py Version: Ren'Py 7.1.3.1092
-Sun Mar 31 19:35:18 2019
+Sun Mar 31 21:49:45 2019

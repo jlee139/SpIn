@@ -11,15 +11,15 @@ label start:
 
 
     #Debugging each chapter
-    #call firstfloor    #After the prologue, we go to the first floor
+    call firstfloor    #After the prologue, we go to the first floor
     #call secondfloor   #Then the 2nd floor
     #call thirdfloor    #Then the 3rd floor
 
     #Tada! Story is done!
 
     #Debugging Things:
-    scene bg fronthall with fade
-    call huntmodestart #Testing our hunt mode
+    #scene bg fronthall with fade
+    #call huntmodestart #Testing our hunt mode
     #call shootfix #Testing our hunt mode
     #call begin_TutRPG #Testing our Battle Mode
     #jump introToWitch #for debugging
