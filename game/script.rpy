@@ -11,7 +11,7 @@ label start:
 
 
     #Debugging each chapter
-    call firstfloor    #After the prologue, we go to the first floor
+    #call firstfloor    #After the prologue, we go to the first floor
     #call secondfloor   #Then the 2nd floor
     #call thirdfloor    #Then the 3rd floor
 

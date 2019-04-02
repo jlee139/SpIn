@@ -15,7 +15,7 @@ label prologue:
 
     nvl clear
 
-    nvlmc "…"
+    nvlmc "..."
     nvlmc "Those days are long gone now."
     nvlmc "And some things are precious because you can't ever get them back."
 
@@ -81,12 +81,12 @@ label prologue:
         "Answer what you can":
             show blueapprove at appsprite
             $ blueap+= 1
-            "Something like that. It's been what? Two years for the three of us?"
-            blue "Nearly two years. Three more months, and it'll be our anni."
+            "Something like that. It's been what? Almost a year for the three of us?"
+            blue "Yup. Three more months, and it'll be our anni."
             "(He looks way too happy. I hope he's not planning on baking...)"
         "Answer honestly" if trueend:
             $ bossap+= 1
-            "About two years with these guys. But before that, I worked together with the former Red. Ah, you'll probably recognize his name as 'Boss.'"
+            "About a year with these guys. But before that, I worked together with the former Red. Ah, you'll probably recognize his name as 'Boss.'"
             rookie "Is that...?"
             blue "If you're thinking the one who recruited most of us and formed our Supernatural Invesgitation group by giving it the silly name of 'SpIn,' you are correct."
             rookie "I don't think I've met him."
