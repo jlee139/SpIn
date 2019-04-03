@@ -288,12 +288,13 @@ label firstambushed:
         alpha 0.5
 
     #Ability to skip the tutorial if you've already played through at least once
-    menu if endingct > 0:
-        "Would you like to skip the tutorial battle?"
-        "Yes":
-            jump introToWitch
-        "No":
-            jump firstambushedcont
+    if endingct > 0:
+        menu:
+            "Would you like to skip the tutorial battle?"
+            "Yes":
+                jump introToWitch
+            "No":
+                jump firstambushedcont
 
 label firstambushedcont:
     show r temp at center with dissolve
@@ -446,6 +447,7 @@ label introToWitch:
     window hide
 
     #FOX CG
+    $quick_menu = False
     scene cg foxreveal with fade
     pause 1.0
     scene bg fronthall with fade
@@ -454,6 +456,7 @@ label introToWitch:
     show particleFog1:
         alpha 0.5
 
+    $quick_menu = True
     witch "You think a little form change is enough? "
     "(It looks like she's gathering her energy for a bigger blast. Then I'll just cut her off before she releases!)"
 

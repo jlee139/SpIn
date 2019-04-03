@@ -65,6 +65,7 @@ label begin_TutRPG:
     $redatk = 10
     $beastmode = False #To keep track of damages in beast mode
     $showwincond = False #Keep track of whether or not we've seen the win condition
+    $quick_menu = False
 
     window hide
 
@@ -244,6 +245,7 @@ label wincondition:
     $showwincond = True
     scene black
     "You defeated the enemy!"
+    $quick_menu = True
     return
 
 return

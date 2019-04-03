@@ -358,50 +358,40 @@ screen main_menu():
     add gui.main_menu_background
 
     ## This empty frame darkens the main menu.
-    frame:
-        pass
+    #frame:
+    #    pass
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
-    use navigation
+    #use navigation
 
-    if gui.show_name:
+    #if gui.show_name:
 
-        vbox:
-            text "[config.name!t]":
-                style "main_menu_title"
+    #    vbox:
+    #        text "[config.name!t]":
+    #            style "main_menu_title"
 
             #text "[config.version]":
                 #style "main_menu_version"
 
 
-style main_menu_frame is empty
-style main_menu_vbox is vbox
-style main_menu_text is gui_text
-style main_menu_title is main_menu_text
-style main_menu_version is main_menu_text
+    #How to make an imagemap Menu by OokamiKasumi (https://lemmasoft.renai.us/forums/viewtopic.php?f=51&t=20720)
+    imagemap:
+        ground "gui/menu-disabled.png"
+        hover "gui/menu-hover.png"
+        idle "gui/menu-click.png"
 
-style main_menu_frame:
-    xsize 280
-    yfill True
+        alpha False
 
-    background "gui/overlay/main_menu.png"
+        hotspot (1090, 336, 150, 46) action Start()
+        hotspot (1106, 394, 136, 46) action ShowMenu("load")
+        hotspot (924, 451, 317, 46) action ShowMenu("preferences")
+        hotspot (1068, 510, 174, 46) action ShowMenu("about")
+        if endingct > 0:
+            hotspot (1087, 566, 155, 46) action ShowMenu("extra")
+        hotspot (1122, 625, 122, 46) action Quit(confirm=False)
 
-style main_menu_vbox:
-    xalign 1.0
-    xoffset -20
-    xmaximum 800
-    yalign 1.0
-    yoffset -20
 
-style main_menu_text:
-    properties gui.text_properties("main_menu", accent=True)
-
-style main_menu_title:
-    properties gui.text_properties("title")
-
-style main_menu_version:
-    properties gui.text_properties("version")
 
 
 ## Game Menu screen ############################################################

@@ -110,6 +110,7 @@ label endhuntreport:
     #escape nvl mode
     nvl clear
     window hide
+    $quick_menu = True
     return
 
 
@@ -119,6 +120,7 @@ label huntmodestart:
     $numskele = 0
     $numchests =0
     $numoftries = 12
+    $quick_menu = False
     window hide
 
     call huntmode

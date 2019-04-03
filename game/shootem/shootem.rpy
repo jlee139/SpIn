@@ -69,6 +69,7 @@ screen ghoster():
 
 label shootfix:
     #"Hi. We're going to try this again."
+    $quick_menu = False
     window hide
     call startshootem
     return
@@ -111,6 +112,8 @@ label battleready:
     #escape nvl mode
     nvl clear
     window hide
+
+    $quick_menu = True
 
     return
 
