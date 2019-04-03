@@ -269,7 +269,7 @@ screen quick_menu():
                     hover "gui/quickmenu/adv-auto-push.png"
                     insensitive "gui/quickmenu/adv-auto-none.png"
                     selected_idle "gui/quickmenu/adv-auto-push.png"
-                    selected_hover "gui/quickmenu/adv-auto.png"
+                    selected_hover "gui/quickmenu/adv-auto-push.png"
                     action Preference("auto-forward", "toggle")
 
                 imagebutton: #Save
@@ -305,7 +305,7 @@ screen quick_menu():
                     hover "gui/quickmenu/nvl-auto-push.png"
                     insensitive "gui/quickmenu/nvl-auto-none.png"
                     selected_idle "gui/quickmenu/nvl-auto-push.png"
-                    selected_hover "gui/quickmenu/nvl-auto.png"
+                    selected_hover "gui/quickmenu/nvl-auto-push.png"
                     action Preference("auto-forward", "toggle")
 
                 imagebutton: #Save
