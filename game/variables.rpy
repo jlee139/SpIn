@@ -50,6 +50,9 @@ init python:
     bluewith = True
     rookiewith = True
 
+    #NVL vs ADV Screen Boolean
+    nvl_showing = False
+
     #Ending Variables
     trueend = False #Activated when player has unlocked everything
     greenend = False #Activated when player has unlocked green's happy end

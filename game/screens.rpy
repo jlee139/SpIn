@@ -246,20 +246,77 @@ screen quick_menu():
 
     if quick_menu:
 
-        hbox:
-            style_prefix "quick"
+        #For ADV Quick Menu
+        if nvl_showing == False:
+            hbox:
+                style_prefix "quick"
 
-            xalign 0.5
-            yalign 1.0
+                xalign 0.833
+                yalign 0.725
 
-            #textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            #textbutton _("Q.Save") action QuickSave()
-            #textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+                imagebutton: #History
+                    idle "gui/quickmenu/adv-log.png"
+                    hover "gui/quickmenu/adv-log-push.png"
+                    action ShowMenu('history')
+
+                imagebutton: #Skip
+                    idle "gui/quickmenu/adv-skip.png"
+                    hover "gui/quickmenu/adv-skip-push.png"
+                    action Skip() alternate Skip(fast=True, confirm=True)
+
+                imagebutton: #Auto
+                    idle "gui/quickmenu/adv-auto.png"
+                    hover "gui/quickmenu/adv-auto-push.png"
+                    insensitive "gui/quickmenu/adv-auto-none.png"
+                    selected_idle "gui/quickmenu/adv-auto-push.png"
+                    selected_hover "gui/quickmenu/adv-auto.png"
+                    action Preference("auto-forward", "toggle")
+
+                imagebutton: #Save
+                    idle "gui/quickmenu/adv-save.png"
+                    hover "gui/quickmenu/adv-save-push.png"
+                    action ShowMenu('save')
+
+                imagebutton: #Prefs
+                    idle "gui/quickmenu/adv-pref.png"
+                    hover "gui/quickmenu/adv-pref-push.png"
+                    action ShowMenu('preferences')
+
+        #For NVL Quick Menu
+        else:
+            vbox:
+                style_prefix "quick"
+
+                xalign 0.163
+                yalign 0.2
+
+                imagebutton: #History
+                    idle "gui/quickmenu/nvl-log.png"
+                    hover "gui/quickmenu/nvl-log-push.png"
+                    action ShowMenu('history')
+
+                imagebutton: #Skip
+                    idle "gui/quickmenu/nvl-skip.png"
+                    hover "gui/quickmenu/nvl-skip-push.png"
+                    action Skip() alternate Skip(fast=True, confirm=True)
+
+                imagebutton: #Auto
+                    idle "gui/quickmenu/nvl-auto.png"
+                    hover "gui/quickmenu/nvl-auto-push.png"
+                    insensitive "gui/quickmenu/nvl-auto-none.png"
+                    selected_idle "gui/quickmenu/nvl-auto-push.png"
+                    selected_hover "gui/quickmenu/nvl-auto.png"
+                    action Preference("auto-forward", "toggle")
+
+                imagebutton: #Save
+                    idle "gui/quickmenu/nvl-save.png"
+                    hover "gui/quickmenu/nvl-save-push.png"
+                    action ShowMenu('save')
+
+                imagebutton: #Prefs
+                    idle "gui/quickmenu/nvl-pref.png"
+                    hover "gui/quickmenu/nvl-pref-push.png"
+                    action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -1283,6 +1340,10 @@ style notify_text:
 
 
 screen nvl(dialogue, items=None):
+
+    #To set quickmenu
+    on "show" action SetVariable("nvl_showing", True)
+    on "hide" action SetVariable("nvl_showing", False)
 
     window:
         style "nvl_window"

@@ -25,25 +25,6 @@ label start:
     #call begin_TutRPG #Testing our Battle Mode
     #jump introToWitch #for debugging
 
-
-    #Rando Scenes to Test our Quick Menus
-    show g temp at right with dissolve
-    green "By the way, Rookie, you know that the whole 'SpIn' thing is a joke, right? No one actually calls us that."
-    show r temp at center with dissolve
-    rookie "... I... was not aware."
-    show bl temp at left with dissolve
-    blue "How many times do I have to tell you to stop confusing people? It's not a joke. SpIn is silly sounding, but it is still our name."
-
-    nvl clear
-    window show
-
-    nvlmc "On one such mission, we were interrupted by a witch. Since what we were taking care of at the time was time sensitive, we decided to ignore that witch for the time being to complete the mission."
-    nvlmc "That was our mistake."
-
-    window hide
-
-
-
     scene black
     #"That's the end of the demo. Thank you!"
 
