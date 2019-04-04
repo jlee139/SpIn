@@ -1,4 +1,6 @@
 #Blue route here
+label secblue:
+    show blueapprove at appsprite
 
 
 

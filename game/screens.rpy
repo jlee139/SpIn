@@ -379,6 +379,9 @@ screen navigation():
 
         textbutton _("About") action ShowMenu("about")
 
+        if endingct > 0:
+            textbutton _("Extra") action MainMenu()
+
         if renpy.variant("pc"):
 
             ## Help isn't necessary or relevant to mobile devices.
@@ -606,7 +609,7 @@ screen about():
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("{size=-10}Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]{/size}")
 
 
 ## This is redefined in options.rpy to add text to the about screen.
@@ -646,7 +649,7 @@ screen load():
 
 screen file_slots(title):
 
-    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
+    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"))
 
     use game_menu(title):
 
@@ -709,9 +712,6 @@ screen file_slots(title):
 
                 if config.has_autosave:
                     textbutton _("{#auto_page}A") action FilePage("auto")
-
-                if config.has_quicksave:
-                    textbutton _("{#quick_page}Q") action FilePage("quick")
 
                 ## range(1, 10) gives the numbers from 1 to 9.
                 for page in range(1, 10):
@@ -777,13 +777,6 @@ screen preferences():
                         label _("Display")
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
-
-                vbox:
-                    style_prefix "radio"
-                    label _("Rollback Side")
-                    textbutton _("Disable") action Preference("rollback side", "disable")
-                    textbutton _("Left") action Preference("rollback side", "left")
-                    textbutton _("Right") action Preference("rollback side", "right")
 
                 vbox:
                     style_prefix "check"

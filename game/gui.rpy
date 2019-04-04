@@ -353,7 +353,7 @@ define gui.history_name_xalign = 1.0
 
 ## The position, width, and alignment of the dialogue text.
 define gui.history_text_xpos = 170
-define gui.history_text_ypos = 2
+define gui.history_text_ypos = 1
 define gui.history_text_width = 740
 define gui.history_text_xalign = 0.0
 

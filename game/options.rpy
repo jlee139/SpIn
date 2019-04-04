@@ -30,7 +30,19 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
-A group of Supernatural Investigators have been asked to look into the mystery behind a haunted mansion.
+A group of Supernatural Investigators have been tasked to look into the mystery behind a haunted mansion.
+
+{b}Story Mode{/b}
+This is about 95% of the game. If you are not interested in reading a story, then it is highly recommended that you do not play this.
+
+{b}Shoot Mode{/b}
+To get to the Battle Mode, you must first store your energy by "shooting" down as many spirits and creatures as you can find in the 15 second time span.
+
+{b}Hunt Mode{/b}
+You have 12 chances to investigate a location in hopes of finding a treasure chest. 
+
+{b}Battle Mode{/b}
+In order to defeat the various ghosts and spirits that reside in this mansion, you must fight the boss of each area in a rpg style battle.
 """)
 
 
