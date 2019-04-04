@@ -43,6 +43,9 @@ image r temp = "rookie/rookietemp.png"
 #witch
 image w temp = "witch/witchsprite.png"
 
+#butler
+image but temp = ""
+
 #Boss Battle Sprites
 image battlew full = "battlemode/witch_tut_beg.png"
 image battlew half = "battlemode/witch_tut_mid.png"

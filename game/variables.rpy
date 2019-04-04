@@ -103,5 +103,7 @@ define rookie = Character('Rookie', color="#6B0B94", callback=RaiseImage("r"), w
 define boss = Character('Boss', color="#A00303", callback=RaiseImage("bs"), window_background="gui/textbox-red.png")
 define prewitch = Character('???', color="#555555", callback=RaiseImage("w"), window_background="gui/textbox-witch.png")
 define witch = Character('Witch', color="#555555", callback=RaiseImage("w"), window_background="gui/textbox-witch.png")
+define prebut = Character('???', color="#555555", callback=RaiseImage("but"), window_background="gui/textbox-witch.png")
+define butler = Character('Butler', color="#555555", callback=RaiseImage("but"), window_background="gui/textbox-witch.png")
 
 default mouse_xy = (0, 0)
