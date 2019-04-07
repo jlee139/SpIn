@@ -1,6 +1,9 @@
 label secondfloor: #2nd chapter start!
     #First, we have the children joking around
-    #scene bg stairway with fade
+    window hide
+    scene bg stairway with fade
+    show particleFog1:
+        alpha 0.5
 
     show g temp at right with dissolve
     green "By the way, Rookie, you know that the whole 'SpIn' thing is a joke, right? No one actually calls us that."
@@ -75,7 +78,10 @@ label secondfloor: #2nd chapter start!
     nvlmc "We climb up the stairs to the second floor. The wood of the mansion look old and rickety. To be honest, I’m shocked that they can hold our weight. "
 
     window hide
-    #scene bg upstairsent with fade
+    scene bg threedoors with fade
+
+    show particleFog1:
+        alpha 0.5
 
     window show
 
@@ -87,7 +93,9 @@ label secondfloor: #2nd chapter start!
     nvl clear
     window hide
 
+    show bl temp at left with dissolve
     blue "Looks like they’re welcoming us with a trap."
+    show g temp at right with dissolve
     green "Nothing we’re not used to."
     "Since there’s three doors, one of us should double up."
     "(I want to tell Rookie to stay behind. But I don’t think he’ll listen to me if I say it.)"
@@ -96,6 +104,7 @@ label secondfloor: #2nd chapter start!
     green "Can’t have our precious tank get a boo-boo. "
     "Ugh. You have the worst phrasing."
     blue "But it’s the truth. It’ll be best that you pick someone you feel the most comfortable fighting alongside."
+    show r temp at center with dissolve
     rookie "Sounds good to me."
 
     menu:

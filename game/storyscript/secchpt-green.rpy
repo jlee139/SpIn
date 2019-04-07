@@ -43,8 +43,12 @@ label secgreen:
     nvlmc "I allow Green to enter first to establish his Zone before following after him. It’s something that we’ve talked about before. Despite the fact that I’d be able to react much faster than him if this turned out to be a trap, he prefers that I put in an extra effort to save him by going first. "
     nvlmc "He likes to insist that he can establish his Zone faster than I can react to a trap, all because of this one mission. He refuses to acknowledge that it was because he tripped me."
     nvlmc "Just as I thought about that time, I hear Green’s panicked voice call out to me. Tch. No time to rest, huh?"
+    scene black
     nvlmc "I rush in to help him. But even in my haste, I notice the door slamming shut behind me. Guess Blue and Rookie will be on their own. I hope they’ll be okay."
     nvlmc "But I have no time to waste on thinking about them. I need to find Green. The thick cigarette smoke makes it hard to smell or see. But there’s still one more trick up my sleeve."
+
+    show particleFog1:
+        alpha 0.8
 
     #escape nvl mode
     nvl clear
@@ -57,11 +61,13 @@ label secgreen:
         "I’ll go with you to that concert you talked about!":
             "..."
             "(Did it not work?)"
+            show g temp at center with dissolve
             green "Hey… Didn’t I already tell you? Someone with zero music sense like you will never fit in at a concert."
             "(I guess it worked. But why does he look so mad?)"
             $ greenap-= 1
         "I know who broke your favorite figurine!":
             "(Ugh. What horrid stench. That must be-)"
+            show g temp at center with dissolve
             green "Who was it? It was that damned Zero, wasn’t it?"
             "(... his cigarette.)"
             "(Sorry, Zero! I’ll make it up to you when we see each other again!)"

@@ -21,6 +21,10 @@ image bg mansionentrance = "background/mansionentrance.png"
 image bg fronthall = "background/fronthall.png"
 image bg portrait = "background/portrait.png"
 image bg diningroom = "background/diningroom.png"
+image bg stairway = "background/stairway.png"
+image bg threedoors = "background/threedoors.png"
+image bg greenroom = "background/greenroom.png"
+
 
 #CGs to be Used
 image cg foxreveal = "cg/fox.png"
@@ -44,7 +48,7 @@ image r temp = "rookie/rookietemp.png"
 image w temp = "witch/witchsprite.png"
 
 #butler
-image but temp = ""
+#image but temp = ""
 
 #Boss Battle Sprites
 image battlew full = "battlemode/witch_tut_beg.png"
