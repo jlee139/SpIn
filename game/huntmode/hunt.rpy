@@ -3,18 +3,18 @@ transform disappeardeath:
     yalign 0.5
     alpha 1
     parallel:
-        linear 0.3 yoffset -100
+        linear 1.0 yoffset -100
     parallel:
-        linear 0.3 alpha 0
+        linear 1.0 alpha 0
 
 transform celebrationchest:
     xalign 0.5
     yalign 0.3
     alpha 0
     parallel:
-        linear 0.3 yoffset 100
+        linear 1.0 yoffset 100
     parallel:
-        linear 0.3 alpha 1
+        linear 1.0 alpha 1
 
 screen huntmodeset():
     grid 4 3:
@@ -24,53 +24,65 @@ screen huntmodeset():
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
-            action Call('calcperct')
+            insensitive "huntmode/selectarea_none.png"
+            action If(butt1 == True, [SetVariable("butt1", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
-            action Call('calcperct')
+            insensitive "huntmode/selectarea_none.png"
+            action If(butt2 == True, [SetVariable("butt2", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
-            action Call('calcperct')
+            insensitive "huntmode/selectarea_none.png"
+            action If(butt3 == True, [SetVariable("butt3", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
-            action Call('calcperct')
+            insensitive "huntmode/selectarea_none.png"
+            action If(butt4 == True, [SetVariable("butt4", False), Call('calcperct')], None)
 
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
-            action Call('calcperct')
+            insensitive "huntmode/selectarea_none.png"
+            action If(butt5 == True, [SetVariable("butt5", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
-            action Call('calcperct')
+            insensitive "huntmode/selectarea_none.png"
+            action If(butt6 == True, [SetVariable("butt6", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
-            action Call('calcperct')
+            insensitive "huntmode/selectarea_none.png"
+            action If(butt7 == True, [SetVariable("butt7", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
-            action Call('calcperct')
+            insensitive "huntmode/selectarea_none.png"
+            action If(butt8 == True, [SetVariable("butt8", False), Call('calcperct')], None)
 
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
-            action Call('calcperct')
+            insensitive "huntmode/selectarea_none.png"
+            action If(butt9 == True, [SetVariable("butt9", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
-            action Call('calcperct')
+            insensitive "huntmode/selectarea_none.png"
+            action If(butt10 == True, [SetVariable("butt10", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
-            action Call('calcperct')
+            insensitive "huntmode/selectarea_none.png"
+            action If(butt11 == True, [SetVariable("butt11", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
-            action Call('calcperct')
+            insensitive "huntmode/selectarea_none.png"
+            action If(butt12 == True, [SetVariable("butt12", False), Call('calcperct')], None)
 
     frame:
         xpadding 10
@@ -80,8 +92,6 @@ screen huntmodeset():
         yalign 0.95
         hbox:
             spacing 50
-            vbox:
-                text "[numoftries] tries left."
             vbox:
                 text "You found [numwisps] wisp(s)."
                 text "You found [numghosts] ghost(s)."
@@ -122,6 +132,19 @@ label huntmodestart:
     $numoftries = 12
     $quick_menu = False
     window hide
+
+    $butt1 = True
+    $butt2 = True
+    $butt3 = True
+    $butt4 = True
+    $butt5 = True
+    $butt6 = True
+    $butt7 = True
+    $butt8 = True
+    $butt9 = True
+    $butt10 = True
+    $butt11 = True
+    $butt12 = True
 
     call huntmode
 

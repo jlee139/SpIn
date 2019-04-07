@@ -1,24 +1,52 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/imagedef.rpy", line 47, in script
-    image but temp = ""
-Exception: An empty string cannot be used as a displayable.
+After initialization, but before game start.
+  File "game/huntmode/hunt.rpy", line 19, in prepare_screen
+    screen huntmodeset():
+  File "game/huntmode/hunt.rpy", line 19, in prepare
+    screen huntmodeset():
+  File "game/huntmode/hunt.rpy", line 20, in prepare
+    grid 4 3:
+  File "game/huntmode/hunt.rpy", line 20, in prepare
+    grid 4 3:
+  File "game/huntmode/hunt.rpy", line 24, in prepare
+    imagebutton:
+  File "game/huntmode/hunt.rpy", line 24, in prepare
+    imagebutton:
+SyntaxError: non-keyword arg after keyword arg (game/huntmode/hunt.rpy, line 27)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/imagedef.rpy", line 47, in script
-    image but temp = ""
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\ast.py", line 984, in execute
-    renpy.exports.image(self.imgname, img)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\exports.py", line 366, in image
-    d = renpy.easy.displayable(d)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\easy.py", line 108, in displayable
-    raise Exception("An empty string cannot be used as a displayable.")
-Exception: An empty string cannot be used as a displayable.
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\bootstrap.py", line 313, in bootstrap
+    renpy.main.main()
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\main.py", line 513, in main
+    run(restart)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\main.py", line 90, in run
+    renpy.display.screen.prepare_screens()
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\screen.py", line 909, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/huntmode/hunt.rpy", line 19, in prepare_screen
+    screen huntmodeset():
+  File "game/huntmode/hunt.rpy", line 19, in prepare
+    screen huntmodeset():
+  File "game/huntmode/hunt.rpy", line 20, in prepare
+    grid 4 3:
+  File "game/huntmode/hunt.rpy", line 20, in prepare
+    grid 4 3:
+  File "game/huntmode/hunt.rpy", line 24, in prepare
+    imagebutton:
+  File "game/huntmode/hunt.rpy", line 24, in prepare
+    imagebutton:
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\pyanalysis.py", line 700, in ast_eval
+    return self.ast_eval_literal(expr)[0]
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\pyanalysis.py", line 684, in ast_eval_literal
+    expr = py_compile(expr, 'eval', ast_node=True)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\python.py", line 674, in py_compile
+    raise e
+SyntaxError: non-keyword arg after keyword arg (game/huntmode/hunt.rpy, line 27)
 
 Windows-8-6.2.9200
 Ren'Py 7.1.3.1092
 SpIn 1.0
-Fri Apr 05 13:23:05 2019
+Sun Apr 07 14:46:07 2019
