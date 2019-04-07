@@ -56,7 +56,7 @@ screen battleui():
 
 #For Tutorial Battle
 label begin_TutRPG:
-    $numturns = 20 #This is for debugging. Remember to turn this off!!
+    #$numturns = 20 #This is for debugging. Remember to turn this off!!
     $bosshp = 80
     $bossmaxhp = 80
     $turnnum = 0 #To determine whose turn it is

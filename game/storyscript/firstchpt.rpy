@@ -311,18 +311,35 @@ label firstambushedcont:
     hide bl temp
     hide g temp
 
-    #Explain Shoot Mode
+    # #Explain Shoot Mode
+    # #NVL Mode
+    # window show
+    # nvlmc "How lucky for us there's so many creatures for me to eat. But from the way they're swarming, it feels like there's going to be a big boss that'll appear soon."
+    # nvlmc "Guess I better eat as much as I can before they appear. It's always good to reduce enemy numbers. Besides, eating them will also boost my own strength, too. Win-win, if you will."
+    # nvlmc "Make sure to click as many creatures as you can before the boss appears, alright?"
+    #
+    # #end nvl
+    # nvl clear
+    # window hide
+    #
+    # call shootfix #Our Shoot Mode
+
+
+    #Explain Hunt Mode
     #NVL Mode
     window show
-    nvlmc "How lucky for us there's so many creatures for me to eat. But from the way they're swarming, it feels like there's going to be a big boss that'll appear soon."
-    nvlmc "Guess I better eat as much as I can before they appear. It's always good to reduce enemy numbers. Besides, eating them will also boost my own strength, too. Win-win, if you will."
-    nvlmc "Make sure to click as many creatures as you can before the boss appears, alright?"
+
+    nvlmc "Almost as if understanding that standing in my way will get them eliminated, the ghosts hide."
+    nvlmc "Do they think such a childish method will keep them safe from me? I honestly hate being underestimated like this. Although I wasn't planning on it, this is pretty much begging me to be petty. They clearly want to be completely eradicated, you know?"
+    nvlmc "Until I run out of space to look, I'll search through every nook and cranny until I've found them all."
+    nvlmc "I have zero intention of letting any of them get away."
 
     #end nvl
     nvl clear
     window hide
+    #Call Hunt Mode
+    call huntmodestart
 
-    call shootfix #Our Shoot Mode
     scene bg fronthall with fade
     #Turn on our fog
     show particleFog1:

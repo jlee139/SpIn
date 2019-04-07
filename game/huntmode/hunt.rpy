@@ -3,18 +3,18 @@ transform disappeardeath:
     yalign 0.5
     alpha 1
     parallel:
-        linear 1.0 yoffset -100
+        linear 0.8 yoffset -100
     parallel:
-        linear 1.0 alpha 0
+        linear 0.8 alpha 0
 
 transform celebrationchest:
     xalign 0.5
     yalign 0.3
     alpha 0
     parallel:
-        linear 1.0 yoffset 100
+        linear 0.8 yoffset 100
     parallel:
-        linear 1.0 alpha 1
+        linear 0.8 alpha 1
 
 screen huntmodeset():
     grid 4 3:
@@ -107,15 +107,15 @@ label endhuntreport:
     window show
 
     nvlmc "Your Progress Report:"
-    nvlmc "You found [numwisps] wisp(s). That gives you [numwisps] turn(s)."
+    nvlmc "You found [numwisps] wisp(s). That gives you [numwisps] energy."
     $calcghost = numghosts*2
-    nvlmc "You found [numghosts] ghost(s). That gives you [calcghost] more turn(s)."
+    nvlmc "You found [numghosts] ghost(s). That gives you [calcghost] more energy."
     $calcskele = numskele*5
-    nvlmc "You found [numskele] skeleton(s). That gives you [calcskele] more turn(s)."
+    nvlmc "You found [numskele] skeleton(s). That gives you [calcskele] more energy."
     $calcchest = numchests*10
-    nvlmc "You found [numchests] chest(s). That gives you [calcchest] more turn(s)."
+    nvlmc "You found [numchests] chest(s). That gives you [calcchest] more energy."
     $numturns = numwisps + calcghost + calcskele+calcchest
-    nvlmc "You have total of [numturns] turns for the upcoming battle."
+    nvlmc "You have total of [numturns] energy for the upcoming battle."
 
     #escape nvl mode
     nvl clear
