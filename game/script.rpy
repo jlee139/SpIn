@@ -2,10 +2,6 @@
 
 # The game starts here.
 label start:
-
-    #First thing first, get the Player's name
-    #$ mcname = renpy.input("Enter your name")
-
     #Then We start the story!
     #call prologue      #Start us up with the prologue of the story
 
@@ -19,11 +15,11 @@ label start:
 
     #Debugging Things:
     #scene bg fronthall with fade
-    #window hide
-    call huntmodestart #Testing our hunt mode
+    window hide
+    #call huntmodestart #Testing our hunt mode
     #call shootfix #Testing our hunt mode
     #call begin_TutRPG #Testing our Battle Mode
-    #jump secgreen #for debugging
+    jump breakpoint #for debugging
 
     #scene black
     #"That's the end of the demo. Thank you!"

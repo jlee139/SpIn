@@ -36,7 +36,7 @@ label prologue:
     rookie "Sorry. I am still not used to this."
 
     menu:
-        "Thanks for watching out for me."
+        advmc "Thanks for watching out for me."
         "Offer to reiterate code names":
             show allappsprite
             #show rookieapprove at appsprite
@@ -57,66 +57,66 @@ label prologue:
     green "Rookie. You haven't earned your color yet. Until you can prove yourself, you'll be Rookie."
     rookie "..."
     green "What? Got a problem with it?"
-    "Don't mind him. He's just cranky because he's threatened by your presence."
+    advmc "Don't mind him. He's just cranky because he's threatened by your presence."
     green "Don't tell him misleading things! Listen here, Rookie. Our job as Supernatural Investigator is dangerous. One wrong move and we can die or worse, end up cursed. The easiest way to get cursed is by handing your name over carelessly."
-    "Oh wow. You actually sound smart for once!"
+    advmc "Oh wow. You actually sound smart for once!"
     blue "He's just paraphrasing everything I told him. How is that impressive?"
-    "But look, it actually sunk in this time. You only told him that for every mission we went on."
+    advmc "But look, it actually sunk in this time. You only told him that for every mission we went on."
     rookie "Have you guys been together long?"
 
     menu:
-        "(Together, huh? What a sore topic to ask.)"
+        advmc "(Together, huh? What a sore topic to ask.)"
         "Reassure him":
             show rookieapprove at appsprite
             $ rookieap+= 1
-            "Don't worry. You'll fit in in no time."
+            advmc "Don't worry. You'll fit in in no time."
             rookie "I see."
-            "(He got really quiet. Did I say the wrong thing?)"
+            advmc "(He got really quiet. Did I say the wrong thing?)"
         "Dodge the question":
             show greenapprove at appsprite
             $ greenap+= 1
-            "I guess? I don't really remember."
+            advmc "I guess? I don't really remember."
             green "Maybe you should stop getting hit on the head so often, eh?"
-            "No one asked you!"
+            advmc "No one asked you!"
         "Answer what you can":
             show blueapprove at appsprite
             $ blueap+= 1
-            "Something like that. It's been what? Almost a year for the three of us?"
+            advmc "Something like that. It's been what? Almost a year for the three of us?"
             blue "Yup. Three more months, and it'll be our anni."
-            "(He looks way too happy. I hope he's not planning on baking...)"
+            advmc "(He looks way too happy. I hope he's not planning on baking...)"
         "Answer honestly" if trueend:
             $ bossap+= 1
-            "About a year with these guys. But before that, I worked together with the former Red. Ah, you'll probably recognize his name as 'Boss.'"
+            advmc "About a year with these guys. But before that, I worked together with the former Red. Ah, you'll probably recognize his name as 'Boss.'"
             rookie "Is that...?"
             blue "If you're thinking the one who recruited most of us and formed our Supernatural Invesgitation group by giving it the silly name of 'SpIn,' you are correct."
             rookie "I don't think I've met him."
             green "..."
             blue "..."
             rookie "?"
-            "You'll meet him later."
+            advmc "You'll meet him later."
             green "Red, you..."
-            "Rookie will meet him later."
+            advmc "Rookie will meet him later."
 
     blue "Now then, do we need to go over what the mission is?"
     green "Hey, why're you looking at me for?!"
-    "Don't know. Why're you such an idiot?"
+    advmc "Don't know. Why're you such an idiot?"
     green "Why you-"
     rookie "It's to investigate this mansion and to rid of any malicious spirits residing here."
     blue "At least one of you were paying attention to the briefing. Here, have a candy."
-    "You're not that much older than us. Stop treating us like children."
+    advmc "You're not that much older than us. Stop treating us like children."
     green "That's not fair! I want candy!"
     blue "As you were saying, Red?"
-    "... Are we going to be okay with this mission...?"
+    advmc "... Are we going to be okay with this mission...?"
 
     if trueend:
         scene bg office memory with fade
 
         boss "Hahahaha! Relax a bit, Red! If you're that tense, you'll end up hurting yourself."
-        "Your code name is Red! That's your name! How many times do I have to tell that to you?!"
+        advmc "Your code name is Red! That's your name! How many times do I have to tell that to you?!"
         boss "T-that was a joke! Don't be mad! I was trying to make you laugh."
-        "A joke should be funny. You have zero tact!"
+        advmc "A joke should be funny. You have zero tact!"
         boss "Don't be like that! C'mon, just smile a little for me? Please, Silver?"
-        "My code name is Gray! You came up with it!"
+        advmc "My code name is Gray! You came up with it!"
         boss "I'm telling you, it's a joke!"
 
         #turn nvl back on

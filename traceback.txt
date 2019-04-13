@@ -1,52 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/huntmode/hunt.rpy", line 19, in prepare_screen
-    screen huntmodeset():
-  File "game/huntmode/hunt.rpy", line 19, in prepare
-    screen huntmodeset():
-  File "game/huntmode/hunt.rpy", line 20, in prepare
-    grid 4 3:
-  File "game/huntmode/hunt.rpy", line 20, in prepare
-    grid 4 3:
-  File "game/huntmode/hunt.rpy", line 24, in prepare
-    imagebutton:
-  File "game/huntmode/hunt.rpy", line 24, in prepare
-    imagebutton:
-SyntaxError: non-keyword arg after keyword arg (game/huntmode/hunt.rpy, line 27)
+While running game code:
+  File "game/storyscript/secchpt-green.rpy", line 526, in script
+    show but temp at center with begone
+Exception: Parameter 'new_widget' is not known by ATL Transform.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\bootstrap.py", line 313, in bootstrap
-    renpy.main.main()
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\main.py", line 513, in main
-    run(restart)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\main.py", line 90, in run
-    renpy.display.screen.prepare_screens()
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\screen.py", line 909, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/huntmode/hunt.rpy", line 19, in prepare_screen
-    screen huntmodeset():
-  File "game/huntmode/hunt.rpy", line 19, in prepare
-    screen huntmodeset():
-  File "game/huntmode/hunt.rpy", line 20, in prepare
-    grid 4 3:
-  File "game/huntmode/hunt.rpy", line 20, in prepare
-    grid 4 3:
-  File "game/huntmode/hunt.rpy", line 24, in prepare
-    imagebutton:
-  File "game/huntmode/hunt.rpy", line 24, in prepare
-    imagebutton:
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\pyanalysis.py", line 700, in ast_eval
-    return self.ast_eval_literal(expr)[0]
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\pyanalysis.py", line 684, in ast_eval_literal
-    expr = py_compile(expr, 'eval', ast_node=True)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\python.py", line 674, in py_compile
-    raise e
-SyntaxError: non-keyword arg after keyword arg (game/huntmode/hunt.rpy, line 27)
+  File "game/storyscript/secchpt-green.rpy", line 526, in script
+    show but temp at center with begone
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\ast.py", line 1356, in execute
+    renpy.exports.with_statement(trans, paired)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\exports.py", line 1481, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\core.py", line 2227, in do_with
+    clear=clear)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\core.py", line 2672, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\display\core.py", line 3012, in interact_core
+    new_widget=layers_root)
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\atl.py", line 433, in __call__
+    raise Exception('Parameter %r is not known by ATL Transform.' % k)
+Exception: Parameter 'new_widget' is not known by ATL Transform.
 
 Windows-8-6.2.9200
 Ren'Py 7.1.3.1092
 SpIn 1.0
-Sun Apr 07 14:46:07 2019
+Sat Apr 13 16:35:12 2019

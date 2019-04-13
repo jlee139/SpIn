@@ -48,12 +48,15 @@ image r temp = "rookie/rookietemp.png"
 image w temp = "witch/witchsprite.png"
 
 #butler
-#image but temp = ""
+image but temp = "enemy/butler.png"
 
 #Boss Battle Sprites
 image battlew full = "battlemode/witch_tut_beg.png"
 image battlew half = "battlemode/witch_tut_mid.png"
 image battlew no = "battlemode/witch_tut_final.png"
+image battleb full = "battlemode/butfirst.png"
+image battleb half = "battlemode/butmid.png"
+image battleb no = "battlemode/butlast.png"
 
 #Investigation Sprites
 image ghostdis = "huntmode/ghost_dead.png"
@@ -109,9 +112,9 @@ image healing:
 image dustparticle:
     "shootem/explode.png"
     alpha 0
-    linear 0.05 alpha 0.8
+    linear 0.5 alpha 0.8
     alpha 1
-    linear 0.5 alpha 0.0
+    linear 1.0 alpha 0.0
 
 
 #Whiteflash tweaked from code by Epadder (https://lemmasoft.renai.us/forums/viewtopic.php?t=16604)
@@ -138,15 +141,15 @@ transform appsprite:
     linear 2.0 alpha 0
 
 image allappsprite:
-    "blueapprove.png"
+    "blue/blueapprove.png"
     alpha 1.0
     xalign 0.95 yalign 0.05
     linear 2.0 alpha 0
-    "greenapprove.png"
+    "green/greenapprove.png"
     alpha 1.0
     xalign 0.95 yalign 0.05
     linear 2.0 alpha 0
-    "rookieapprove.png"
+    "rookie/rookieapprove.png"
     alpha 1.0
     xalign 0.95 yalign 0.05
     linear 2.0 alpha 0

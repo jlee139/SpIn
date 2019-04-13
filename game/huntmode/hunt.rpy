@@ -163,25 +163,25 @@ label calcperct:
     if randchance <40:
         #You found wisp
         $numwisps+=1
-        scene black
+        #scene black
         show wispdis at disappeardeath
         "You found a wisp!"
     elif  randchance <80:
         #You found a ghost
         $numghosts+=1
-        scene black
+        #scene black
         show ghostdis at disappeardeath
         "You found a ghost!"
     elif  randchance <=98:
         #You found a skeleton
         $numskele+=1
-        scene black
+        #scene black
         show skeledis at disappeardeath
         "You found a skeleton!"
     elif  randchance >98:
         #You found a chest!
         $numchests+=1
-        scene black
+        #scene black
         show chestfound at celebrationchest
         "You found a chest!"
 

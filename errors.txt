@@ -2,11 +2,29 @@
 errors listed below, and try again.
 
 
-File "game/options.rpy", line 32: EOL while scanning string literal
-(Perhaps you left out a " at the end of the first line.)
-    _p("
-        ^
-    
+File "game/storyscript/secchpt-green.rpy", line 623: expected statement.
+    window hides
+          ^
+
+File "game/storyscript/secchpt-green.rpy", line 659: expected statement.
+    window hides
+          ^
+
+File "game/storyscript/secchpt-green.rpy", line 692: expected statement.
+    window hides
+          ^
+
+File "game/storyscript/secchpt-green.rpy", line 715: expected statement.
+    window hides
+          ^
+
+File "game/storyscript/secchpt-green.rpy", line 720: expected statement.
+    Scene black
+               ^
+
+File "game/storyscript/secchpt-green.rpy", line 733: expected statement.
+    window hides
+          ^
 
 Ren'Py Version: Ren'Py 7.1.3.1092
-Wed Apr 03 16:40:51 2019
+Sat Apr 13 16:24:23 2019

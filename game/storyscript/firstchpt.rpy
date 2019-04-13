@@ -37,7 +37,7 @@ label firstfloor: #set up of the rest of the story
         alpha 0.5
 
     #children being cute now
-    "Ready?"
+    advmc "Ready?"
     show bl temp at left with dissolve
     blue "Want a candy? It'll help you with your nerves."
     show g temp at right with dissolve
@@ -46,24 +46,24 @@ label firstfloor: #set up of the rest of the story
     rookie "I feel fine. But if you are in need of rest, I can carry you."
 
     menu:
-        "(Even Rookie is making fun of me? Just how pathetic do I look?)"
+        advmc "(Even Rookie is making fun of me? Just how pathetic do I look?)"
         "No to both candy and being carried.":
             show blueapprove at appsprite
             $ blueap+= 1
-            "I'm not nervous. Just wanted to cover my bases."
+            advmc "I'm not nervous. Just wanted to cover my bases."
             blue "Got it. But if you change your mind, I have strawberry flavor."
         "I think I'm too nervous to be carried or to eat something.":
             show rookieapprove at appsprite
             $ rookieap+= 1
-            "But thank you for offering anyways. I'll be fine."
+            advmc "But thank you for offering anyways. I'll be fine."
             rookie "You push yourself too much."
         "I'm fine! Like hell I'm getting cold feet!":
             show greenapprove at appsprite
             $ greenap+= 1
-            "I've taken care of harder missions than this plenty of times!"
+            advmc "I've taken care of harder missions than this plenty of times!"
             green "Hah! THat we did!"
 
-    "Let's go!"
+    advmc "Let's go!"
 
     #nvl set up
     scene bg fronthall with fade
@@ -91,29 +91,29 @@ label firstfloor: #set up of the rest of the story
     rookie "Seal? In this big of an area? Would it be effective?"
 
     green "Jeesh, and I thought Red here was pretty air-headed. Pay more attention to others' abilities, won't you?"
-    "Hilarious coming from you. You thought my ability was to make tea!"
+    advmc "Hilarious coming from you. You thought my ability was to make tea!"
     green "Whua-?! How many times do I have to say that it was a joke?"
     blue "Since they're too distracted to be of help, let me explain. I'm not putting up a protection seal. This seal is meant to serve as a prison."
     rookie "Ah. I see. To prevent anyone else from leaving, correct? "
     blue "Very good. You're not a complete lost case. Should I give you a candy as reward?"
     rookie "No thank you. But if the seal prevents them from leaving, does it also keep us in?"
     green "Yup! But it's not like you were planning on leaving in the middle of a mission, were you?"
-    "No need to get nasty."
-    "Rookie, don't worry. No matter how badly things get, I will protect you."
+    advmc "No need to get nasty."
+    advmc "Rookie, don't worry. No matter how badly things get, I will protect you."
     rookie "...!"
-    "(Huh? He looks even more worried now!)"
+    advmc "(Huh? He looks even more worried now!)"
     green "How selfish! You're seriously going to rely on Red to carry through your first mission?"
     blue "Don't you make Red ‘carry' you all the time?"
     green "Hey! That's different! I'm the support type! You can't make someone like me fight!"
     rookie "I believe a healer is also a support type."
-    "Whether you can't fight or you don't want to, it doesn't matter. I will make sure that all of you get out alive. That is my promise to you, my comrades."
+    advmc "Whether you can't fight or you don't want to, it doesn't matter. I will make sure that all of you get out alive. That is my promise to you, my comrades."
     green "Ugh. Way to sap up the conversation."
     rookie "..."
-    "(I can't tell what kind of expression that's supposed to be. Is he happy? Is he annoyed? Does he even care about what I just said?)"
+    advmc "(I can't tell what kind of expression that's supposed to be. Is he happy? Is he annoyed? Does he even care about what I just said?)"
     blue "Well, with that established, can you guys shut up so I can put up the seal?"
 
     menu:
-        "Sorry about that!"
+        advmc "Sorry about that!"
         "Green, I want to check out that room.":
             jump cafeteria
         "Rookie, I'm curious about the portrait over there. Come with me?":
@@ -145,10 +145,10 @@ label cafeteria:
     nvl clear
     window hide
 
-    "Hey, you don't have to move your Zone. Keep it concentrated around Blue."
+    advmc "Hey, you don't have to move your Zone. Keep it concentrated around Blue."
     show g temp at center with dissolve
     green "And if you get ambushed? You're our best fighter. If you go down, none of us have a chance once Blue's seal goes up. So shut up and let me do my job."
-    "Heh. Surprisingly, even you have a soft side, huh?"
+    advmc "Heh. Surprisingly, even you have a soft side, huh?"
     green "If you're done looking, then we should leave!"
 
     #nvl set up
@@ -166,7 +166,7 @@ label cafeteria:
     window hide
 
     green "Hey! Get back here now!"
-    "Are we being attacked? How many?"
+    advmc "Are we being attacked? How many?"
     green "Too many for Rookie and Blue to handle alone. I'll slow them down. Get going!"
 
     jump firstambushed
@@ -175,7 +175,7 @@ label portrait:
     show rookieapprove at appsprite
     $ rookieap+= 1
     rookie "Understood."
-    "Green, I'll leave it to you to protect Blue."
+    advmc "Green, I'll leave it to you to protect Blue."
     green "Yeah, yeah. So annoying."
 
     #nvl set up
@@ -198,16 +198,16 @@ label portrait:
     "Hey, can you help me move the portrait?"
     show r temp at center with dissolve
     rookie "Is that why you asked me to come?"
-    "Who else can I depend on?"
+    advmc "Who else can I depend on?"
     rookie "..."
-    "(Please, I can't read your mind. Say something!)"
+    advmc "(Please, I can't read your mind. Say something!)"
     rookie "I... I was happy that you asked me."
-    "(Did he read my mind...?)"
+    advmc "(Did he read my mind...?)"
     rookie "Three years ago..."
-    "Huh? Three years ago?"
+    advmc "Huh? Three years ago?"
     rookie "I-it is nothing. I will move this for you."
     if trueend:
-        "(Three years ago? Why would he bring something up from that long ago? ... He can't be...?)"
+        advmc "(Three years ago? Why would he bring something up from that long ago? ... He can't be...?)"
 
     #nvl set up
     window show
@@ -226,7 +226,7 @@ label portrait:
     show whiteflash zorder 50 with vpunch
     "{i}Skreeeeeeeeeeeeeee!{i}"
 
-    "Tch! Looks like there's no time for this. Rookie, let the portrait be. We need to focus on protecting Blue."
+    advmc "Tch! Looks like there's no time for this. Rookie, let the portrait be. We need to focus on protecting Blue."
     rookie "Understood."
 
     jump firstambushed
@@ -234,7 +234,7 @@ label portrait:
 label stayguard:
     show blueapprove at appsprite
     $ blueap+= 1
-    "Green, Rookie, look around and make sure we won't be ambushed."
+    advmc "Green, Rookie, look around and make sure we won't be ambushed."
     green "Yeah, yeah. So noisy."
     rookie "Understood."
 
@@ -245,12 +245,12 @@ label stayguard:
 
     show bl temp at center with dissolve
     blue "You know you don't have to stay here with me. If there's trouble, Green will let you know."
-    "Do you want me to leave?"
+    advmc "Do you want me to leave?"
     blue "No, no. I just... thought you'd rather explore."
-    "(It looked like he was going to say something else.)"
-    "If I'm bothering you, I can go."
+    advmc "(It looked like he was going to say something else.)"
+    advmc "If I'm bothering you, I can go."
     blue "Now you're just being petty."
-    "What can I say? I'm a petty being."
+    advmc "What can I say? I'm a petty being."
     blue "I'm sure you are."
 
     #nvl set up
@@ -268,16 +268,16 @@ label stayguard:
     window hide
 
     blue "You know, it's hard to focus when you keep staring like that."
-    "Eh? I didn't take you for the shy type, Blue."
+    advmc "Eh? I didn't take you for the shy type, Blue."
     blue "Is that supposed to be a compliment?"
-    "Always is!"
+    advmc "Always is!"
     blue "Despite accusing me of treating you like a kid, you're quite an offender yourself."
-    "I don't treat you like a kid, Blue. At best, you're more like... "
+    advmc "I don't treat you like a kid, Blue. At best, you're more like... "
     blue "Like...?"
-    "(That's funny. I can see my breath? Tch. That means-)"
+    advmc "(That's funny. I can see my breath? Tch. That means-)"
     show g temp at left with dissolve
     green "Sorry to interrupt, but we're being attacked!"
-    "Blue, get that seal up. I'll deal with this!"
+    advmc "Blue, get that seal up. I'll deal with this!"
 
     jump firstambushed
 
@@ -303,13 +303,13 @@ label firstambushedcont:
     blue "Sorry guys. The seal isn't ready yet. Until it is, I won't be able to put up defensive seals around us."
     show g temp at right with dissolve
     green "What a pain. I'll slow them down with my Zone."
-    "Please do. Blue, concentrate on your seal. That's our number one priority. Rookie, stay close to Blue and protect him the best you can."
+    advmc "Please do. Blue, concentrate on your seal. That's our number one priority. Rookie, stay close to Blue and protect him the best you can."
     rookie "What are you going to do?"
-    "Don't you remember? I'm the tank."
+    advmc "Don't you remember? I'm the tank."
 
-    hide r temp
-    hide bl temp
-    hide g temp
+    hide r
+    hide bl
+    hide g
 
     # #Explain Shoot Mode
     # #NVL Mode
@@ -348,7 +348,7 @@ label firstambushedcont:
     show w temp at center with dissolve
     prewitch "What's this? It's been so long since we had guests!"
     prewitch "Welcome, welcome! And now die!"
-    hide w temp
+    hide w
 
     #Explain Battle Mode
     #NVL Mode
@@ -380,34 +380,34 @@ label introToWitch:
     #gotta call everyone now
     show w temp at center with dissolve
     prewitch "How frustrating. But you seem to be quite adept at this."
-    "As are you. You don't seem to be a normal spirit. Are you, by any chance, a witch?"
+    advmc "As are you. You don't seem to be a normal spirit. Are you, by any chance, a witch?"
     witch "My, my! How rude! To call a fragile maiden like myself a witch! But I can't deny it, I suppose."
 
     show whiteflash zorder 50 with vpunch
 
-    "My, my! How rude! We weren't done talking, you know."
+    advmc "My, my! How rude! We weren't done talking, you know."
     show w temp at center with dissolve
     witch "You... Did you just nullified my attacks? What the hell are you people?"
-    "(To think that it took her this long to get serious... What a monster.)"
-    hide w temp
+    advmc "(To think that it took her this long to get serious... What a monster.)"
+    hide w
     show bl temp at left with dissolve
     blue "What a soft life you must have lived if a witch such as yourself aren't familiar with us."
     show g temp at right with dissolve
     green "I'm shocked as well. To think there exists a supernatural creature who do not know of us."
     show r temp at center with dissolve
     rookie "We are Supernatural Investigators, SpIn for short."
-    hide r temp
-    hide bl temp
-    hide g temp
+    hide r
+    hide bl
+    hide g
 
     show w temp at center with dissolve
     witch "Investigators? "
     witch "Ha... haha... Hahahahahaha!"
     witch "So you came to kill me? Is that it?"
-    "(Damn it! Can't you guys for once not create more problems for me?!)"
-    "Get back! She's going to-"
+    advmc "(Damn it! Can't you guys for once not create more problems for me?!)"
+    advmc "Get back! She's going to-"
 
-    hide w temp
+    hide w
     show whiteflash zorder 50 with vpunch
 
     #nvl set up
@@ -475,7 +475,7 @@ label introToWitch:
 
     $quick_menu = True
     witch "You think a little form change is enough? "
-    "(It looks like she's gathering her energy for a bigger blast. Then I'll just cut her off before she releases!)"
+    advmc "(It looks like she's gathering her energy for a bigger blast. Then I'll just cut her off before she releases!)"
 
     #nvl set up
     window show
@@ -514,31 +514,31 @@ label introToWitch:
 
     show w temp at center with dissolve
     witch "Haha... looks like you're at your limit."
-    hide w temp
+    hide w
     show g temp at right with dissolve
     green "Is she gathering another projectile? Wouldn't that destroy her?"
     show bl temp at left with dissolve
     blue "Looks like she plans on killing herself with us."
-    "Any chance you guys can stop her?"
+    advmc "Any chance you guys can stop her?"
     green "Very encouraging to hear from our only fighter."
     blue "Rookie looks terrified, too. Tch. We need to run."
-    hide bl temp
-    hide g temp
+    hide bl
+    hide g
     show w temp at center with dissolve
     witch "I won't let you!"
-    "Heh. Got you."
+    advmc "Heh. Got you."
 
     show whiteflash zorder 50 with vpunch
     #Turn on our fog
     show particleFog1:
         alpha 0.5
 
-    hide w temp
+    hide w
 
     show g temp at right with dissolve
     green "How did you miss at that distance?!"
-    hide g temp
-    "(I didn't! She pulled back at the last second. Is she prioritizing survival?)"
+    hide g
+    advmc "(I didn't! She pulled back at the last second. Is she prioritizing survival?)"
     show w temp at center with dissolve
     witch "Are you stupid? Why would I make it that easy for you to catch me?"
 
@@ -547,7 +547,7 @@ label introToWitch:
 
     nvlmc "The wind kicks off. I must be really weakened, if this little is enough to knock me back into Blue's arms. At least it looks like Blue has some kind of a minor seal up around us. But if she fires something at us, it won't last. And I don't have my necklace to protect me anymore."
     nvlmc "With another cackle, the witch flies up the staircase and through the gaping hole of the second floor's entrance. She doesn't put up a seal to stop us from entering, which already tells me that the second floor must be filled with traps."
-    hide w temp
+    hide w
     nvlmc "The gust dies down."
     nvlmc "We seem to have returned to relative peace."
 
@@ -561,55 +561,55 @@ label introToWitch:
     rookie "..."
     show bl temp at left with dissolve
     blue "You alright, Red? You look pale."
-    "Yeah. Just tired."
+    advmc "Yeah. Just tired."
     green "Hey Rookie, aren't you our healer? Get to it."
     rookie "R-right."
-    "(He looks shaken. Was too much for his first mission?)"
-    "Hey, sorry if I scared you. You probably didn't expect that, right? I'm part... er... I suppose the best way to say is that I have some fox blood in me."
-    "Don't worry; I don't lose control or anything. That version is still me. Just... more powerful. Like taking off seals or limiters, you know?"
-    "(What am I saying? I'm making less sense trying to explain it.)"
+    advmc "(He looks shaken. Was too much for his first mission?)"
+    advmc "Hey, sorry if I scared you. You probably didn't expect that, right? I'm part... er... I suppose the best way to say is that I have some fox blood in me."
+    advmc "Don't worry; I don't lose control or anything. That version is still me. Just... more powerful. Like taking off seals or limiters, you know?"
+    advmc "(What am I saying? I'm making less sense trying to explain it.)"
     green "What's with that? He has our files. It's our own responsibility to read about our teammates' abilities before a mission."
     blue "Amazing. Have all of my lectures finally sunk in for you? Or are you just echoing them to look cool in front of a new member?"
     green "Shut up, you."
     rookie "I am not scared."
-    "Is that so? That's a relief."
+    advmc "Is that so? That's a relief."
     rookie "Just..."
     green "Just?"
     rookie "Three years ago, my village was attacked by a silver fox with four tails."
     blue "Three years ago? Wasn't that...?"
-    "If you were wondering if that was me, then yeah. It was. There haven't been any other silver foxes, let alone four-tailed ones, in about half a century."
+    advmc "If you were wondering if that was me, then yeah. It was. There haven't been any other silver foxes, let alone four-tailed ones, in about half a century."
     green "Urk. You couldn't think of a kinder way to phrase that?"
-    "Look, I'm not a good person. I've done many things I'm not proud of. If that makes you uncomfortable, request that you never be put on the same team with me again."
-    "But for this mission, I need you to set aside whatever issues you have and work with me."
+    advmc "Look, I'm not a good person. I've done many things I'm not proud of. If that makes you uncomfortable, request that you never be put on the same team with me again."
+    advmc "But for this mission, I need you to set aside whatever issues you have and work with me."
     rookie "..."
-    "(Hey, say something!)"
+    advmc "(Hey, say something!)"
     blue "Or if you guys want, I can drop the seal right now. It would mean that our mission is a failure, but at least no one would be forced to work with someone they are uncomfortable with."
     rookie "I... am fine."
 
     menu:
-        "(You don't look fine at all! Great. Now everyone's looking at me to decide.)"
+        advmc "(You don't look fine at all! Great. Now everyone's looking at me to decide.)"
         "Let's call it quits":
             jump storyendEmptyHands
         "We can't give up yet":
             jump firstfloorcont
 
 label storyendEmptyHands:
-    "It's clear that you're uncomfortable, Rookie. It'd be better for a different team to take care of this mission."
+    advmc "It's clear that you're uncomfortable, Rookie. It'd be better for a different team to take care of this mission."
     green "But doesn't that mean that witch can get stronger in the meanwhile?"
-    "(Look, I don't like it either. But I'm not going to force Rookie here to spend time with a monster that wiped out his village. If he's talking about {i}that incident{/i}  three years ago...)"
+    advmc "(Look, I don't like it either. But I'm not going to force Rookie here to spend time with a monster that wiped out his village. If he's talking about {i}that incident{/i}  three years ago...)"
     blue "At least the next group will have a better heads up about what's here. "
     rookie "If you decided this because of me, I ask that you reconsider."
-    "(You say that, but you look the most disturbed by the whole thing.)"
-    "It's not because of you. I'm too tired to keep going. Not to mention, I broke my necklace. You want your only tank to face against whatever else is in this mansion without any kind of protection?"
+    advmc "(You say that, but you look the most disturbed by the whole thing.)"
+    advmc "It's not because of you. I'm too tired to keep going. Not to mention, I broke my necklace. You want your only tank to face against whatever else is in this mansion without any kind of protection?"
     green "You're a monster, so I'm sure you'll be fine."
-    "(Get a hint, you idiot!)"
-    "What's that? You want me to accidentally kill you?"
+    advmc "(Get a hint, you idiot!)"
+    advmc "What's that? You want me to accidentally kill you?"
     blue "If that's how Red feels, then that's how Red feels. Go ahead. Punch Green all you want."
     green "H-huh?! Wait a minute!"
 
-    hide bl temp
-    hide g temp
-    hide r temp
+    hide bl
+    hide g
+    hide r
 
     #nvl set up
     window show
@@ -625,6 +625,7 @@ label storyendEmptyHands:
     window hide
 
     #Bad End CG
+    $quick_menu = False
     $ persistent.badend1 = True
     scene end bad with fade
     pause 2.0
@@ -638,49 +639,49 @@ label firstfloorcont:
     $ greenap+= 1
     $ rookieap+= 1
 
-    "We can't let any witch go free. That'd cause a bureaucratic mess that will doubtlessly end up with us pulling multiple all-nighters to handle."
+    advmc "We can't let any witch go free. That'd cause a bureaucratic mess that will doubtlessly end up with us pulling multiple all-nighters to handle."
     green "Oh, please let's not do that again."
     blue "Whose fault was it that we were in that position to begin with?"
     green "C-come on, we all suffered together. So don't blame it all on me!"
-    "So if we can, I would really like to complete this mission. "
+    advmc "So if we can, I would really like to complete this mission. "
     rookie "That is fine with me."
-    "(Are you really okay? You look pale.)"
-    "That witch was really powerful. If you guys are near me when I fight her again, I can't guarantee your safety. So-"
+    advmc "(Are you really okay? You look pale.)"
+    advmc "That witch was really powerful. If you guys are near me when I fight her again, I can't guarantee your safety. So-"
     green "That's fine. We'll stay near the back. "
     blue "I'll be focused enough to set up a better seal around us this time. Don't worry about us and go full out."
-    "(I'm saying if I do, you'll die!)"
+    advmc "(I'm saying if I do, you'll die!)"
     rookie "I will trust your judgement."
-    "(All of you suck.)"
-    "(But this is the first.)"
+    advmc "(All of you suck.)"
+    advmc"(But this is the first.)"
 
     if trueend:
         boss "Pwhahahaha! What expression is that supposed to be?"
-        "S-shut up! I don't know! I don't know what I'm feeling!"
+        advmc "S-shut up! I don't know! I don't know what I'm feeling!"
         boss "Tsk, tsk. You've spent this long with humans and still can't figure out emotions? I thought you foxes are supposed to be smart!"
-        "Being smart and knowing your emotions are different things. "
+        advmc "Being smart and knowing your emotions are different things. "
         boss "[mcname], emotions are simple. If it's a positive feeling, you smile. If not, you cry. See?"
-        "I-I don't know. Is this... positive? I can't figure it out."
+        advmc "I-I don't know. Is this... positive? I can't figure it out."
         boss "Do you hate it?"
-        "N-no? I don't think so? I don't understand myself."
+        advmc "N-no? I don't think so? I don't understand myself."
         boss "Then what about this? If you don't know what you're feeling, just laugh."
-        "What kind of logic is that?"
+        advmc "What kind of logic is that?"
         boss "Once you laugh, it gets easier, you know. If it was a negative feeling, you'll suddenly feel a lot better. If it was a positive feeling, it'll make you feel doubly better for sharing it."
-        "That... sounds fake."
+        advmc "That... sounds fake."
         boss "H-hey! I'm trying to give you some sound advice!"
 
-    "Pfft... Hahahahaha!"
+    advmc "Pfft... Hahahahaha!"
     green "Nice going, Rookie. Red's lost it because of you."
     blue "A-are you alright?"
     rookie "..."
-    "I will make sure all of you get back safely. Until then, will you trust me?"
+    advmc "I will make sure all of you get back safely. Until then, will you trust me?"
     green "Were you hit on the head while fighting? What's with such a gross question?"
     blue "Did you forget, Red? We are a team. As much as we trust you, you should trust us."
     rookie "... I... I will leave it to you."
-    "Good. Then our next objective is the floor above us. I have no idea what's waiting for us up there, but I will keep you safe. If you can't trust me, please feel free to stay here."
+    advmc "Good. Then our next objective is the floor above us. I have no idea what's waiting for us up there, but I will keep you safe. If you can't trust me, please feel free to stay here."
     green "I'm telling you, stop being so gross!"
     blue "I'll layer so many seals around you that no one will be able to touch you. Heh."
     rookie "I trust your judgements."
-    "Then let's go!"
+    advmc "Then let's go!"
 
 jump secondfloor #Proceed to the 2nd Chapter
 

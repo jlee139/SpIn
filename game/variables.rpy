@@ -60,8 +60,19 @@ init python:
     rookiened = False #Activated when player has unlocked rookie's happy end
     endingct = 0    #num of time player has played through
 
+    #The Color of Orbs collected
+    greenOrb = False #Activated when player defeats Green's Boss
+    blueOrb = False #Activated when player defeats Blue's Boss
+    purpleOrb = False #Activated when player defeats Rookie's Boss
+
+    #OnRoute Variables
+    onGreenRoute = False #Activated when player is on Green's Route
+    onBlueRoute = False #Activated when player is on Blue's Route
+    onRookieRoute = False #Activated when player is on Rookie's Route
+
     #For Ending CGs
     badend1 = False #The very first ending we can get. "Empty Hands"
+    greenbadend = False #Green's Bad Ending
 
     #Affection points
     greenap = 0
@@ -95,7 +106,9 @@ define blanktxt = Character(None, kind=adv)
 # name of the character.
 define nvlmc = Character(None, kind=nvl)
 #for if we ever get sprites for Red
-define advmc = Character('[mcname]', kind=adv)
+#mcname = renpy.input("Enter your name")
+#define advmc = Character('[mcname]', kind=adv)
+define advmc = Character('Red', kind=adv)
 
 define green = Character('Green', color="#088329", callback=RaiseImage("g"), window_background="gui/textbox-green.png")
 define blue = Character('Blue', color="#0638A9", callback=RaiseImage("bl"), window_background="gui/textbox-blue.png")

@@ -11,19 +11,19 @@ label secondfloor: #2nd chapter start!
     rookie "... I... was not aware."
     show bl temp at left with dissolve
     blue "How many times do I have to tell you to stop confusing people? It's not a joke. SpIn is silly sounding, but it is still our name."
-    "It's on our uniform. Why would you lie about something so obvious?"
+    advmc "It's on our uniform. Why would you lie about something so obvious?"
     green "Oh, shut up! It's a stupid name! I can't believe it stuck! "
 
     #Since we already explained boss
     if trueend:
         rookie "But is it not the name that Boss gave?"
-        "It is. And most people are respectful enough to keep saying SpIn."
+        advmc "It is. And most people are respectful enough to keep saying SpIn."
         green "It's so undignified!"
         blue "No one cares what you think, Green."
         rookie "Excuse me for asking, but is there something wrong with Boss?"
         green "..."
         blue "Well, you'll hear more about it in detail later. But the gneral gist is-"
-        "Let me explain."
+        advmc "Let me explain."
 
     else:
         blue "No matter how stupid it is or how silly it sounds, respect Boss's wish for wanting that to be our name."
@@ -31,7 +31,7 @@ label secondfloor: #2nd chapter start!
         green "Oh, that's right. You probably haven't met him, huh?"
         rookie "What kind of person is he?"
 
-    "He was the one who used the codename 'Red' first. And because of how short-staffed we were, he and I parntered up to take care of missions..."
+    advmc "He was the one who used the codename 'Red' first. And because of how short-staffed we were, he and I parntered up to take care of missions..."
 
     #nvl set up
     nvl clear
@@ -54,21 +54,21 @@ label secondfloor: #2nd chapter start!
     nvl clear
     window hide
 
-    "And then as if to mock us all for this, the witch scrambled our memories of that time. We all know that there was a witch and a curse was casted on Boss. But none of us can tell you more details outside of that."
+    advmc "And then as if to mock us all for this, the witch scrambled our memories of that time. We all know that there was a witch and a curse was casted on Boss. But none of us can tell you more details outside of that."
     rookie "That... sounds rough."
     blue "But if we are dealing with a witch here, then it's quite perfect for us."
     rookie "How so?"
-    "We might be able to... {i}convince{/i} her to help us break the curse."
+    advmc "We might be able to... {i}convince{/i} her to help us break the curse."
     green "H-hey, your face looks super evil right now!"
     blue "Or we might be able to prod her into figuring out which witch cursed one of our own."
     rookie "I thought Boss was just a recluse who had too much paperwork. There was actually a reason why he never left his room."
     green "..."
     blue "..."
-    "..."
+    advmc "..."
     rookie "..."
     rookie "T-That was a joke."
-    "H-huh?! You can tell jokes?"
-    "(Ack, maybe that was too mean. He won't meet my eyes.)"
+    advmc "H-huh?! You can tell jokes?"
+    advmc "(Ack, maybe that was too mean. He won't meet my eyes.)"
     blue "W-well anyways, let's just focus on getting to that witch for now."
 
     #nvl set up
@@ -97,36 +97,38 @@ label secondfloor: #2nd chapter start!
     blue "Looks like they’re welcoming us with a trap."
     show g temp at right with dissolve
     green "Nothing we’re not used to."
-    "Since there’s three doors, one of us should double up."
-    "(I want to tell Rookie to stay behind. But I don’t think he’ll listen to me if I say it.)"
+    advmc "Since there’s three doors, one of us should double up."
+    advmc "(I want to tell Rookie to stay behind. But I don’t think he’ll listen to me if I say it.)"
     blue "Red, you broke your necklace earlier, right? Why don’t you decide which of us you’d rather go with?"
-    "H-huh? Me?"
+    advmc "H-huh? Me?"
     green "Can’t have our precious tank get a boo-boo. "
-    "Ugh. You have the worst phrasing."
+    advmc "Ugh. You have the worst phrasing."
     blue "But it’s the truth. It’ll be best that you pick someone you feel the most comfortable fighting alongside."
     show r temp at center with dissolve
     rookie "Sounds good to me."
 
     menu:
-        "Alright, then... "
+        advmc "Alright, then... "
         "Green, you’ll cause the least amount of trouble next to me.":
             $ greenap+= 1
             jump secgreen
         "Blue, I trust you the most.":
             $ blueap+= 1
-            jump secblue
+            "Blue's Route has yet to have been implemented."
+            #jump secblue
         "Rookie, would you be alright with me?":
             $ rookieap+= 1
-            jump secrook
+            "Rookie's route has yet to have been implemented."
+            #jump secrook
         "I’ll be fine on my own." if trueend:
             $bossap+=1
             jump secsolo
 
-    "Let's go!"
+    advmc "Let's go!"
 
 
 label secsolo:
-    "This is only available once you've cleared everything else."
+    advmc "This is only available once you've cleared everything else."
 return
 
 
