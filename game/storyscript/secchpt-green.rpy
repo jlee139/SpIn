@@ -518,7 +518,6 @@ label secgreen:
     #Battle Mode against Butler
     #call battlebutler
 
-label breakpoint:
     scene bg greenroom with fade
     show particleFog1:
         alpha 0.8
@@ -527,7 +526,9 @@ label breakpoint:
     butler "Forgive me, my Mistress. Once again, I…"
     show dustparticle at center
     pause 0.8
+    hide particleFog1
     hide but with fade
+
 
     advmc "That should have destroyed the puppets. Where’s Green? Hm?"
     advmc "(There’s a small green ball rolling this way. Did the Butler drop this? What even is this?)"
@@ -557,6 +558,8 @@ label breakpoint:
     green "Picky! I liked you better when you were getting all weepy that I was hurt."
     advmc "That never happened! Now shut up and focus on running. This place will collapse before we get out at this rate!"
 
+    scene bg exitroom with fade
+
     #nvl set up
     nvl clear
     window show
@@ -572,6 +575,7 @@ label breakpoint:
     nvl clear
     window hide
 
+    show g temp at center with dissolve
     green "Even if you don’t say it, I know what you’re thinking."
     advmc "Is that so? That’s a relief."
     green "Yup. I know exactly what you’re thinking."
@@ -597,6 +601,7 @@ label breakpoint:
     nvlmc "Forgive me, Green. Once we’re out of here, I promise I’ll force Zero to buy you a new figurine. "
     nvlmc "I’m just a few meters shy of the door. But the floor is already giving out here. We won’t have long to stand here before we fall through."
     nvlmc "If that door is locked, we’re screwed. Then it’ll be for the best that there is no door."
+    scene bg exitroomhole with fade
     nvlmc "I gather just enough energy to blast a hole next to the door. I meant to destroy the door, but it seems that my aim isn’t good when I’m trying to balance Green in one arm while trying to land somewhere that won’t immediately make us fall through."
     nvlmc "It makes me a little bitter, but beggars can’t be choosers."
 
@@ -608,6 +613,7 @@ label breakpoint:
     if greenap<2:
         show whiteflash zorder 50 with vpunch
         advmc "(What? I’m bleeding? Why…?)"
+        show g temp at center with dissolve
         green "Thanks for taking me all the way here. I got it from here on, though. "
         advmc "What…? Green? You…?"
         green "Hm? Are you really having that hard of a time to figure out what I did? It’s Strychnine. I heard it’s a deadly poison for foxes. Looks like it’s true. "
@@ -642,6 +648,7 @@ label breakpoint:
     #If Green's Points are Awesome, go to Green's Route
     if greenap>9:
         $ onGreenRoute = True #So we can toggle on the correct ending card
+        show g temp at center with dissolve
         green "You know, no matter how you slice it, it’s too late for me."
         advmc "So what?"
         green "So let’s change the plan."
@@ -672,6 +679,7 @@ label breakpoint:
     #Otherwise, Green's Points are Normal, so we'll go straight into the Normal Ending
     show whiteflash zorder 50 with vpunch
     advmc "(Did this guy seriously just smack me? I’m trying to save his sorry life!)"
+    show g temp at center with dissolve
     green "No matter how we look at it, it’s clear that I’m just a dead weight right now."
     advmc "So you have to hit me?"
     green "Drop me."

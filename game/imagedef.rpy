@@ -24,6 +24,8 @@ image bg diningroom = "background/diningroom.png"
 image bg stairway = "background/stairway.png"
 image bg threedoors = "background/threedoors.png"
 image bg greenroom = "background/greenroom.png"
+image bg exitroom = "background/onedoorexit.png"
+image bg exitroomhole = "background/onedoorexit-hole.png"
 
 
 #CGs to be Used
