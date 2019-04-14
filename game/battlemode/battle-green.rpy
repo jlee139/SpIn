@@ -57,15 +57,21 @@ screen battleuigreen():
 #Start Battle Here
 label battlebutler:
     $numturns = 20 #This is for debugging. Remember to turn this off!!
-    $bosshp = 100
-    $bossmaxhp = 100
+    $bosshp = 120
+    $bossmaxhp = 120
     $turnnum = 0 #To determine whose turn it is
     #Set up variables for the upcoming battle
-    $bossatk = 10
+    $bossatk = 8 #Butler has weaker attack base than witch
     $redatk = 10
     $beastmode = False #To keep track of damages in beast mode
     $showwincond = False #Keep track of whether or not we've seen the win condition
     $quick_menu = False
+    #Puppets
+    $puppetnum = 0
+    $pupone = False
+    $puptwo = False
+    $pupthree= False
+    $pupfour = False
 
     window hide
 
@@ -124,7 +130,7 @@ label battlebutler:
 
 label attackdmgg:
     $ butdef = renpy.random.randint(1,10)
-    if butdef >=9: #There's 10% chance she'll defend
+    if butdef >=7: #There's 30% chance she'll defend
         call butdef
     $bosshp -= redatk
     show scratch:
@@ -134,7 +140,7 @@ label attackdmgg:
     #If butler's HP is 0, go straight to winning stance
     if bosshp <1:
         jump wincondition
-    if butdef <9: #There's 90% chance she'll attack
+    if butdef <7: #There's 70% chance she'll attack
         call butturn
     return
 
@@ -143,13 +149,13 @@ label defenddmgg:
         xalign 0.5 yalign 0.3
     "You brace for impact. Damage taken is reduced."
     hide shield
-    $bossatk = bossatk*0.7
+    $bossatk = bossatk*0.5
     call butturn
     return
 
 label magicdmgg:
     $ butdef = renpy.random.randint(1,10)
-    if butdef >=8: #There's 20% chance she'll defend
+    if butdef >=6: #There's 40% chance she'll defend
         call butdef
     $numturns-=2
     $redatk = redatk * 1.5
@@ -161,7 +167,7 @@ label magicdmgg:
     #If butler's HP is 0, go straight to winning stance
     if bosshp <1:
         jump wincondition
-    if butdef <8: #There's 80% chance she'll attack
+    if butdef <6: #There's 60% chance she'll attack
         call butturn
     return
 
@@ -185,7 +191,7 @@ label healdmgg:
 
 label butdef:
     "The butler braces for impact. Your attack does less damage."
-    $redatk = redatk*0.7 #Reduce Red's attack to 7
+    $redatk = redatk*0.8 #Reduce Red's attack to 8
     return
 
 label butturn:
@@ -194,16 +200,30 @@ label butturn:
         show battleb half at top
     if bosshp<=20:
         show battleb no at top
-    $ butmagic = renpy.random.randint(1,10)
-    if butmagic >=5: #There's 50% chance she'll use magic
-        $bossatk = bossatk*1.5
-        "The enemy fires a magic spell that does [bossatk] damage."
-        with vpunch
-        $hp-=bossatk
-    else:
-        "The enemy does [bossatk] damage."
-        with vpunch
-        $hp-=bossatk
+    #Now we do some puppet magic
+    if puppetnum<5 and bosshp>10:
+        $bosshp-=10 #For 10 of Boss's HP, create puppets
+        show battlepuppet1:
+            xalign 0 yalign 0.3
+        $pupone = True
+        $puppetnum += 1
+        show battlepuppet2:
+            xalign 0.3 yalign 0.3
+        $puptwo = True
+        $puppetnum += 1
+        show battlepuppet3:
+            xalign 0.7 yalign 0.3
+        $pupthree = True
+        $puppetnum += 1
+        show battlepuppet4:
+            xalign 1.0 yalign 0.3
+        $pupfour = True
+        $puppetnum += 1
+
+    #Then he attacks normally
+    "The enemy does [bossatk] damage."
+    with vpunch
+    $hp-=bossatk
     return
 
 return

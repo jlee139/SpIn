@@ -59,6 +59,11 @@ image battlew no = "battlemode/witch_tut_final.png"
 image battleb full = "battlemode/butfirst.png"
 image battleb half = "battlemode/butmid.png"
 image battleb no = "battlemode/butlast.png"
+image battlepuppet1 = "battlemode/puppet.png"
+image battlepuppet2 = "battlemode/puppet.png"
+image battlepuppet3 = "battlemode/puppet.png"
+image battlepuppet4 = "battlemode/puppet.png"
+
 
 #Investigation Sprites
 image ghostdis = "huntmode/ghost_dead.png"
