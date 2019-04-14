@@ -13,7 +13,7 @@ screen battleui():
                 range bossmaxhp
                 value bosshp
                 xmaximum 230
-            label _("Enemy HP ([bosshp]/[bossmaxhp])")
+            label _("Witch's HP ([bosshp]/[bossmaxhp])")
     frame:
         xpadding 10
         ypadding 10
@@ -213,11 +213,11 @@ label witchturn:
     $ witchmagic = renpy.random.randint(1,10)
     if witchmagic >=5: #There's 50% chance she'll use magic
         $bossatk = bossatk*1.5
-        "The enemy fires a magic spell that does [bossatk] damage."
+        "The witch fires a magic spell that does [bossatk] damage."
         with vpunch
         $hp-=bossatk
     else:
-        "The enemy does [bossatk] damage."
+        "The witch does [bossatk] damage."
         with vpunch
         $hp-=bossatk
     return
@@ -244,7 +244,7 @@ label wincondition:
     hide beastoverlay
     $showwincond = True
     scene black
-    "You defeated the enemy!"
+    "You won!"
     $quick_menu = True
     return
 

@@ -130,18 +130,80 @@ label battlebutler:
 
 label attackdmgg:
     $ butdef = renpy.random.randint(1,10)
-    if butdef >=7: #There's 30% chance she'll defend
+    if bosshp<=20:
+        #There's 100% chance he'll defend
         call butdef
-    $bosshp -= redatk
-    show scratch:
-        xalign 0.5 yalign 0.3
-    "You did [redatk] damage!"
-    hide scratch
+    elif  bosshp<=40:
+        if butdef >=5: #There's 50% chance he'll defend
+            call butdef
+    else:
+        if butdef >=9: #There's 10% chance he'll defend
+            call butdef
+    #Ask which one to attack
+    if puppetnum>0:
+        menu:
+            "Who should I attack?"
+            "Attack the first Puppet" if pupone:
+                show scratch:
+                    xalign 0.0 yalign 0.5
+                "You attacked the first puppet."
+                hide scratch
+                hide battlepuppet1
+                $puppetnum -=1
+                $pupone = False
+            "Attack the second Puppet" if puptwo:
+                show scratch:
+                    xalign 0.3 yalign 0.5
+                "You attacked the second puppet."
+                hide scratch
+                hide battlepuppet2
+                $puppetnum -=1
+                $puptwo = False
+            "Attack the third Puppet" if pupthree:
+                show scratch:
+                    xalign 0.7 yalign 0.5
+                "You attacked the third puppet."
+                hide scratch
+                hide battlepuppet3
+                $puppetnum -=1
+                $pupthree = False
+            "Attack the fourth Puppet" if pupfour:
+                show scratch:
+                    xalign 1.0 yalign 0.5
+                "You attacked the fourth puppet."
+                hide scratch
+                hide battlepuppet4
+                $puppetnum -=1
+                $pupfour = False
+            "Attack the Butler":
+                show scratch:
+                    xalign 0.5 yalign 0.2
+                "You did [redatk] damage to the Butler!"
+                hide scratch
+                $bosshp -= redatk
+            "Nevermind.":
+                $numturns +=1
+                return
+    else:
+        show scratch:
+            xalign 0.5 yalign 0.2
+        "You did [redatk] damage to the Butler!"
+        hide scratch
+        $bosshp -= redatk
+
     #If butler's HP is 0, go straight to winning stance
     if bosshp <1:
         jump wincondition
-    if butdef <7: #There's 70% chance she'll attack
-        call butturn
+
+    if bosshp<=20:
+        #There's 100% chance he'll defend
+        pass
+    elif  bosshp<=40:
+        if butdef <5: #There's 50% chance he'll defend
+            call butturn
+    else:
+        if butdef <9: #There's 10% chance he'll defend
+            call butturn
     return
 
 label defenddmgg:
@@ -155,20 +217,128 @@ label defenddmgg:
 
 label magicdmgg:
     $ butdef = renpy.random.randint(1,10)
-    if butdef >=6: #There's 40% chance she'll defend
+    if bosshp<=20:
+        #There's 100% chance he'll defend
         call butdef
-    $numturns-=2
-    $redatk = redatk * 1.5
-    show torchitall:
-        xalign 0.5 yalign 0.3
-    "By using 3 energy, you fire a magic spell that does [redatk] damage."
-    hide torchitall
-    $bosshp -= redatk
+    elif  bosshp<=40:
+        if butdef >=5: #There's 50% chance he'll defend
+            call butdef
+    else:
+        if butdef >=9: #There's 10% chance he'll defend
+            call butdef
+    #First decide if we're doing AOE or ST
+    if puppetnum>0:
+        menu:
+            "Should I hit one target with a strong magic spell? Or hit all of them with a weaker one?"
+            "One target with a strong spell.":
+                menu:
+                    "Who should I attack?"
+                    "Attack the first Puppet" if pupone:
+                        show torchitall:
+                            xalign 0.1 yalign 0.5
+                        "You attacked the first puppet."
+                        hide torchitall
+                        hide battlepuppet1
+                        $puppetnum -=1
+                        $pupone = False
+                    "Attack the second Puppet" if puptwo:
+                        show torchitall:
+                            xalign 0.34 yalign 0.5
+                        "You attacked the second puppet."
+                        hide torchitall
+                        hide battlepuppet2
+                        $puppetnum -=1
+                        $puptwo = False
+                    "Attack the third Puppet" if pupthree:
+                        show torchitall:
+                            xalign 0.65 yalign 0.5
+                        "You attacked the third puppet."
+                        hide torchitall
+                        hide battlepuppet3
+                        $puppetnum -=1
+                        $pupthree = False
+                    "Attack the fourth Puppet" if pupfour:
+                        show torchitall:
+                            xalign 0.9 yalign 0.5
+                        "You attacked the fourth puppet."
+                        hide torchitall
+                        hide battlepuppet4
+                        $puppetnum -=1
+                        $pupfour = False
+                    "Attack the Butler":
+                        $numturns-=2
+                        $redatk = redatk * 1.5
+                        show torchitall:
+                            xalign 0.5 yalign 0.2
+                        "By using 3 energy, you fire a magic spell that does [redatk] damage."
+                        hide torchitall
+                        $bosshp -= redatk
+            "All of them with a weaker one.":
+                if pupone:
+                    show torchitall:
+                        xalign 0.1 yalign 0.5
+                    pause 0.5
+                    hide torchitall
+                    hide battlepuppet1
+                    $puppetnum -=1
+                    $pupone = False
+                if puptwo:
+                    show torchitall:
+                        xalign 0.34 yalign 0.5
+                    pause 0.5
+                    hide torchitall
+                    hide battlepuppet2
+                    $puppetnum -=1
+                    $puptwo = False
+                if pupthree:
+                    show torchitall:
+                        xalign 0.65 yalign 0.5
+                    pause 0.5
+                    hide torchitall
+                    hide battlepuppet3
+                    $puppetnum -=1
+                    $pupthree = False
+                if pupfour:
+                    show torchitall:
+                        xalign 0.9 yalign 0.5
+                    pause 0.5
+                    hide torchitall
+                    hide battlepuppet4
+                    $puppetnum -=1
+                    $pupfour = False
+                #If butler
+                $numturns-=2
+                $redatk = redatk * 0.8
+                show torchitall:
+                    xalign 0.5 yalign 0.2
+                "By using 3 energy, you fire a magic spell that does [redatk] damage to all targets."
+                hide torchitall
+                $bosshp -= redatk
+            "Nevermind.":
+                $numturns +=2
+                return
+    else:
+        $numturns-=2
+        $redatk = redatk * 1.5
+        show torchitall:
+            xalign 0.5 yalign 0.3
+        "By using 3 energy, you fire a magic spell that does [redatk] damage."
+        hide torchitall
+        $bosshp -= redatk
+
     #If butler's HP is 0, go straight to winning stance
     if bosshp <1:
         jump wincondition
-    if butdef <6: #There's 60% chance she'll attack
-        call butturn
+
+    if bosshp<=20:
+        #There's 100% chance he'll defend
+        pass
+    elif  bosshp<=40:
+        if butdef <5: #There's 50% chance he'll defend
+            call butturn
+    else:
+        if butdef <9: #There's 10% chance he'll defend
+            call butturn
     return
 
 label healdmgg:
@@ -190,7 +360,7 @@ label healdmgg:
     return
 
 label butdef:
-    "The butler braces for impact. Your attack does less damage."
+    "The Butler braces for impact. Your attack does less damage."
     $redatk = redatk*0.8 #Reduce Red's attack to 8
     return
 
@@ -201,29 +371,35 @@ label butturn:
     if bosshp<=20:
         show battleb no at top
     #Now we do some puppet magic
-    if puppetnum<5 and bosshp>10:
+    if puppetnum<4 and bosshp>10:
         $bosshp-=10 #For 10 of Boss's HP, create puppets
-        show battlepuppet1:
-            xalign 0 yalign 0.3
-        $pupone = True
-        $puppetnum += 1
-        show battlepuppet2:
-            xalign 0.3 yalign 0.3
-        $puptwo = True
-        $puppetnum += 1
-        show battlepuppet3:
-            xalign 0.7 yalign 0.3
-        $pupthree = True
-        $puppetnum += 1
-        show battlepuppet4:
-            xalign 1.0 yalign 0.3
-        $pupfour = True
-        $puppetnum += 1
+        "The Butler exchanged his health to create puppets! These puppets are flimsy enough that one hit should destroy them."
+        if pupone == False:
+            show battlepuppet1:
+                xalign 0 yalign 0.3
+            $pupone = True
+            $puppetnum += 1
+        if puptwo == False:
+            show battlepuppet2:
+                xalign 0.3 yalign 0.3
+            $puptwo = True
+            $puppetnum += 1
+        if pupthree == False:
+            show battlepuppet3:
+                xalign 0.7 yalign 0.3
+            $pupthree = True
+            $puppetnum += 1
+        if pupfour == False:
+            show battlepuppet4:
+                xalign 1.0 yalign 0.3
+            $pupfour = True
+            $puppetnum += 1
 
-    #Then he attacks normally
-    "The enemy does [bossatk] damage."
+    #Then he attacks normally with the puppets
+    "The Butler does [bossatk] damage. The puppets each does 2 damage."
     with vpunch
     $hp-=bossatk
+    $hp-=8
     return
 
 return

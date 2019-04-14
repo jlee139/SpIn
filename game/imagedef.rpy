@@ -86,6 +86,7 @@ image torchitall:
     0.1
     alpha 0
 
+
 #Scartch for Normal Attack in RPG Mode
 image scratch:
     "battlemode/scratch.png"
