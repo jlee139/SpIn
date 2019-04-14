@@ -1,5 +1,5 @@
-#RPG Set up
-screen battleui():
+#Our Battle for Green's Route. Boss: Butler
+screen battleuigreen():
     frame:
         xpadding 10
         ypadding 10
@@ -35,15 +35,15 @@ screen battleui():
             imagebutton: #Attack Button
                 idle "battlemode/attack_up.png"
                 hover "battlemode/attack_down.png"
-                action Call('attackdmg')
+                action Call('attackdmgg')
             imagebutton: #Defend Button
                 idle "battlemode/defend_up.png"
                 hover "battlemode/defend_down.png"
-                action Call('defenddmg')
+                action Call('defenddmgg')
             imagebutton: #Magic Attack Button
                 idle "battlemode/magic_up.png"
                 hover "battlemode/magic_down.png"
-                action If(numturns >2, Call('magicdmg'), None)
+                action If(numturns >2, Call('magicdmgg'), None)
             imagebutton: #Beserk Button
                 idle "battlemode/beast_up.png"
                 hover "battlemode/beast_down.png"
@@ -51,14 +51,14 @@ screen battleui():
             imagebutton: #Heal Button
                 idle "battlemode/heal_up.png"
                 hover "battlemode/heal_down.png"
-                action If(numjewels >=1, Call('healdmg'), None)
+                action If(numjewels >=1, Call('healdmgg'), None)
 
 
-#For Tutorial Battle
-label begin_TutRPG:
-    #$numturns = 20 #This is for debugging. Remember to turn this off!!
-    $bosshp = 80
-    $bossmaxhp = 80
+#Start Battle Here
+label battlebutler:
+    $numturns = 20 #This is for debugging. Remember to turn this off!!
+    $bosshp = 100
+    $bossmaxhp = 100
     $turnnum = 0 #To determine whose turn it is
     #Set up variables for the upcoming battle
     $bossatk = 10
@@ -70,19 +70,19 @@ label begin_TutRPG:
     window hide
 
     #First place the enemy sprite in front of us
-    show battlew full at top
+    show battleb full at top
 
     #While we have turns, go through the battleui
     while numturns>0 and bosshp>0 and hp>0:
         #Change the Sprite accordingly
-        show battlew full at top
+        show battleb full at top
         if bosshp<=40:
-            show battlew half at top
+            show battleb half at top
         if bosshp<=20:
-            show battlew no at top
+            show battleb no at top
 
         #Checks happen here before we start the battles
-        #If witch's HP is 0, go straight to winning stance
+        #If butler's HP is 0, go straight to winning stance
         if bosshp <1 and showwincond==False:
             $showwincond = True
             jump wincondition
@@ -97,7 +97,7 @@ label begin_TutRPG:
             $beastmode = False
 
         #Display our health and numturns
-        call screen battleui
+        call screen battleuigreen
         $numturns-=1
         $turnnum+=1
         #If we're in beastmode, put up the attack
@@ -110,7 +110,7 @@ label begin_TutRPG:
             $redatk = 10
             hide beastoverlay
 
-    #If witch's HP is 0, go straight to winning stance
+    #If butler's HP is 0, go straight to winning stance
     if bosshp <1 and showwincond==False:
         $showwincond = True
         jump wincondition
@@ -122,35 +122,35 @@ label begin_TutRPG:
         return
     return
 
-label attackdmg:
-    $ witchdef = renpy.random.randint(1,10)
-    if witchdef >=9: #There's 10% chance she'll defend
-        call witchdef
+label attackdmgg:
+    $ butdef = renpy.random.randint(1,10)
+    if butdef >=9: #There's 10% chance she'll defend
+        call butdef
     $bosshp -= redatk
     show scratch:
         xalign 0.5 yalign 0.3
     "You did [redatk] damage!"
     hide scratch
-    #If witch's HP is 0, go straight to winning stance
+    #If butler's HP is 0, go straight to winning stance
     if bosshp <1:
         jump wincondition
-    if witchdef <9: #There's 90% chance she'll attack
-        call witchturn
+    if butdef <9: #There's 90% chance she'll attack
+        call butturn
     return
 
-label defenddmg:
+label defenddmgg:
     show shield:
         xalign 0.5 yalign 0.3
     "You brace for impact. Damage taken is reduced."
     hide shield
     $bossatk = bossatk*0.7
-    call witchturn
+    call butturn
     return
 
-label magicdmg:
-    $ witchdef = renpy.random.randint(1,10)
-    if witchdef >=8: #There's 20% chance she'll defend
-        call witchdef
+label magicdmgg:
+    $ butdef = renpy.random.randint(1,10)
+    if butdef >=8: #There's 20% chance she'll defend
+        call butdef
     $numturns-=2
     $redatk = redatk * 1.5
     show torchitall:
@@ -158,14 +158,14 @@ label magicdmg:
     "By using 3 energy, you fire a magic spell that does [redatk] damage."
     hide torchitall
     $bosshp -= redatk
-    #If witch's HP is 0, go straight to winning stance
+    #If butler's HP is 0, go straight to winning stance
     if bosshp <1:
         jump wincondition
-    if witchdef <8: #There's 80% chance she'll attack
-        call witchturn
+    if butdef <8: #There's 80% chance she'll attack
+        call butturn
     return
 
-label healdmg:
+label healdmgg:
     scene black
     menu:
         "You can crush 1 jewel to fully heal yourself."
@@ -180,38 +180,22 @@ label healdmg:
     hide healing
     $numjewels -= 1
     $hp = 300
-    call witchturn
+    call butturn
     return
 
-label zerker:
-    menu:
-        "Damage done is increased and damage received is decreased for the next 3 turns."
-        "Use 10 energy" if numturns>10:
-            $numturns -=9
-        "Use 3 jewels" if numjewels==3:
-            $numjewels = 0
-            $numturns +=1
-        "Nevermind.":
-            $numturns +=1
-            return
-
-    $beastmode = True
-    $turnnum = 0 #Once this turns 3, we need to turn off beastmode
-    return
-
-label witchdef:
-    "The witch braces for impact. Your attack does less damage."
+label butdef:
+    "The butler braces for impact. Your attack does less damage."
     $redatk = redatk*0.7 #Reduce Red's attack to 7
     return
 
-label witchturn:
-    show battlew full at top
+label butturn:
+    show battleb full at top
     if bosshp<=40:
-        show battlew half at top
+        show battleb half at top
     if bosshp<=20:
-        show battlew no at top
-    $ witchmagic = renpy.random.randint(1,10)
-    if witchmagic >=5: #There's 50% chance she'll use magic
+        show battleb no at top
+    $ butmagic = renpy.random.randint(1,10)
+    if butmagic >=5: #There's 50% chance she'll use magic
         $bossatk = bossatk*1.5
         "The enemy fires a magic spell that does [bossatk] damage."
         with vpunch
@@ -220,32 +204,6 @@ label witchturn:
         "The enemy does [bossatk] damage."
         with vpunch
         $hp-=bossatk
-    return
-
-label healthgameover:
-    hide beastoverlay
-    scene black
-    "You ran out of health. You are unable to keep your promise of keeping your comrades safe and die."
-    "Keep a better eye on your health next time!"
-    scene end dead with fade
-    pause 2.0
-    return
-
-label turngameover:
-    hide beastoverlay
-    scene black
-    "You have ran out of energy. You are unable to keep your promise of keeping your comrades safe and die."
-    "Budget your energy more carefully!"
-    scene end dead with fade
-    pause 2.0
-    return
-
-label wincondition:
-    hide beastoverlay
-    $showwincond = True
-    scene black
-    "You defeated the enemy!"
-    $quick_menu = True
     return
 
 return

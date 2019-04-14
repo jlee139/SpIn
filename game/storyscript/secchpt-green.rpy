@@ -516,7 +516,7 @@ label secgreen:
     butler "What a persistent guest you are!"
 
     #Battle Mode against Butler
-    #call battlebutler
+    call battlebutler
 
     scene bg greenroom with fade
     show particleFog1:

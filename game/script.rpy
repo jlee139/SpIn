@@ -14,12 +14,14 @@ label start:
     #Tada! Story is done!
 
     #Debugging Things:
-    #scene bg fronthall with fade
+    scene bg greenroom with fade
+    show particleFog1:
+        alpha 0.8
     window hide
     #call huntmodestart #Testing our hunt mode
     #call shootfix #Testing our hunt mode
-    #call begin_TutRPG #Testing our Battle Mode
-    jump breakpoint #for debugging
+    call battlebutler #Testing our Battle Mode
+    #jump breakpoint #for debugging
 
     #scene black
     #"That's the end of the demo. Thank you!"
