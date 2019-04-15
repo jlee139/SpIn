@@ -11,7 +11,6 @@ init python:
     config.window_hide_transition = dissolve
     config.window_show_transition = dissolve
 
-
     #Cont of PyTom's code for making it clear who is speaking (https://lemmasoft.renai.us/forums/viewtopic.php?t=31501)
     class RaiseImage(object):
         def __init__(self, tag, low=0, high=10, speak=speak, nospeak=nospeak):

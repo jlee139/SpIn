@@ -25,63 +25,87 @@ screen huntmodeset():
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
             insensitive "huntmode/selectarea_none.png"
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
             action If(butt1 == True, [SetVariable("butt1", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
             insensitive "huntmode/selectarea_none.png"
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
             action If(butt2 == True, [SetVariable("butt2", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
             insensitive "huntmode/selectarea_none.png"
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
             action If(butt3 == True, [SetVariable("butt3", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
             insensitive "huntmode/selectarea_none.png"
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
             action If(butt4 == True, [SetVariable("butt4", False), Call('calcperct')], None)
 
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
             insensitive "huntmode/selectarea_none.png"
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
             action If(butt5 == True, [SetVariable("butt5", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
             insensitive "huntmode/selectarea_none.png"
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
             action If(butt6 == True, [SetVariable("butt6", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
             insensitive "huntmode/selectarea_none.png"
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
             action If(butt7 == True, [SetVariable("butt7", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
             insensitive "huntmode/selectarea_none.png"
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
             action If(butt8 == True, [SetVariable("butt8", False), Call('calcperct')], None)
 
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
             insensitive "huntmode/selectarea_none.png"
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
             action If(butt9 == True, [SetVariable("butt9", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
             insensitive "huntmode/selectarea_none.png"
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
             action If(butt10 == True, [SetVariable("butt10", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
             insensitive "huntmode/selectarea_none.png"
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
             action If(butt11 == True, [SetVariable("butt11", False), Call('calcperct')], None)
         imagebutton:
             idle "huntmode/selectarea.png"
             hover "huntmode/selectarea-hover.png"
             insensitive "huntmode/selectarea_none.png"
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
             action If(butt12 == True, [SetVariable("butt12", False), Call('calcperct')], None)
 
     frame:
@@ -164,24 +188,28 @@ label calcperct:
         #You found wisp
         $numwisps+=1
         #scene black
+        play audio "sfx/collect.mp3"
         show wispdis at disappeardeath
         "You found a wisp!"
     elif  randchance <80:
         #You found a ghost
         $numghosts+=1
         #scene black
+        play audio "sfx/collect.mp3"
         show ghostdis at disappeardeath
         "You found a ghost!"
     elif  randchance <=98:
         #You found a skeleton
         $numskele+=1
         #scene black
+        play audio "sfx/collect.mp3"
         show skeledis at disappeardeath
         "You found a skeleton!"
     elif  randchance >98:
         #You found a chest!
         $numchests+=1
         #scene black
+        play audio "sfx/jingle-achievement-00.mp3"
         show chestfound at celebrationchest
         "You found a chest!"
 

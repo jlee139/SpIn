@@ -35,22 +35,32 @@ screen battleuigreen():
             imagebutton: #Attack Button
                 idle "battlemode/attack_up.png"
                 hover "battlemode/attack_down.png"
+                hover_sound "sfx/click2.mp3"
+                activate_sound "sfx/menu-selection-click.mp3"
                 action Call('attackdmgg')
             imagebutton: #Defend Button
                 idle "battlemode/defend_up.png"
                 hover "battlemode/defend_down.png"
+                hover_sound "sfx/click2.mp3"
+                activate_sound "sfx/menu-selection-click.mp3"
                 action Call('defenddmgg')
             imagebutton: #Magic Attack Button
                 idle "battlemode/magic_up.png"
                 hover "battlemode/magic_down.png"
+                hover_sound "sfx/click2.mp3"
+                activate_sound "sfx/menu-selection-click.mp3"
                 action If(numturns >2, Call('magicdmgg'), None)
             imagebutton: #Beserk Button
                 idle "battlemode/beast_up.png"
                 hover "battlemode/beast_down.png"
+                hover_sound "sfx/click2.mp3"
+                activate_sound "sfx/menu-selection-click.mp3"
                 action If(numturns>10 or numjewels==3, Call('zerker'), None)
             imagebutton: #Heal Button
                 idle "battlemode/heal_up.png"
                 hover "battlemode/heal_down.png"
+                hover_sound "sfx/click2.mp3"
+                activate_sound "sfx/menu-selection-click.mp3"
                 action If(numjewels >=1, Call('healdmgg'), None)
 
 

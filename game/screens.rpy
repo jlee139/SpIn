@@ -27,9 +27,13 @@ style gui_text:
 
 style button:
     properties gui.button_properties("button")
+    hover_sound "sfx/click2.mp3"
+    activate_sound "sfx/menu-selection-click.mp3"
 
 style button_text is gui_text:
     properties gui.text_properties("button")
+    hover_sound "sfx/click2.mp3"
+    activate_sound "sfx/menu-selection-click.mp3"
     yalign 0.5
 
 
@@ -257,11 +261,15 @@ screen quick_menu():
                 imagebutton: #History
                     idle "gui/quickmenu/adv-log.png"
                     hover "gui/quickmenu/adv-log-push.png"
+                    hover_sound "sfx/click2.mp3"
+                    activate_sound "sfx/menu-selection-click.mp3"
                     action ShowMenu('history')
 
                 imagebutton: #Skip
                     idle "gui/quickmenu/adv-skip.png"
                     hover "gui/quickmenu/adv-skip-push.png"
+                    hover_sound "sfx/click2.mp3"
+                    activate_sound "sfx/menu-selection-click.mp3"
                     action Skip() alternate Skip(fast=True, confirm=True)
 
                 imagebutton: #Auto
@@ -270,16 +278,22 @@ screen quick_menu():
                     insensitive "gui/quickmenu/adv-auto-none.png"
                     selected_idle "gui/quickmenu/adv-auto-push.png"
                     selected_hover "gui/quickmenu/adv-auto-push.png"
+                    hover_sound "sfx/click2.mp3"
+                    activate_sound "sfx/menu-selection-click.mp3"
                     action Preference("auto-forward", "toggle")
 
                 imagebutton: #Save
                     idle "gui/quickmenu/adv-save.png"
                     hover "gui/quickmenu/adv-save-push.png"
+                    hover_sound "sfx/click2.mp3"
+                    activate_sound "sfx/menu-selection-click.mp3"
                     action ShowMenu('save')
 
                 imagebutton: #Prefs
                     idle "gui/quickmenu/adv-pref.png"
                     hover "gui/quickmenu/adv-pref-push.png"
+                    hover_sound "sfx/click2.mp3"
+                    activate_sound "sfx/menu-selection-click.mp3"
                     action ShowMenu('preferences')
 
         #For NVL Quick Menu
@@ -293,11 +307,15 @@ screen quick_menu():
                 imagebutton: #History
                     idle "gui/quickmenu/nvl-log.png"
                     hover "gui/quickmenu/nvl-log-push.png"
+                    hover_sound "sfx/click2.mp3"
+                    activate_sound "sfx/menu-selection-click.mp3"
                     action ShowMenu('history')
 
                 imagebutton: #Skip
                     idle "gui/quickmenu/nvl-skip.png"
                     hover "gui/quickmenu/nvl-skip-push.png"
+                    hover_sound "sfx/click2.mp3"
+                    activate_sound "sfx/menu-selection-click.mp3"
                     action Skip() alternate Skip(fast=True, confirm=True)
 
                 imagebutton: #Auto
@@ -306,16 +324,22 @@ screen quick_menu():
                     insensitive "gui/quickmenu/nvl-auto-none.png"
                     selected_idle "gui/quickmenu/nvl-auto-push.png"
                     selected_hover "gui/quickmenu/nvl-auto-push.png"
+                    hover_sound "sfx/click2.mp3"
+                    activate_sound "sfx/menu-selection-click.mp3"
                     action Preference("auto-forward", "toggle")
 
                 imagebutton: #Save
                     idle "gui/quickmenu/nvl-save.png"
                     hover "gui/quickmenu/nvl-save-push.png"
+                    hover_sound "sfx/click2.mp3"
+                    activate_sound "sfx/menu-selection-click.mp3"
                     action ShowMenu('save')
 
                 imagebutton: #Prefs
                     idle "gui/quickmenu/nvl-pref.png"
                     hover "gui/quickmenu/nvl-pref-push.png"
+                    hover_sound "sfx/click2.mp3"
+                    activate_sound "sfx/menu-selection-click.mp3"
                     action ShowMenu('preferences')
 
 
@@ -357,30 +381,57 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Start"):
+                hover_sound "sfx/click2.mp3"
+                activate_sound "sfx/menu-selection-click.mp3"
+                action Start()
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            textbutton _("History"):
+                hover_sound "sfx/click2.mp3"
+                activate_sound "sfx/menu-selection-click.mp3"
+                action ShowMenu("history")
 
-            textbutton _("Save") action ShowMenu("save")
+            textbutton _("Save"):
+                hover_sound "sfx/click2.mp3"
+                activate_sound "sfx/menu-selection-click.mp3"
+                action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        textbutton _("Load"):
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
+            action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Preferences"):
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
+            action ShowMenu("preferences")
 
         if _in_replay:
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+            textbutton _("End Replay"):
+                hover_sound "sfx/click2.mp3"
+                activate_sound "sfx/menu-selection-click.mp3"
+                action EndReplay(confirm=True)
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Main Menu"):
+                hover_sound "sfx/click2.mp3"
+                activate_sound "sfx/menu-selection-click.mp3"
+                action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        textbutton _("About"):
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
+            action ShowMenu("about")
 
         if endingct > 0:
-            textbutton _("Extra") action MainMenu()
+            textbutton _("Extra"):
+                hover_sound "sfx/click2.mp3"
+                activate_sound "sfx/menu-selection-click.mp3"
+                action MainMenu()
 
         if renpy.variant("pc"):
 
@@ -388,7 +439,10 @@ screen navigation():
             #textbutton _("Help") action ShowMenu("help")
 
             ## The quit button is banned on iOS and unnecessary on Android.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            textbutton _("Quit"):
+                hover_sound "sfx/click2.mp3"
+                activate_sound "sfx/menu-selection-click.mp3"
+                action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -443,13 +497,31 @@ screen main_menu():
 
         alpha False
 
-        hotspot (1090, 336, 150, 46) action Start()
-        hotspot (1106, 394, 136, 46) action ShowMenu("load")
-        hotspot (924, 451, 317, 46) action ShowMenu("preferences")
-        hotspot (1068, 510, 174, 46) action ShowMenu("about")
+        hotspot (1090, 336, 150, 46):
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
+            action Start()
+        hotspot (1106, 394, 136, 46):
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
+            action ShowMenu("load")
+        hotspot (924, 451, 317, 46):
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
+            action ShowMenu("preferences")
+        hotspot (1068, 510, 174, 46):
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
+            action ShowMenu("about")
         if endingct > 0:
-            hotspot (1087, 566, 155, 46) action ShowMenu("extra")
-        hotspot (1122, 625, 122, 46) action Quit(confirm=False)
+            hotspot (1087, 566, 155, 46):
+                hover_sound "sfx/click2.mp3"
+                activate_sound "sfx/menu-selection-click.mp3"
+                action ShowMenu("extra")
+        hotspot (1122, 625, 122, 46):
+            hover_sound "sfx/click2.mp3"
+            activate_sound "sfx/menu-selection-click.mp3"
+            action Quit(confirm=False)
 
 
 
@@ -520,6 +592,8 @@ screen game_menu(title, scroll=None, yinitial=0.0):
     use navigation
 
     textbutton _("Return"):
+        hover_sound "sfx/click2.mp3"
+        activate_sound "sfx/menu-selection-click.mp3"
         style "return_button"
 
         action Return()
@@ -662,6 +736,8 @@ screen file_slots(title):
             ## The page name, which can be edited by clicking on a button.
             button:
                 style "page_label"
+                hover_sound "sfx/click2.mp3"
+                activate_sound "sfx/menu-selection-click.mp3"
 
                 key_events True
                 xalign 0.5
@@ -685,6 +761,8 @@ screen file_slots(title):
                     $ slot = i + 1
 
                     button:
+                        hover_sound "sfx/click2.mp3"
+                        activate_sound "sfx/menu-selection-click.mp3"
                         action FileAction(slot)
 
                         has vbox
@@ -1200,8 +1278,14 @@ screen confirm(message, yes_action, no_action):
                 xalign 0.5
                 spacing 100
 
-                textbutton _("Yes") action yes_action
-                textbutton _("No") action no_action
+                textbutton _("Yes"):
+                    hover_sound "sfx/click2.mp3"
+                    activate_sound "sfx/menu-selection-click.mp3"
+                    action yes_action
+                textbutton _("No"):
+                    hover_sound "sfx/click2.mp3"
+                    activate_sound "sfx/menu-selection-click.mp3"
+                    action no_action
 
     ## Right-click and escape answer "no".
     key "game_menu" action no_action
