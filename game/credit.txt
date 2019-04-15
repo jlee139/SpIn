@@ -23,3 +23,7 @@ Sound Effect Credits:
 "menu-selection-click" by NenadSimic (https://freesound.org/people/NenadSimic/sounds/171697/)
 "jingle-achievement-00" by LittleRobotSoundFactory (https://freesound.org/people/LittleRobotSoundFactory/sounds/270404/)
 "collect" by Wagna (https://freesound.org/people/Wagna/sounds/325805/)
+"thud-falling-on-wooden-floor" by Breviceps (https://freesound.org/people/Breviceps/sounds/447922/)
+"sword-thud" by sefu2010 (https://freesound.org/people/sefu2010/sounds/435210/)
+"thud" by insanity54 (https://freesound.org/people/insanity54/sounds/339832/)
+"another-magic-wand-spell-tinkle" by Timbre (https://freesound.org/people/Timbre/sounds/221683/)

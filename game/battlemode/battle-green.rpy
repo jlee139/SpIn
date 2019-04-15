@@ -154,6 +154,7 @@ label attackdmgg:
         menu:
             "Who should I attack?"
             "Attack the first Puppet" if pupone:
+                play audio "sfx/metal-sound-fighting-game.mp3"
                 show scratch:
                     xalign 0.0 yalign 0.5
                 "You attacked the first puppet."
@@ -162,6 +163,7 @@ label attackdmgg:
                 $puppetnum -=1
                 $pupone = False
             "Attack the second Puppet" if puptwo:
+                play audio "sfx/metal-sound-fighting-game.mp3"
                 show scratch:
                     xalign 0.3 yalign 0.5
                 "You attacked the second puppet."
@@ -170,6 +172,7 @@ label attackdmgg:
                 $puppetnum -=1
                 $puptwo = False
             "Attack the third Puppet" if pupthree:
+                play audio "sfx/metal-sound-fighting-game.mp3"
                 show scratch:
                     xalign 0.7 yalign 0.5
                 "You attacked the third puppet."
@@ -178,6 +181,7 @@ label attackdmgg:
                 $puppetnum -=1
                 $pupthree = False
             "Attack the fourth Puppet" if pupfour:
+                play audio "sfx/metal-sound-fighting-game.mp3"
                 show scratch:
                     xalign 1.0 yalign 0.5
                 "You attacked the fourth puppet."
@@ -186,6 +190,7 @@ label attackdmgg:
                 $puppetnum -=1
                 $pupfour = False
             "Attack the Butler":
+                play audio "sfx/metal-sound-fighting-game.mp3"
                 show scratch:
                     xalign 0.5 yalign 0.2
                 "You did [redatk] damage to the Butler!"
@@ -195,6 +200,7 @@ label attackdmgg:
                 $numturns +=1
                 return
     else:
+        play audio "sfx/metal-sound-fighting-game.mp3"
         show scratch:
             xalign 0.5 yalign 0.2
         "You did [redatk] damage to the Butler!"
@@ -217,6 +223,7 @@ label attackdmgg:
     return
 
 label defenddmgg:
+    play audio "sfx/another-magic-wand-spell-tinkle.mp3"
     show shield:
         xalign 0.5 yalign 0.3
     "You brace for impact. Damage taken is reduced."
@@ -244,6 +251,7 @@ label magicdmgg:
                 menu:
                     "Who should I attack?"
                     "Attack the first Puppet" if pupone:
+                        play audio "sfx/fire-crackle-and-flames-002.mp3"
                         show torchitall:
                             xalign 0.1 yalign 0.5
                         "You attacked the first puppet."
@@ -252,6 +260,7 @@ label magicdmgg:
                         $puppetnum -=1
                         $pupone = False
                     "Attack the second Puppet" if puptwo:
+                        play audio "sfx/fire-crackle-and-flames-002.mp3"
                         show torchitall:
                             xalign 0.34 yalign 0.5
                         "You attacked the second puppet."
@@ -260,6 +269,7 @@ label magicdmgg:
                         $puppetnum -=1
                         $puptwo = False
                     "Attack the third Puppet" if pupthree:
+                        play audio "sfx/fire-crackle-and-flames-002.mp3"
                         show torchitall:
                             xalign 0.65 yalign 0.5
                         "You attacked the third puppet."
@@ -268,6 +278,7 @@ label magicdmgg:
                         $puppetnum -=1
                         $pupthree = False
                     "Attack the fourth Puppet" if pupfour:
+                        play audio "sfx/fire-crackle-and-flames-002.mp3"
                         show torchitall:
                             xalign 0.9 yalign 0.5
                         "You attacked the fourth puppet."
@@ -278,6 +289,7 @@ label magicdmgg:
                     "Attack the Butler":
                         $numturns-=2
                         $redatk = redatk * 1.5
+                        play audio "sfx/fire-crackle-and-flames-002.mp3"
                         show torchitall:
                             xalign 0.5 yalign 0.2
                         "By using 3 energy, you fire a magic spell that does [redatk] damage."
@@ -285,6 +297,7 @@ label magicdmgg:
                         $bosshp -= redatk
             "All of them with a weaker one.":
                 if pupone:
+                    play audio "sfx/fire-crackle-and-flames-002.mp3"
                     show torchitall:
                         xalign 0.1 yalign 0.5
                     pause 0.5
@@ -293,6 +306,7 @@ label magicdmgg:
                     $puppetnum -=1
                     $pupone = False
                 if puptwo:
+                    play audio "sfx/fire-crackle-and-flames-002.mp3"
                     show torchitall:
                         xalign 0.34 yalign 0.5
                     pause 0.5
@@ -301,6 +315,7 @@ label magicdmgg:
                     $puppetnum -=1
                     $puptwo = False
                 if pupthree:
+                    play audio "sfx/fire-crackle-and-flames-002.mp3"
                     show torchitall:
                         xalign 0.65 yalign 0.5
                     pause 0.5
@@ -309,6 +324,7 @@ label magicdmgg:
                     $puppetnum -=1
                     $pupthree = False
                 if pupfour:
+                    play audio "sfx/fire-crackle-and-flames-002.mp3"
                     show torchitall:
                         xalign 0.9 yalign 0.5
                     pause 0.5
@@ -319,6 +335,7 @@ label magicdmgg:
                 #If butler
                 $numturns-=2
                 $redatk = redatk * 0.8
+                play audio "sfx/fire-crackle-and-flames-002.mp3"
                 show torchitall:
                     xalign 0.5 yalign 0.2
                 "By using 3 energy, you fire a magic spell that does [redatk] damage to all targets."
@@ -330,6 +347,7 @@ label magicdmgg:
     else:
         $numturns-=2
         $redatk = redatk * 1.5
+        play audio "sfx/fire-crackle-and-flames-002.mp3"
         show torchitall:
             xalign 0.5 yalign 0.3
         "By using 3 energy, you fire a magic spell that does [redatk] damage."
@@ -356,6 +374,7 @@ label healdmgg:
     menu:
         "You can crush 1 jewel to fully heal yourself."
         "Crush jewel":
+            play audio "sfx/320655-rhodesmas-level-up-01.mp3"
             show healing:
                 xalign 0.5 yalign 0.3
 
@@ -371,6 +390,7 @@ label healdmgg:
 
 label butdef:
     "The Butler braces for impact. Your attack does less damage."
+    play audio "sfx/fist-punch-3.mp3"
     $redatk = redatk*0.8 #Reduce Red's attack to 8
     return
 
@@ -384,6 +404,7 @@ label butturn:
     if puppetnum<4 and bosshp>10:
         $bosshp-=10 #For 10 of Boss's HP, create puppets
         "The Butler exchanged his health to create puppets! These puppets are flimsy enough that one hit should destroy them."
+        play audio "sfx/hand-bells-d-single.mp3"
         if pupone == False:
             show battlepuppet1:
                 xalign 0 yalign 0.3
@@ -407,6 +428,7 @@ label butturn:
 
     #Then he attacks normally with the puppets
     "The Butler does [bossatk] damage. The puppets each does 2 damage."
+    play audio "sfx/thud-falling-on-wooden-floor.mp3"
     with vpunch
     $hp-=bossatk
     $hp-=8

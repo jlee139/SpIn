@@ -137,6 +137,7 @@ label attackdmg:
     if witchdef >=9: #There's 10% chance she'll defend
         call witchdef
     $bosshp -= redatk
+    play audio "sfx/metal-sound-fighting-game.mp3"
     show scratch:
         xalign 0.5 yalign 0.3
     "You did [redatk] damage!"
@@ -149,6 +150,7 @@ label attackdmg:
     return
 
 label defenddmg:
+    play audio "sfx/another-magic-wand-spell-tinkle.mp3"
     show shield:
         xalign 0.5 yalign 0.3
     "You brace for impact. Damage taken is reduced."
@@ -163,6 +165,7 @@ label magicdmg:
         call witchdef
     $numturns-=2
     $redatk = redatk * 1.5
+    play audio "sfx/fire-crackle-and-flames-002.mp3"
     show torchitall:
         xalign 0.5 yalign 0.3
     "By using 3 energy, you fire a magic spell that does [redatk] damage."
@@ -180,6 +183,7 @@ label healdmg:
     menu:
         "You can crush 1 jewel to fully heal yourself."
         "Crush jewel":
+            play audio "sfx/320655-rhodesmas-level-up-01.mp3"
             show healing:
                 xalign 0.5 yalign 0.3
 
@@ -211,6 +215,7 @@ label zerker:
 
 label witchdef:
     "The witch braces for impact. Your attack does less damage."
+    play audio "sfx/fist-punch-3.mp3"
     $redatk = redatk*0.7 #Reduce Red's attack to 7
     return
 
@@ -224,10 +229,12 @@ label witchturn:
     if witchmagic >=5: #There's 50% chance she'll use magic
         $bossatk = bossatk*1.5
         "The witch fires a magic spell that does [bossatk] damage."
+        play audio "sfx/sword-thud.mp3"
         with vpunch
         $hp-=bossatk
     else:
         "The witch does [bossatk] damage."
+        play audio "sfx/thud.mp3"
         with vpunch
         $hp-=bossatk
     return
@@ -237,6 +244,9 @@ label healthgameover:
     scene black
     "You ran out of health. You are unable to keep your promise of keeping your comrades safe and die."
     "Keep a better eye on your health next time!"
+    play audio "sfx/bone-crunch-fast.mp3"
+    play audio "sfx/bone-snap-7.mp3"
+    play audio "sfx/bone-crunch-fast.mp3"
     scene end dead with fade
     pause 2.0
     return
@@ -246,6 +256,9 @@ label turngameover:
     scene black
     "You have ran out of energy. You are unable to keep your promise of keeping your comrades safe and die."
     "Budget your energy more carefully!"
+    play audio "sfx/bone-snap-7.mp3"
+    play audio "sfx/bone-crunch-fast.mp3"
+    play audio "sfx/bone-snap-7.mp3"
     scene end dead with fade
     pause 2.0
     return
@@ -254,6 +267,7 @@ label wincondition:
     hide beastoverlay
     $showwincond = True
     scene black
+    play audio "sfx/jingle-achievement-00.mp3"
     "You won!"
     $quick_menu = True
     return
