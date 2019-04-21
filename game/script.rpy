@@ -9,18 +9,19 @@ label start:
     #Debugging each chapter
     #call firstfloor    #After the prologue, we go to the first floor
     #call secondfloor   #Then the 2nd floor
-    #call thirdfloor    #Then the 3rd floor
+    $numOrb = 1
+    call thirdfloor    #Then the 3rd floor
 
     #Tada! Story is done!
 
     #Debugging Things:
-    scene bg greenroom with fade
-    show particleFog1:
-        alpha 0.8
+    #scene bg greenroom with fade
+    #show particleFog1:
+    #    alpha 0.8
     window hide
     #call huntmodestart #Testing our hunt mode
     #call shootfix #Testing our hunt mode
-    call battlebutler #Testing our Battle Mode
+    #call debug #Testing our Battle Mode
     #jump breakpoint #for debugging
 
     #scene black

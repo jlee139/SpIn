@@ -454,7 +454,7 @@ label introToWitch:
     nvlmc "My ability."
     nvl clear
     nvlmc "Well, to call it my ability is actually misleading. It's a part of who I am, after all. But it's not like there's any better way to describe it. To any other Supernatural Investigators, it'll be considered their ability."
-    nvlmc "In the Eastern sector, there's a famous onmyouji (I suppose the closest translation would be an exorcist) by the name of Abe no Seimei. According to legends, his mother was a beast called the “Nine-tailed Fox.” A fox is supposed to gain an extra tail for every 100 years it lives. So to have nine of them, that fox must have lived for a long time while collecting wisdom and power. Because of his lineage, Abe no Seimei was an undefeatable man."
+    nvlmc "In the Eastern sector, there's a famous onmyouji (I suppose the closest translation would be an exorcist) by the name of Abe no Seimei. According to legends, his mother was a beast called the \"Nine-tailed Fox.\" A fox is supposed to gain an extra tail for every 100 years it lives. So to have nine of them, that fox must have lived for a long time while collecting wisdom and power. Because of his lineage, Abe no Seimei was an undefeatable man."
     nvlmc "I'm not going to say something so grand like I am a descendent of Abe no Seimei. "
     nvlmc "But there's probably some traces of his blood in my vein."
     nvlmc "Otherwise, I have no real words to describe this form of mine."

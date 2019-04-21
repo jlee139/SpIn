@@ -107,7 +107,7 @@ label secondfloor: #2nd chapter start!
     show r temp at center with dissolve
     rookie "Sounds good to me."
 
-    menu:
+    menu routechoice:
         advmc "Alright, then... "
         "Green, you’ll cause the least amount of trouble next to me.":
             $ greenap+= 1
@@ -115,11 +115,11 @@ label secondfloor: #2nd chapter start!
         "Blue, I trust you the most.":
             $ blueap+= 1
             "Blue's Route has yet to have been implemented."
-            #jump secblue
+            jump routechoice
         "Rookie, would you be alright with me?":
             $ rookieap+= 1
             "Rookie's route has yet to have been implemented."
-            #jump secrook
+            jump routechoice
         "I’ll be fine on my own." if trueend:
             $bossap+=1
             jump secsolo

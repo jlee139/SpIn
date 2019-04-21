@@ -161,8 +161,8 @@ label secgreen:
     nvl clear
     window show
 
-    nvlmc "From the distance of the dense fog, I see bunch of silhouettes staggering towards us. Their movement is slow. I can only assume that these “puppets” as this guy had said can’t move too fast. Are they zombies? Ghouls? Golems? Are they really there or is it an illusion trick of the fog?"
-    nvlmc "Just to check, I lunge forward to attack. The minute an attack hits, the “puppet” disappears in a puff of smoke. "
+    nvlmc "From the distance of the dense fog, I see bunch of silhouettes staggering towards us. Their movement is slow. I can only assume that these \"puppets\" as this guy had said can’t move too fast. Are they zombies? Ghouls? Golems? Are they really there or is it an illusion trick of the fog?"
+    nvlmc "Just to check, I lunge forward to attack. The minute an attack hits, the \"puppet\" disappears in a puff of smoke. "
     nvlmc "Nothing solid, then. But it didn’t feel like just an illusion either. I get the feeling that they could actually do some damage to me if I let them get too close. "
     nvlmc "Feeling uneasy, I rush back to Green and pick him up. He’s heavier than he looks. But there’s no time to dwell on that. It’s important to see if I can get away from this mob approaching us."
 
@@ -385,7 +385,7 @@ label secgreen:
     advmc "For someone who proclaims loyalty, you don’t follow through, do you?"
     green "H-hey, no need to get nasty. Sometimes, there’s really nothing you can do."
     advmc "I find that hard to believe. "
-    advmc "You’re telling me that someone you serve was in trouble but you didn’t even raise your hand to help? Because “servants don’t have power.” Isn’t that too convenient? "
+    advmc "You’re telling me that someone you serve was in trouble but you didn’t even raise your hand to help? Because \"servants don’t have power.\" Isn’t that too convenient? "
     green "It’s not about conveniency. Even if you want to help, there are limits to what you can do."
     advmc "That just means that you’re not trying hard enough. There’s always something you can do. Even if it’s biting off my own tails, I-"
     green "But that’s the case for you. Not everyone has that luxury."
@@ -532,7 +532,10 @@ label secgreen:
 
     advmc "That should have destroyed the puppets. Where’s Green? Hm?"
     advmc "(There’s a small green ball rolling this way. Did the Butler drop this? What even is this?)"
-    $ persistent.greenOrb = True
+    #If this route has never been ran before, change it so that we've collected the green Orb
+    if greenOrb == False:
+        $numOrb=+1
+        $ persistent.greenOrb = True
     show g temp at center with dissolve
     green "Hey Red!"
     advmc "Should you be yelling so much? What if you start bleeding again?"
@@ -558,6 +561,7 @@ label secgreen:
     green "Picky! I liked you better when you were getting all weepy that I was hurt."
     advmc "That never happened! Now shut up and focus on running. This place will collapse before we get out at this rate!"
 
+label debug:
     scene bg exitroom with fade
 
     #nvl set up

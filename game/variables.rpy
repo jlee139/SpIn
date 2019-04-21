@@ -63,6 +63,7 @@ init python:
     greenOrb = False #Activated when player defeats Green's Boss
     blueOrb = False #Activated when player defeats Blue's Boss
     purpleOrb = False #Activated when player defeats Rookie's Boss
+    numOrb = 0 #Number of Orbs collected
 
     #OnRoute Variables
     onGreenRoute = False #Activated when player is on Green's Route
@@ -72,6 +73,8 @@ init python:
     #For Ending CGs
     badend1 = False #The very first ending we can get. "Empty Hands"
     greenbadend = False #Green's Bad Ending
+    greengoodend = False #Green's Good Ending
+    normalend1 = False #"Bloodied Hands" Ending
 
     #Affection points
     greenap = 0
