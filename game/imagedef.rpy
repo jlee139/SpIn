@@ -26,6 +26,12 @@ image bg threedoors = "background/threedoors.png"
 image bg greenroom = "background/greenroom.png"
 image bg exitroom = "background/onedoorexit.png"
 image bg exitroomhole = "background/onedoorexit-hole.png"
+image bg thirdhall = "background/hallway.png"
+image bg thirdhallclose = "background/hallway_closeup.png"
+image bg thirdhallbroke = "background/hallway-broken.png"
+image bg thirdhallbrokeclose = "background/hallway_closeup-broken.png"
+image bg atticdark = "background/attic_dark.png"
+image bg atticlight = "background/attic_lighter.png"
 
 
 #CGs to be Used

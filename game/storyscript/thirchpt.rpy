@@ -2,7 +2,7 @@ label thirdfloor: #3rd chapter start!
     #nvl set up
     nvl clear
     window hide
-    #scene bg thirdfloorstair with fade
+    scene bg thirdhall with fade
     window show
 
     nvlmc "The willow the wisps eventually lead me to a stairway that doesn’t look like the rest of the mansion. Either this place was created with magic and doesn’t exist in actuality, or this place was later created by one of the other owners. At this moment in time, I can care less which one it is."
@@ -20,17 +20,20 @@ label thirdfloor: #3rd chapter start!
     nvlmc "In no time, I arrive at the top."
 
     nvl clear
+    window hide
+    scene bg thirdhallclose with fade
+    window show
 
     nvlmc "What? Do I just open this door? Is it wired to electrify me, too? I don’t particularly want to find out by getting shocked."
     nvlmc "So I do the only logical thing."
     nvlmc "I blast a hole through the door."
     window hide
-    #scene change
+    scene bg thirdhallbrokeclose with fade
     window show
     nvlmc "Then I walk in through."
 
     window hide
-    #Scene change
+    scene bg atticdark with fade
     window show
 
     nvlmc "The room looks like an attic of sorts that hasn’t been opened in ages. The air is completely stiff in here, although it’s now starting to move thanks to the hole. It’s dark, too. The only light at first is from the hole behind me."
@@ -60,23 +63,22 @@ label thirdfloor: #3rd chapter start!
     advmc "(Then I better destroy it.)"
     witch "Don’t you dare!"
 
+    scene bg thirdhallbrokeclose with fade
+
     #nvl set up
     nvl clear
     window show
 
     nvlmc "It seems I underestimated her again. "
     nvlmc "She pushes me out of there with pure force. If I hadn’t blasted a hole through the door, I would’ve collided with it. But as of now, it looks like I’ll fall straight into the electrifying stairs."
-
-    window hide
-    #Scene Change
-    window show
-
     nvlmc "Tch. Annoying."
     nvlmc "I fire a small blast below me to give me enough air to get me to the bottom of the stairs. It’s just enough to skip over the electric shocks, but it looks like the witch isn’t done with me. She follows after me with a crazed expression on her face."
 
     #escape nvl mode
     nvl clear
     window hide
+
+    scene bg thirdhallbroke with fade
 
     show w temp at center with fade
     witch "You saw too much! I was just going to kill you, but now I’m going to make you suffer first!"
