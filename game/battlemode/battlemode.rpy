@@ -249,7 +249,7 @@ label healthgameover:
     play audio "sfx/bone-crunch-fast.mp3"
     scene end dead with fade
     pause 2.0
-    return
+    $ MainMenu(confirm=False)()
 
 label turngameover:
     hide beastoverlay
@@ -261,7 +261,7 @@ label turngameover:
     play audio "sfx/bone-snap-7.mp3"
     scene end dead with fade
     pause 2.0
-    return
+    $ MainMenu(confirm=False)()
 
 label wincondition:
     hide beastoverlay

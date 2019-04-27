@@ -67,10 +67,10 @@ define gui.interface_text_font = "fonts/Asap-Regular.otf"
 define gui.title_text_font = "fonts/Sail-Regular.otf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 22
+define gui.text_size = 20
 
 ## The size of character names.
-define gui.name_text_size = 30
+define gui.name_text_size = 28
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 22

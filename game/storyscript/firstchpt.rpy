@@ -49,16 +49,19 @@ label firstfloor: #set up of the rest of the story
         advmc "(Even Rookie is making fun of me? Just how pathetic do I look?)"
         "No to both candy and being carried.":
             show blueapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ blueap+= 1
             advmc "I'm not nervous. Just wanted to cover my bases."
             blue "Got it. But if you change your mind, I have strawberry flavor."
         "I think I'm too nervous to be carried or to eat something.":
             show rookieapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ rookieap+= 1
             advmc "But thank you for offering anyways. I'll be fine."
             rookie "You push yourself too much."
         "I'm fine! Like hell I'm getting cold feet!":
             show greenapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ greenap+= 1
             advmc "I've taken care of harder missions than this plenty of times!"
             green "Hah! THat we did!"
@@ -122,7 +125,10 @@ label firstfloor: #set up of the rest of the story
             jump stayguard
 
 label cafeteria:
+    #Play Green's Theme
+    play music "music/Wolf_Nilson_Trio_-_04_-_Auf_der_anderen_Seite.mp3" fadein 1.0 fadeout 1.0
     show greenapprove at appsprite
+    play audio "sfx/hand-bells-d-single.mp3"
     $ greenap+= 1
     green "Ugh. Don't make me spread my area so thinly. The furthest I can go is to the doorway... Hey, are you listening?!"
 
@@ -172,7 +178,10 @@ label cafeteria:
     jump firstambushed
 
 label portrait:
+    #Play Rookie's Theme
+    play music "music/krackatoa_-_Pretend_and_walk_outside.mp3" fadein 1.0 fadeout 1.0
     show rookieapprove at appsprite
+    play audio "sfx/hand-bells-d-single.mp3"
     $ rookieap+= 1
     rookie "Understood."
     advmc "Green, I'll leave it to you to protect Blue."
@@ -224,6 +233,7 @@ label portrait:
     window hide
 
     show whiteflash zorder 50 with vpunch
+    play audio "sfx/82082__rmw2861__1000000009.mp3"
     "{i}Skreeeeeeeeeeeeeee!{i}"
 
     advmc "Tch! Looks like there's no time for this. Rookie, let the portrait be. We need to focus on protecting Blue."
@@ -232,7 +242,10 @@ label portrait:
     jump firstambushed
 
 label stayguard:
+    #Play Blue's Theme
+    play music "music/Peter_Rudenko_-_12_-_Snowing.mp3" fadein 1.0 fadeout 1.0
     show blueapprove at appsprite
+    play audio "sfx/hand-bells-d-single.mp3"
     $ blueap+= 1
     advmc "Green, Rookie, look around and make sure we won't be ambushed."
     green "Yeah, yeah. So noisy."
@@ -282,6 +295,8 @@ label stayguard:
     jump firstambushed
 
 label firstambushed:
+    #Suspenseful Music Start!
+    play music "music/Chris_Zabriskie_-_14_-_Prelude_No_14.mp3" fadein 1.0 fadeout 1.0
     scene bg fronthall with fade
     #Turn on our fog
     show particleFog1:
@@ -311,20 +326,6 @@ label firstambushedcont:
     hide bl
     hide g
 
-    # #Explain Shoot Mode
-    # #NVL Mode
-    # window show
-    # nvlmc "How lucky for us there's so many creatures for me to eat. But from the way they're swarming, it feels like there's going to be a big boss that'll appear soon."
-    # nvlmc "Guess I better eat as much as I can before they appear. It's always good to reduce enemy numbers. Besides, eating them will also boost my own strength, too. Win-win, if you will."
-    # nvlmc "Make sure to click as many creatures as you can before the boss appears, alright?"
-    #
-    # #end nvl
-    # nvl clear
-    # window hide
-    #
-    # call shootfix #Our Shoot Mode
-
-
     #Explain Hunt Mode
     #NVL Mode
     window show
@@ -337,8 +338,13 @@ label firstambushedcont:
     #end nvl
     nvl clear
     window hide
+    #Hunt Mode Music
+    play music "music/Chris_Zabriskie_-_07_-_Its_Always_Too_Late_to_Start_Over.mp3" fadein 1.0 fadeout 1.0
     #Call Hunt Mode
     call huntmodestart
+
+    #Back to our suspenseful music
+    play music "music/Chris_Zabriskie_-_14_-_Prelude_No_14.mp3" fadein 1.0 fadeout 1.0
 
     scene bg fronthall with fade
     #Turn on our fog
@@ -368,7 +374,11 @@ label firstambushedcont:
     nvl clear
     window hide
 
+    #Begin Battle Music
+    play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
     call begin_TutRPG #Our Battle Mode Tutorial version
+    #Back to our suspenseful music
+    play music "music/Chris_Zabriskie_-_14_-_Prelude_No_14.mp3" fadein 1.0 fadeout 1.0
     jump introToWitch
 
 label introToWitch:
@@ -383,6 +393,7 @@ label introToWitch:
     advmc "As are you. You don't seem to be a normal spirit. Are you, by any chance, a witch?"
     witch "My, my! How rude! To call a fragile maiden like myself a witch! But I can't deny it, I suppose."
 
+    play audio "sfx/dropping-wood-2.mp3"
     show whiteflash zorder 50 with vpunch
 
     advmc "My, my! How rude! We weren't done talking, you know."
@@ -408,6 +419,7 @@ label introToWitch:
     advmc "Get back! She's going to-"
 
     hide w
+    play audio "sfx/dropping-wood-2.mp3"
     show whiteflash zorder 50 with vpunch
 
     #nvl set up
@@ -417,6 +429,7 @@ label introToWitch:
     nvlmc "Not good. I underestimated her. I should have taken her seriously from the get-go."
 
     if trueend:
+        play music "music/David_Hilowitz_-_Angle_of_Light.mp3" fadein 1.0 fadeout 1.0
         #end nvl
         #CG????
         window hide
@@ -428,6 +441,7 @@ label introToWitch:
         "Don't."
         boss "Hehe. That kind of rough side of you is cute, too."
         "Didn't I tell you to shut up?"
+        play music "music/David_Hilowitz_-_10_-_Missed_Connections.mp3" fadein 1.0 fadeout 1.0
         window show
 
     nvlmc "We came here prepared for a spirit, not a witch. Damn it all. This isn't good. "
@@ -439,11 +453,13 @@ label introToWitch:
     nvlmc "First priority is to protect everyone. "
     nvlmc "Unlike them, I'm durable enough that I can probably survive a blast or two if she starts flinging this dense energy at me. If the others got even scratched with something like this, they'd probably evaporate."
     nvlmc "But can I take the hit without letting even a stray hit get near them? Then the only other way to perfectly protect everyone would be..."
+    play music "music/Marsel_Minga_-_03_-_Drum_Machine_Battle.mp3" fadein 1.0 fadeout 1.0
     nvlmc "I clutch the three jeweled necklace. Since this has a fairy's blessing, it should work."
     nvlmc "Without hesitation, I rush towards the spirit, the necklace clutched tightly in my hand. Seeing me move, the spirit turns her whole attention to me."
     nvlmc "Good."
     nvlmc "I hope this doesn't hurt too much."
 
+    play audio "sfx/dropping-wood-2.mp3"
     show whiteflash zorder 50 with vpunch
     nvl clear
 
@@ -495,6 +511,7 @@ label introToWitch:
     nvlmc "For example, I can crush it in my hand for an extra boost of power. It also means that I won't be able to rely on this any more, but if I can keep these guys safe..."
     nvlmc "What's a little sacrifice, right?"
 
+    play audio "sfx/dropping-wood-2.mp3"
     show whiteflash zorder 50 with vpunch
     #Turn on our fog
     show particleFog1:
@@ -528,6 +545,7 @@ label introToWitch:
     witch "I won't let you!"
     advmc "Heh. Got you."
 
+    play audio "sfx/dropping-wood-2.mp3"
     show whiteflash zorder 50 with vpunch
     #Turn on our fog
     show particleFog1:
@@ -548,6 +566,8 @@ label introToWitch:
     nvlmc "The wind kicks off. I must be really weakened, if this little is enough to knock me back into Blue's arms. At least it looks like Blue has some kind of a minor seal up around us. But if she fires something at us, it won't last. And I don't have my necklace to protect me anymore."
     nvlmc "With another cackle, the witch flies up the staircase and through the gaping hole of the second floor's entrance. She doesn't put up a seal to stop us from entering, which already tells me that the second floor must be filled with traps."
     hide w
+    #The music for here should be...
+    play music "music/David_Hilowitz_-_10_-_Missed_Connections.mp3" fadein 1.0 fadeout 1.0
     nvlmc "The gust dies down."
     nvlmc "We seem to have returned to relative peace."
 
@@ -594,6 +614,7 @@ label introToWitch:
             jump firstfloorcont
 
 label storyendEmptyHands:
+    play music "music/Chris_Zabriskie_-_03_-_I_Dont_See_the_Branches_I_See_the_Leaves.mp3" fadein 1.0 fadeout 1.0
     advmc "It's clear that you're uncomfortable, Rookie. It'd be better for a different team to take care of this mission."
     green "But doesn't that mean that witch can get stronger in the meanwhile?"
     advmc "(Look, I don't like it either. But I'm not going to force Rookie here to spend time with a monster that wiped out his village. If he's talking about {i}that incident{/i}  three years ago...)"
@@ -635,6 +656,7 @@ label storyendEmptyHands:
 
 label firstfloorcont:
     show allappsprite
+    play audio "sfx/hand-bells-d-single.mp3"
     $ blueap+= 1
     $ greenap+= 1
     $ rookieap+= 1
@@ -655,6 +677,7 @@ label firstfloorcont:
     advmc"(But this is the first.)"
 
     if trueend:
+        play music "music/David_Hilowitz_-_Angle_of_Light.mp3" fadein 1.0 fadeout 1.0
         boss "Pwhahahaha! What expression is that supposed to be?"
         advmc "S-shut up! I don't know! I don't know what I'm feeling!"
         boss "Tsk, tsk. You've spent this long with humans and still can't figure out emotions? I thought you foxes are supposed to be smart!"
@@ -668,6 +691,7 @@ label firstfloorcont:
         boss "Once you laugh, it gets easier, you know. If it was a negative feeling, you'll suddenly feel a lot better. If it was a positive feeling, it'll make you feel doubly better for sharing it."
         advmc "That... sounds fake."
         boss "H-hey! I'm trying to give you some sound advice!"
+        play music "music/David_Hilowitz_-_10_-_Missed_Connections.mp3" fadein 1.0 fadeout 1.0
 
     advmc "Pfft... Hahahahaha!"
     green "Nice going, Rookie. Red's lost it because of you."

@@ -1,4 +1,7 @@
 label prologue:
+    #The story starts with a flashback. That means the sound is...
+    play music "music/David_Hilowitz_-_Angle_of_Light.mp3" fadein 1.0 fadeout 1.0
+
     #nvl set up
     nvl clear
     window hide
@@ -10,11 +13,9 @@ label prologue:
     nvlmc "\"Did you fall asleep here again?\" he'd say every time he found me on the couch. \"Isn't it uncomfortable? You don't have to wait for me in the office.\""
     nvlmc "It's possible that since asking me to join his Supernatural Investigation Office, he never once considered that I had nowhere else to go but here. That I had nowhere but by his side to call home."
     nvlmc "\"I don't mind,\" I'd say instead."
+    nvl clear
     nvlmc "He would always laugh at those words while ruffling my hair. Like he was rewarding a dog or a child. I both loved and hated him in the same breath."
     nvlmc "\"Want me to leave a blanket here for you?\""
-
-    nvl clear
-
     nvlmc "..."
     nvlmc "Those days are long gone now."
     nvlmc "And some things are precious because you can't ever get them back."
@@ -24,6 +25,8 @@ label prologue:
     window hide
 
     #Now we get to the main cast
+    #The music for here should be...
+    play music "music/David_Hilowitz_-_10_-_Missed_Connections.mp3" fadein 1.0 fadeout 1.0
     scene bg mansionout with fade
 
     show g temp at right with dissolve
@@ -38,16 +41,19 @@ label prologue:
     menu:
         advmc "Thanks for watching out for me."
         "Offer to reiterate code names":
-            show allappsprite
+            show rookieapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             #show rookieapprove at appsprite
             $ rookieap+= 1
             "If you want, we can go over everyone's code names again. I'm Red."
         "Gently but firmly reiterate the importance of code names":
             show blueapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ blueap+= 1
             "Don't forget that these code names exist to protect us. Until this mission is over, I'm Red."
         "Get annoyed":
             show greenapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ greenap+= 1
             "Until we get back, remember that I'm Red. And you, stop laughing! You couldn't keep the code names straight on your first mission."
 
@@ -68,24 +74,28 @@ label prologue:
         advmc "(Together, huh? What a sore topic to ask.)"
         "Reassure him":
             show rookieapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ rookieap+= 1
             advmc "Don't worry. You'll fit in in no time."
             rookie "I see."
             advmc "(He got really quiet. Did I say the wrong thing?)"
         "Dodge the question":
             show greenapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ greenap+= 1
             advmc "I guess? I don't really remember."
             green "Maybe you should stop getting hit on the head so often, eh?"
             advmc "No one asked you!"
         "Answer what you can":
             show blueapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ blueap+= 1
             advmc "Something like that. It's been what? Almost a year for the three of us?"
             blue "Yup. Three more months, and it'll be our anni."
             advmc "(He looks way too happy. I hope he's not planning on baking...)"
         "Answer honestly" if trueend:
             $ bossap+= 1
+            play audio "sfx/hand-bells-d-single.mp3"
             advmc "About a year with these guys. But before that, I worked together with the former Red. Ah, you'll probably recognize his name as 'Boss.'"
             rookie "Is that...?"
             blue "If you're thinking the one who recruited most of us and formed our Supernatural Invesgitation group by giving it the silly name of 'SpIn,' you are correct."

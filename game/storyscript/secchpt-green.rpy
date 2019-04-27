@@ -1,6 +1,9 @@
 #Green Route Here
 label secgreen:
+    #Play Green's Theme
+    play music "music/Wolf_Nilson_Trio_-_04_-_Auf_der_anderen_Seite.mp3" fadein 1.0 fadeout 1.0
     show greenapprove at appsprite
+    play audio "sfx/hand-bells-d-single.mp3"
 
     green "Your phrasing is worse! Can’t you just say that you’re dazzled by my ruggedly good looks instead?"
 
@@ -8,6 +11,7 @@ label secgreen:
         advmc "(Oh, please! Like you're all that!)"
         "Rookie, here’s another patient for you!":
             show greenapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ greenap+= 1
             green "So you don’t deny my good looks!"
             advmc "You’ll never be able to settle down if you treat everyone you meet like this!"
@@ -73,6 +77,7 @@ label secgreen:
             advmc "(Sorry, Zero! I’ll make it up to you when we see each other again!)"
             advmc "You already knew, huh?"
             show greenapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ greenap+= 1
             green "I’m going to kill that brat!!"
 
@@ -86,6 +91,8 @@ label secgreen:
     advmc "Yeah. This fog isn’t yours, is it?"
     show g temp at left with dissolve
     show but temp at right with dissolve
+    #Butler's Theme
+    play music "music/David_Szesztay_-_Bizarre_Waltz.mp3" fadein 1.0 fadeout 1.0
     prebut "Astute observation, my esteemed guests."
     green "Alas, my smoke isn’t that thick. I’m not the type to keep things in until I can’t take it anymore, after all."
     advmc "If that was supposed to be a dirty joke, I’m afraid it flew over my head."
@@ -121,6 +128,7 @@ label secgreen:
 
         "Are you stupid? That could’ve put both our lives in danger!":
             show greenapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ greenap+= 1
             green "B-but you’re… You’re you. There’s no way that this little can put our lives in danger."
             advmc "D-don’t just suddenly flatter me! "
@@ -128,6 +136,9 @@ label secgreen:
     hide g
     show but temp at center with dissolve
     prebut "Ahem. As I was saying-"
+
+    #Suspenseful Music Start!
+    play music "music/Chris_Zabriskie_-_14_-_Prelude_No_14.mp3" fadein 1.0 fadeout 1.0
 
     #nvl set up
     nvl clear
@@ -199,6 +210,7 @@ label secgreen:
         advmc "(He looks pretty down about this.)"
         "Ehhhh? So there are things that even the great you can’t do, huh?":
             show greenapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ greenap+= 1
             green "Can you not? I’m serious here."
             advmc "It's fine. We’re a team. Our purpose is to cover each others’ backs."
@@ -215,6 +227,8 @@ label secgreen:
     advmc "They disappear too easily to be made out of corpses. "
     show g temp at left with dissolve
     show but temp at right with dissolve
+    #Butler's Theme
+    play music "music/David_Szesztay_-_Bizarre_Waltz.mp3" fadein 1.0 fadeout 1.0
     prebut "That’s correct! My esteemed guests this time around are so smart. "
     advmc "How long have you been there?"
     prebut "A good butler like myself is never too far from providing a necessary service!"
@@ -229,6 +243,7 @@ label secgreen:
         "(Play along)":
             advmc "I prefer coffee and cake. If the coffee isn’t bitter, I’ll send it back."
             show greenapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ greenap+= 1
             green "Oh? Bitter coffee? Didn’t think you were the type to prefer bitter things. Are you trying to be an adult?"
             advmc "Have you forgotten just how many tails I have?"
@@ -251,6 +266,7 @@ label secgreen:
     nvl clear
     window show
 
+    play audio "sfx/click.mp3"
     nvlmc "With a snap of his fingers, the fog clear just enough for us to see a comfortable-looking set up."
 
     scene bg greenroom with fade
@@ -307,6 +323,7 @@ label secgreen:
         "Are you stupid?":
             advmc "Even if that’s a really touching mental image, it doesn’t change the fact that we’re not exactly on the same side here!"
             show greenapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ greenap+= 1
             green "But isn’t it a waste of this good looking food?"
             butler "Indeed, my esteemed guest. It will be a waste to not try it at least."
@@ -333,6 +350,7 @@ label secgreen:
     window hide
 
     if trueend:
+        play music "music/David_Hilowitz_-_Angle_of_Light.mp3" fadein 1.0 fadeout 1.0
         scene bg office memory with fade
         boss "Oh, you don’t want to drink that. That’s coffee."
         advmc "But you’re drinking it. Why can’t I have it?"
@@ -348,6 +366,8 @@ label secgreen:
         advmc "Eh? What’s with that? You humans are too strange in your ways. If food cannot be enjoyed for their taste, what’s the point?"
         boss "Funnily enough, coffee is also pretty toxic for most other species, too."
         advmc "What!? That’s like saying you’re drinking poison for fun! Hey, stop laughing at me! It’s a valid concern!"
+        #Play Green's Theme
+        play music "music/Wolf_Nilson_Trio_-_04_-_Auf_der_anderen_Seite.mp3" fadein 1.0 fadeout 1.0
         scene bg greenroom with fade
         show particleFog1:
             alpha 0.5
@@ -456,6 +476,7 @@ label secgreen:
             green "Argh, you’re the worst!"
         "I can’t believe you!":
             show greenapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ greenap+= 1
             green "Aw c’mon, is it that hard to praise me for a job well done?"
             advmc "You’re bleeding out! Every time you speak, you spew out more blood! You really want to talk about praises right now?"
@@ -472,6 +493,7 @@ label secgreen:
         "(... An idiot)":
             advmc "Stupid! Like hell I need it! But if I don’t have it, you’re going to get mopey and worried, right? Look. I’ll show you that I don’t even need it!"
             show greenapprove at appsprite
+            play audio "sfx/hand-bells-d-single.mp3"
             $ greenap+= 1
             green "Yeah, yeah. You’re the mighty fox."
             advmc "Damn straight."
@@ -505,7 +527,11 @@ label secgreen:
         alpha 0.8
 
     #Hunt Mode!
+    #Hunt Mode Music
+    play music "music/Chris_Zabriskie_-_07_-_Its_Always_Too_Late_to_Start_Over.mp3" fadein 1.0 fadeout 1.0
     call huntmodestart
+
+    stop music fadeout 1.0
 
     scene bg greenroom with fade
     show particleFog1:
@@ -515,15 +541,22 @@ label secgreen:
     show but temp at center with dissolve
     butler "What a persistent guest you are!"
 
+    hide but
+    #Begin Battle Music
+    play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
     #Battle Mode against Butler
     call battlebutler
 
+label debug:
+    #Play Green's Theme
+    play music "music/Wolf_Nilson_Trio_-_04_-_Auf_der_anderen_Seite.mp3" fadein 1.0 fadeout 1.0
     scene bg greenroom with fade
     show particleFog1:
         alpha 0.8
 
     show but temp at center with dissolve
     butler "Forgive me, my Mistress. Once again, I…"
+    play audio "sfx/bone-crunch-fast.mp3"
     show dustparticle at center
     pause 0.8
     hide particleFog1
@@ -561,7 +594,6 @@ label secgreen:
     green "Picky! I liked you better when you were getting all weepy that I was hurt."
     advmc "That never happened! Now shut up and focus on running. This place will collapse before we get out at this rate!"
 
-label debug:
     scene bg exitroom with fade
 
     #nvl set up
@@ -596,15 +628,16 @@ label debug:
     nvlmc "Should I just grab him and jump?"
     nvlmc "The minute I think that, the floor shudders. It looks like this floor is going to completely go under."
     nvlmc "No time to hesitate."
+    nvl clear
     nvlmc "I know I won’t make this jump all the way to the door. But if I can get close enough, I will be able to push Green through."
     nvlmc "With that thought comforting me, I grab Green and jump."
-
-    nvl clear
-
     nvlmc "Surprisingly, Green doesn’t say anything. Is his condition bad? Should I have checked on that first? But there was no time. The floor is collapsing. We don’t really have the luxury of time to make sure that we’re both okay."
     nvlmc "Forgive me, Green. Once we’re out of here, I promise I’ll force Zero to buy you a new figurine. "
+    nvl clear
     nvlmc "I’m just a few meters shy of the door. But the floor is already giving out here. We won’t have long to stand here before we fall through."
     nvlmc "If that door is locked, we’re screwed. Then it’ll be for the best that there is no door."
+    play audio "sfx/dropping-wood-2.mp3"
+    show whiteflash zorder 50 with vpunch
     scene bg exitroomhole with fade
     nvlmc "I gather just enough energy to blast a hole next to the door. I meant to destroy the door, but it seems that my aim isn’t good when I’m trying to balance Green in one arm while trying to land somewhere that won’t immediately make us fall through."
     nvlmc "It makes me a little bitter, but beggars can’t be choosers."
@@ -615,6 +648,8 @@ label debug:
 
     #If Green's Approval Points are too low
     if greenap<2:
+        play music "music/Chris_Zabriskie_-_03_-_I_Dont_See_the_Branches_I_See_the_Leaves.mp3" fadein 1.0 fadeout 1.0
+        play audio "sfx/bone-crunch-fast.mp3"
         show whiteflash zorder 50 with vpunch
         advmc "(What? I’m bleeding? Why…?)"
         show g temp at center with dissolve
@@ -681,6 +716,8 @@ label debug:
         jump aftermath
 
     #Otherwise, Green's Points are Normal, so we'll go straight into the Normal Ending
+    play music "music/David_Hilowitz_-_10_-_Missed_Connections.mp3" fadein 1.0 fadeout 1.0
+    play audio "sfx/dropping-wood-2.mp3"
     show whiteflash zorder 50 with vpunch
     advmc "(Did this guy seriously just smack me? I’m trying to save his sorry life!)"
     show g temp at center with dissolve
@@ -694,6 +731,7 @@ label debug:
         advmc "(Damn this guy!)"
         "Like hell I can do that!":
             green "… If that’s how you feel, then I’ll just do this."
+            play audio "sfx/dropping-wood-2.mp3"
             show whiteflash zorder 50 with vpunch
             advmc "Ow! Stop hitting me! You… you idiot!"
         "You promise you’ll be fine?":
@@ -711,7 +749,7 @@ label debug:
     if trueend:
         #escape nvl mode
         window hide
-
+        play music "music/David_Hilowitz_-_Angle_of_Light.mp3" fadein 1.0 fadeout 1.0
         boss "You don’t get it, do you?"
         advmc "Get what?"
         boss "That desperate want to protect those close to you? It’s the same for everyone. Wanting to protect someone is a normal feeling that everyone feels."
@@ -721,7 +759,7 @@ label debug:
         boss "I don’t think there’s a real way to deal with it. When things happen, you’ll always regret all the things you did, even if it was the best thing you could have done. That’s something that probably won’t change, no matter how strong you become."
         advmc "I really hate human emotions."
         boss "Hahaha! Yeah, me too!"
-
+        play music "music/David_Hilowitz_-_10_-_Missed_Connections.mp3" fadein 1.0 fadeout 1.0
         #nvl set up
         window show
 
@@ -738,6 +776,7 @@ label debug:
     jump aftermath
 
 label aftermath:
+    play music "music/David_Szesztay_-_Paranoid.mp3" fadein 1.0 fadeout 1.0
     scene black
     #nvl set up
     nvl clear

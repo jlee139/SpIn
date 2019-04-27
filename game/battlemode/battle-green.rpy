@@ -66,7 +66,7 @@ screen battleuigreen():
 
 #Start Battle Here
 label battlebutler:
-    $numturns = 20 #This is for debugging. Remember to turn this off!!
+    #$numturns = 20 #This is for debugging. Remember to turn this off!!
     $bosshp = 120
     $bossmaxhp = 120
     $turnnum = 0 #To determine whose turn it is

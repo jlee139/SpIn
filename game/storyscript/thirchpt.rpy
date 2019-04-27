@@ -12,6 +12,8 @@ label thirdfloor: #3rd chapter start!
 
     nvl clear
 
+    play audio "sfx/electric-sparks-railway-a.mp3"
+    show whiteflash zorder 50 with hpunch
     nvlmc "The first is an electric shock that shoots up from my foot. It’s not enough to knock me out of commission, but I think it would have for a normal human. Because soon after, I hear the high pitch whistle of arrows flying through the air."
     nvlmc "So that’s their plan."
     nvlmc "My body feels sluggish, but I’m not useless. I dodge the volley of arrows by jumping forward. Another shock of electricity greets me when my feet meets the ground. Is the entire stairway wired? Then how should I go about dodging this?"
@@ -28,10 +30,14 @@ label thirdfloor: #3rd chapter start!
     nvlmc "So I do the only logical thing."
     nvlmc "I blast a hole through the door."
     window hide
+    play music "music/Lee_Rosevere_and_Daniel_Birch_-_09_-_Halo.mp3" fadein 1.0 fadeout 1.0
+    play audio "sfx/dropping-wood-2.mp3"
+    show whiteflash zorder 50 with vpunch
     scene bg thirdhallbrokeclose with fade
     window show
     nvlmc "Then I walk in through."
 
+    nvl clear
     window hide
     scene bg atticdark with fade
     window show
@@ -54,7 +60,14 @@ label thirdfloor: #3rd chapter start!
     witch "You... I’ll kick you out!"
     hide w
 
+    play music "music/Chris_Zabriskie_-_07_-_Its_Always_Too_Late_to_Start_Over.mp3" fadein 1.0 fadeout 1.0
+    #Call Hunt Mode
+    call huntmodestart
+    play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
+    scene bg atticdark with fade
     #Mini Fight 1
+    scene bg atticdark with fade
+    play music "music/Lee_Rosevere_and_Daniel_Birch_-_09_-_Halo.mp3" fadein 1.0 fadeout 1.0
 
     advmc "(She backed off?)"
     show w temp at center with fade
@@ -63,6 +76,7 @@ label thirdfloor: #3rd chapter start!
     advmc "(Then I better destroy it.)"
     witch "Don’t you dare!"
 
+    play audio "sfx/thud-falling-on-wooden-floor.mp3"
     scene bg thirdhallbrokeclose with fade
 
     #nvl set up
@@ -85,7 +99,14 @@ label thirdfloor: #3rd chapter start!
     advmc "Hah! I’d love to see you try!"
     hide w
 
+    play music "music/Chris_Zabriskie_-_07_-_Its_Always_Too_Late_to_Start_Over.mp3" fadein 1.0 fadeout 1.0
+    #Call Hunt Mode
+    call huntmodestart
+    scene bg thirdhallbroke with fade
+    play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
     #Mini Fight 2
+    scene bg thirdhallbroke with fade
+    play music "music/Lee_Rosevere_and_Daniel_Birch_-_09_-_Halo.mp3" fadein 1.0 fadeout 1.0
 
     show w temp at center with fade
     witch "You’re really annoying!"
@@ -140,7 +161,14 @@ label thirdfloor: #3rd chapter start!
     witch "Gladly!"
     hide w
 
+    play music "music/Chris_Zabriskie_-_07_-_Its_Always_Too_Late_to_Start_Over.mp3" fadein 1.0 fadeout 1.0
+    #Call Hunt Mode
+    call huntmodestart
+    scene bg thirdhallbroke with fade
+    play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
     #Mini Fight 3
+    scene bg thirdhallbroke with fade
+    play music "music/Lee_Rosevere_and_Daniel_Birch_-_09_-_Halo.mp3" fadein 1.0 fadeout 1.0
 
     show w temp at center with fade
     witch "Noooo!"
@@ -183,11 +211,19 @@ label thirdeli:
     advmc "\"Not fair?\" Why, my dear, what makes you think anything in this world is fair?"
     hide w
 
-    #FINAL BATTLE
+    play music "music/Chris_Zabriskie_-_07_-_Its_Always_Too_Late_to_Start_Over.mp3" fadein 1.0 fadeout 1.0
+    #Call Hunt Mode
+    call huntmodestart
+    scene bg thirdhallbroke with fade
+    play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
+    #Mini Fight 4 - Final
+    scene bg thirdhallbroke with fade
+    play music "music/David_Hilowitz_-_10_-_Missed_Connections.mp3" fadein 1.0 fadeout 1.0
 
     show w temp at center with fade
     witch "You’re... horrible... Ahhh... Why won’t anything... go my way?"
     advmc "Disappear silently. You’re not the only one who has ever suffered."
+    play audio "sfx/bone-crunch-fast.mp3"
     show dustparticle at center
     pause 0.8
     hide w with fade
@@ -206,6 +242,8 @@ label thirdeli:
     nvlmc "I guess I’ll just retrace my steps. If I go back, I should be able to make my way to the entrance. I wonder if it’ll be okay to just jump down to the lower floors. No, if I do that recklessly, I might end up stuck. Then again, I could always just blast my way out of there..."
 
     if onGreenRoute:
+        #Play Green's Theme
+        play music "music/Wolf_Nilson_Trio_-_04_-_Auf_der_anderen_Seite.mp3" fadein 1.0 fadeout 1.0
         nvlmc "Ah, I recognize that terrible scent. What terrific timing. To think he was well enough to get up here..."
         nvlmc "The smell of cigarette fills the air as a light fog settles around me. I’m half tempted to point out that there’s no need for this. But I suppose this is his way of saying that he was worried. I’m a little touched, to be honest."
         nvl clear

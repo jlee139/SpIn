@@ -15,6 +15,7 @@ transform celebrationchest:
         linear 0.8 yoffset 100
     parallel:
         linear 0.8 alpha 1
+    linear 0.3 alpha 0
 
 screen huntmodeset():
     grid 4 3:
