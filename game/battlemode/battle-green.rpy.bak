@@ -142,13 +142,13 @@ label attackdmgg:
     $ butdef = renpy.random.randint(1,10)
     if bosshp<=20:
         #There's 100% chance he'll defend
-        call butdef from _call_butdef
+        call butdef
     elif  bosshp<=40:
         if butdef >=5: #There's 50% chance he'll defend
-            call butdef from _call_butdef_1
+            call butdef
     else:
         if butdef >=9: #There's 10% chance he'll defend
-            call butdef from _call_butdef_2
+            call butdef
     #Ask which one to attack
     if puppetnum>0:
         menu:
@@ -216,10 +216,10 @@ label attackdmgg:
         pass
     elif  bosshp<=40:
         if butdef <5: #There's 50% chance he'll defend
-            call butturn from _call_butturn
+            call butturn
     else:
         if butdef <9: #There's 10% chance he'll defend
-            call butturn from _call_butturn_1
+            call butturn
     return
 
 label defenddmgg:
@@ -229,20 +229,20 @@ label defenddmgg:
     "You brace for impact. Damage taken is reduced."
     hide shield
     $bossatk = bossatk*0.5
-    call butturn from _call_butturn_2
+    call butturn
     return
 
 label magicdmgg:
     $ butdef = renpy.random.randint(1,10)
     if bosshp<=20:
         #There's 100% chance he'll defend
-        call butdef from _call_butdef_3
+        call butdef
     elif  bosshp<=40:
         if butdef >=5: #There's 50% chance he'll defend
-            call butdef from _call_butdef_4
+            call butdef
     else:
         if butdef >=9: #There's 10% chance he'll defend
-            call butdef from _call_butdef_5
+            call butdef
     #First decide if we're doing AOE or ST
     if puppetnum>0:
         menu:
@@ -363,10 +363,10 @@ label magicdmgg:
         pass
     elif  bosshp<=40:
         if butdef <5: #There's 50% chance he'll defend
-            call butturn from _call_butturn_3
+            call butturn
     else:
         if butdef <9: #There's 10% chance he'll defend
-            call butturn from _call_butturn_4
+            call butturn
     return
 
 label butdef:

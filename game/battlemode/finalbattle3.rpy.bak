@@ -1,5 +1,5 @@
 #Our First Mini Fight Against the Witch
-screen battleuifinal4():
+screen battleuifinal3():
     frame:
         xpadding 10
         ypadding 10
@@ -37,19 +37,19 @@ screen battleuifinal4():
                 hover "battlemode/attack_down.png"
                 hover_sound "sfx/click2.mp3"
                 activate_sound "sfx/menu-selection-click.mp3"
-                action Call('attackdmgff4')
+                action Call('attackdmgff3')
             imagebutton: #Defend Button
                 idle "battlemode/defend_up.png"
                 hover "battlemode/defend_down.png"
                 hover_sound "sfx/click2.mp3"
                 activate_sound "sfx/menu-selection-click.mp3"
-                action Call('defenddmgff4')
+                action Call('defenddmgff3')
             imagebutton: #Magic Attack Button
                 idle "battlemode/magic_up.png"
                 hover "battlemode/magic_down.png"
                 hover_sound "sfx/click2.mp3"
                 activate_sound "sfx/menu-selection-click.mp3"
-                action If(numturns >2, Call('magicdmgff4'), None)
+                action If(numturns >2, Call('magicdmgff3'), None)
             imagebutton: #Beserk Button
                 idle "battlemode/beast_up.png"
                 hover "battlemode/beast_down.png"
@@ -65,7 +65,7 @@ screen battleuifinal4():
 
 
 #Start Battle Here
-label finalfight4:
+label finalfight3:
     #$numturns = 20 #This is for debugging. Remember to turn this off!!
     $turnnum = 0 #To determine whose turn it is
     #Set up variables for the upcoming battle
@@ -78,12 +78,18 @@ label finalfight4:
     window hide
 
     #First place the enemy sprite in front of us
-    show battlew no at top
+    if bosshp<=300:
+        show battlew no at top
+    else:
+        show battlew half at top
 
     #While we have turns, go through the battleui
     while numturns>0 and bosshp>0 and hp>0:
         #Change the Sprite accordingly
-        show battlew no at top
+        if bosshp<=300:
+            show battlew no at top
+        else:
+            show battlew half at top
 
         #Checks happen here before we start the battles
         #If butler's HP is 0, go straight to winning stance
@@ -101,7 +107,7 @@ label finalfight4:
             $beastmode = False
 
         #Display our health and numturns
-        call screen battleuifinal4
+        call screen battleuifinal3
         $numturns-=1
         $turnnum+=1
         #If we're in beastmode, put up the attack
@@ -122,14 +128,14 @@ label finalfight4:
 
     #if we have ran out of turns...
     if numturns<1 and bosshp>0:
-        jump turngameover
+        jump outtaturn3
         return
     return
 
-label attackdmgff4:
+label attackdmgff3:
     $ witchdef = renpy.random.randint(1,10)
     if witchdef >=9: #There's 10% chance she'll defend
-        call witchdef from _call_witchdef_7
+        call witchdef
     $bosshp -= redatk
     play audio "sfx/metal-sound-fighting-game.mp3"
     show scratch:
@@ -140,23 +146,23 @@ label attackdmgff4:
     if bosshp <1:
         jump wincondition
     if witchdef <9: #There's 90% chance she'll attack
-        call witchturn from _call_witchturn_10
+        call witchturn
     return
 
-label defenddmgff4:
+label defenddmgff3:
     play audio "sfx/another-magic-wand-spell-tinkle.mp3"
     show shield:
         xalign 0.5 yalign 0.3
     "You brace for impact. Damage taken is reduced."
     hide shield
     $bossatk = bossatk*0.5
-    call witchturn4 from _call_witchturn4
+    call witchturn3
     return
 
-label magicdmgff4:
-    $ witchdef = renpy.random.randint(1,10)
-    if witchdef >=8: #There's 20% chance she'll defend
-        call witchdef from _call_witchdef_8
+label magicdmgff3:
+    show battlew half at top
+    if bosshp<=300:
+        show battlew no at top
     $numturns-=2
     $redatk = redatk * 1.5
     play audio "sfx/fire-crackle-and-flames-002.mp3"
@@ -169,11 +175,14 @@ label magicdmgff4:
     if bosshp <1:
         jump wincondition
     if witchdef <8: #There's 80% chance she'll attack
-        call witchturn from _call_witchturn_11
+        call witchturn
     return
 
-label witchturn4:
-    show battlew no at top
+label witchturn3:
+    if bosshp<=300:
+        show battlew no at top
+    else:
+        show battlew half at top
     $ witchmagic = renpy.random.randint(1,10)
     if witchmagic >=5: #There's 50% chance she'll use magic
         $bossatk = bossatk*1.5
@@ -187,5 +196,12 @@ label witchturn4:
         with vpunch
         $hp-=bossatk
     return
+
+menu outtaturn3:
+    "You have ran out of erengy."
+    "Give up.":
+        jump turngameover
+    "Keep fighting.":
+        jump retfinalfight3
 
 return

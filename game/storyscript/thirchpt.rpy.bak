@@ -63,10 +63,10 @@ label thirdfloor: #3rd chapter start!
 
     play music "music/Chris_Zabriskie_-_07_-_Its_Always_Too_Late_to_Start_Over.mp3" fadein 1.0 fadeout 1.0
     #Call Hunt Mode
-    call huntmodestart from _call_huntmodestart_2
+    call huntmodestart
     play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
     scene bg atticdark with fade
-    call finalfight1 from _call_finalfight1
+    call finalfight1
 
 label retfinalfight1:
     scene bg atticdark with fade
@@ -105,10 +105,10 @@ label retfinalfight1:
 
     play music "music/Chris_Zabriskie_-_07_-_Its_Always_Too_Late_to_Start_Over.mp3" fadein 1.0 fadeout 1.0
     #Call Hunt Mode
-    call huntmodestart from _call_huntmodestart_3
+    call huntmodestart
     scene bg thirdhallbroke with fade
     play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
-    call finalfight2 from _call_finalfight2
+    call finalfight2
 
 label retfinalfight2:
     scene bg thirdhallbroke with fade
@@ -173,10 +173,10 @@ label retfinalfight2:
 
     play music "music/Chris_Zabriskie_-_07_-_Its_Always_Too_Late_to_Start_Over.mp3" fadein 1.0 fadeout 1.0
     #Call Hunt Mode
-    call huntmodestart from _call_huntmodestart_4
+    call huntmodestart
     scene bg thirdhallbroke with fade
     play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
-    call finalfight3 from _call_finalfight3
+    call finalfight3
 
 label retfinalfight3:
     scene bg thirdhallbroke with fade
@@ -232,10 +232,10 @@ label thirdeli:
         hide w
         play music "music/Chris_Zabriskie_-_07_-_Its_Always_Too_Late_to_Start_Over.mp3" fadein 1.0 fadeout 1.0
         #Call Hunt Mode
-        call huntmodestart from _call_huntmodestart_5
+        call huntmodestart
         scene bg thirdhallbroke with fade
         play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
-        call finalfight4 from _call_finalfight4
+        call finalfight4
     else:
         #nvl set up
         nvl clear

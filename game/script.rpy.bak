@@ -5,7 +5,7 @@ label start:
     $mcname = renpy.input("Enter your name")
     define advmc = Character('[mcname]', kind=adv)
     #Then We start the story!
-    call prologue from _call_prologue      #Start us up with the prologue of the story
+    call prologue      #Start us up with the prologue of the story
 
 
     #Debugging each chapter

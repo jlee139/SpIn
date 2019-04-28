@@ -131,7 +131,7 @@ label finalfight1:
 label attackdmgff1:
     $ witchdef = renpy.random.randint(1,10)
     if witchdef >=9: #There's 10% chance she'll defend
-        call witchdef
+        call witchdef from _call_witchdef_3
     $bosshp -= redatk
     play audio "sfx/metal-sound-fighting-game.mp3"
     show scratch:
@@ -142,7 +142,7 @@ label attackdmgff1:
     if bosshp <1:
         jump wincondition
     if witchdef <9: #There's 90% chance she'll attack
-        call witchturn
+        call witchturn from _call_witchturn_4
     return
 
 label defenddmgff1:
@@ -152,13 +152,13 @@ label defenddmgff1:
     "You brace for impact. Damage taken is reduced."
     hide shield
     $bossatk = bossatk*0.5
-    call witchturn1
+    call witchturn1 from _call_witchturn1
     return
 
 label magicdmgff1:
     $ witchdef = renpy.random.randint(1,10)
     if witchdef >=8: #There's 20% chance she'll defend
-        call witchdef
+        call witchdef from _call_witchdef_4
     $numturns-=2
     $redatk = redatk * 1.5
     play audio "sfx/fire-crackle-and-flames-002.mp3"
@@ -171,7 +171,7 @@ label magicdmgff1:
     if bosshp <1:
         jump wincondition
     if witchdef <8: #There's 80% chance she'll attack
-        call witchturn
+        call witchturn from _call_witchturn_5
     return
 
 label witchturn1:

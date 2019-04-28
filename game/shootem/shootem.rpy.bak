@@ -71,12 +71,12 @@ label shootfix:
     #"Hi. We're going to try this again."
     $quick_menu = False
     window hide
-    call startshootem from _call_startshootem
+    call startshootem
     return
 
 label startshootem:
     show countdown at Position(xalign=.9, yalign=.9)
-    call createghosts from _call_createghosts
+    call createghosts
     return
 
 label createghosts:

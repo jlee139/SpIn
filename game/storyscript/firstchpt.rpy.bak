@@ -341,7 +341,7 @@ label firstambushedcont:
     #Hunt Mode Music
     play music "music/Chris_Zabriskie_-_07_-_Its_Always_Too_Late_to_Start_Over.mp3" fadein 1.0 fadeout 1.0
     #Call Hunt Mode
-    call huntmodestart from _call_huntmodestart
+    call huntmodestart
 
     #Back to our suspenseful music
     play music "music/Chris_Zabriskie_-_14_-_Prelude_No_14.mp3" fadein 1.0 fadeout 1.0
@@ -376,7 +376,7 @@ label firstambushedcont:
 
     #Begin Battle Music
     play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
-    call begin_TutRPG from _call_begin_TutRPG #Our Battle Mode Tutorial version
+    call begin_TutRPG #Our Battle Mode Tutorial version
     #Back to our suspenseful music
     play music "music/Chris_Zabriskie_-_14_-_Prelude_No_14.mp3" fadein 1.0 fadeout 1.0
     jump introToWitch

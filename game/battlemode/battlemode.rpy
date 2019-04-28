@@ -135,7 +135,7 @@ label begin_TutRPG:
 label attackdmg:
     $ witchdef = renpy.random.randint(1,10)
     if witchdef >=9: #There's 10% chance she'll defend
-        call witchdef
+        call witchdef from _call_witchdef_5
     $bosshp -= redatk
     play audio "sfx/metal-sound-fighting-game.mp3"
     show scratch:
@@ -146,7 +146,7 @@ label attackdmg:
     if bosshp <1:
         jump wincondition
     if witchdef <9: #There's 90% chance she'll attack
-        call witchturn
+        call witchturn from _call_witchturn_6
     return
 
 label defenddmg:
@@ -156,13 +156,13 @@ label defenddmg:
     "You brace for impact. Damage taken is reduced."
     hide shield
     $bossatk = bossatk*0.7
-    call witchturn
+    call witchturn from _call_witchturn_7
     return
 
 label magicdmg:
     $ witchdef = renpy.random.randint(1,10)
     if witchdef >=8: #There's 20% chance she'll defend
-        call witchdef
+        call witchdef from _call_witchdef_6
     $numturns-=2
     $redatk = redatk * 1.5
     play audio "sfx/fire-crackle-and-flames-002.mp3"
@@ -175,7 +175,7 @@ label magicdmg:
     if bosshp <1:
         jump wincondition
     if witchdef <8: #There's 80% chance she'll attack
-        call witchturn
+        call witchturn from _call_witchturn_8
     return
 
 label healdmg:
@@ -193,13 +193,13 @@ label healdmg:
     hide healing
     $numjewels -= 1
     $hp = 300
-    call witchturn
+    call witchturn from _call_witchturn_9
     return
 
 label zerker:
     menu:
         "Damage done is increased and damage received is decreased for the next 3 turns."
-        "Use 10 energy" if numturns>20:
+        "Use 20 energy" if numturns>20:
             $numturns -=19
         "Use 3 jewels" if numjewels==3:
             $numjewels = 0

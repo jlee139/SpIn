@@ -181,7 +181,7 @@ label huntmodestart:
     $butt11 = True
     $butt12 = True
 
-    call huntmode from _call_huntmode
+    call huntmode
 
 label huntmode:
     while numoftries >0:

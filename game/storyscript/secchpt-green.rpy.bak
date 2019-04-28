@@ -545,7 +545,7 @@ label secgreen:
     #Hunt Mode!
     #Hunt Mode Music
     play music "music/Chris_Zabriskie_-_07_-_Its_Always_Too_Late_to_Start_Over.mp3" fadein 1.0 fadeout 1.0
-    call huntmodestart from _call_huntmodestart_1
+    call huntmodestart
 
     stop music fadeout 1.0
 
@@ -561,7 +561,7 @@ label secgreen:
     #Begin Battle Music
     play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
     #Battle Mode against Butler
-    call battlebutler from _call_battlebutler
+    call battlebutler
 
 label debug:
     #Play Green's Theme
