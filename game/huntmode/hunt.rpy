@@ -3,10 +3,10 @@ transform disappeardeath:
     yalign 0.5
     alpha 1
     parallel:
-        linear 0.8 yoffset -100
+        linear 0.8 yoffset -60
     parallel:
         linear 0.8 alpha 0
-    yoffset +50
+    yoffset +60
 
 transform celebrationchest:
     xalign 0.5
