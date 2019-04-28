@@ -1,25 +1,25 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 6, in script call
-    call prologue      #Start us up with the prologue of the story
-  File "game/storyscript/prologue.rpy", line 37, in script
-    rookie "Careful. This area is rocky, [mcname]-"
+  File "game/script.rpy", line 24, in script call
+    call introToWitch #Testing our Battle Mode
+  File "game/storyscript/firstchpt.rpy", line 393, in script
+    advmc "As are you. You don't seem to be a normal spirit. Are you, by any chance, a witch?"
 KeyError: u'mcname'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 6, in script call
-    call prologue      #Start us up with the prologue of the story
-  File "game/storyscript/prologue.rpy", line 37, in script
-    rookie "Careful. This area is rocky, [mcname]-"
+  File "game/script.rpy", line 24, in script call
+    call introToWitch #Testing our Battle Mode
+  File "game/storyscript/firstchpt.rpy", line 393, in script
+    advmc "As are you. You don't seem to be a normal spirit. Are you, by any chance, a witch?"
   File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\ast.py", line 678, in execute
     renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
   File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\exports.py", line 1229, in say
     who(what, *args, **kwargs)
-  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\character.py", line 1018, in __call__
-    what = what_pattern.replace("[what]", sub(what, translate=True))
+  File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\character.py", line 1012, in __call__
+    who = who_pattern.replace("[who]", sub(who))
   File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\character.py", line 1007, in sub
     return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
   File "C:\Users\J\Documents\renpy-7.1.3-sdk\renpy\substitutions.py", line 244, in substitute
@@ -33,4 +33,4 @@ KeyError: u'mcname'
 Windows-8-6.2.9200
 Ren'Py 7.1.3.1092
 SpIn 1.0
-Sat Apr 27 10:55:58 2019
+Sun Apr 28 18:41:43 2019

@@ -90,25 +90,30 @@ label secgreen:
     green "Red..."
     advmc "Yeah. This fog isn’t yours, is it?"
     show g temp at left with dissolve
-    show but temp at right with dissolve
+    show but happy at right with dissolve
     #Butler's Theme
     play music "music/David_Szesztay_-_Bizarre_Waltz.mp3" fadein 1.0 fadeout 1.0
     prebut "Astute observation, my esteemed guests."
     green "Alas, my smoke isn’t that thick. I’m not the type to keep things in until I can’t take it anymore, after all."
     advmc "If that was supposed to be a dirty joke, I’m afraid it flew over my head."
     green "But you recognized it as a dirty joke. So it’s my victory, I’m afraid."
+    show but temp at right with dissolve
     prebut "Ahem."
     advmc "But can you really claim victory when your jokes fall this flat?"
     green "You’re such a sore loser! Why can’t you just admit that I won?"
     advmc "When you’ve actually won, I’ll acknowledge it. Until then, keep trying!"
+    show but annoyance at right with dissolve
     prebut "Hello? Do you not see me?"
     green "Do you not have eyes or something? Can’t you see that we’re talking? "
     advmc "Honestly, have some more manners!"
+    show but temp at right with dissolve
     prebut "I-I apologize."
     advmc "(Huh? Wait. There shouldn’t be a third person here!)"
     advmc "Who are you? Are you the cause of this fog?"
+    show but happy at right with dissolve
     prebut "Astute observation, my esteemed guest!"
     green "Didn’t you already say that?"
+    show but temp at right with dissolve
     prebut "You noticed? But you didn’t say anything? My, the esteemed guests this time seems to like cruel jokes."
     advmc "I prefer the term ‘rude.’"
     green "Of course, you would."
@@ -226,11 +231,12 @@ label secgreen:
     green "Maybe if I had something more physical to work with… H-hey, you don’t think…?"
     advmc "They disappear too easily to be made out of corpses. "
     show g temp at left with dissolve
-    show but temp at right with dissolve
+    show but happy at right with dissolve
     #Butler's Theme
     play music "music/David_Szesztay_-_Bizarre_Waltz.mp3" fadein 1.0 fadeout 1.0
     prebut "That’s correct! My esteemed guests this time around are so smart. "
     advmc "How long have you been there?"
+    show but temp at right with dissolve
     prebut "A good butler like myself is never too far from providing a necessary service!"
     green "A butler, huh? What? You used to work here or something? "
     butler "I am troubled to correct you, my esteemed guests, that I am still an employee of this mansion. If you have any issues, please feel free to inform me or any of my fellow butlers."
@@ -260,6 +266,7 @@ label secgreen:
             advmc "(Great. Way to go, Green. Now this guy is going to chase us to drink tea!)"
             advmc "Alright. Fine. Get me the bitterest coffee."
 
+    show but happy at right with dissolve
     butler "Then please, leave it to us!"
 
     #nvl set up
@@ -284,18 +291,20 @@ label secgreen:
 
     show g temp at left with dissolve
     green "So how long have you served in this mansion?"
-    show but temp at right with dissolve
+    show but happy at right with dissolve
     butler "It is the pride of my family to have served in this mansion for generations. "
     advmc "Every single member of your family did? "
     butler "That is correct."
     advmc "So as long as your family works for this mansion, you don’t care about the master?"
     butler "I must beg to differ, my esteemed guest. My family served the same family who owned this mansion for generations."
     green "How’d they lose it?"
+    show but annoyance at right with dissolve
     advmc "(Oh, he got quiet all of a sudden. Is this a sore topic?)"
     butler "My esteemed guests are mistaken. This mansion was never lost."
     advmc "But it was sold and bought by various people who tried to to modernize this place."
     butler "That may be so, but this mansion never belonged to any of those thieves. "
     advmc "Then who does it belong to?"
+    show but temp at right with dissolve
     butler "Here comes your drinks and sweets. "
     advmc "(He’s hiding something.)"
 
@@ -380,22 +389,26 @@ label secgreen:
     advmc "I resent that!"
     butler "It is alright, my esteemed guest. I am deeply honored and touched that you are worried for me. However, my duty as a butler is to serve. It is a great honor and pleasure for it to be appreciated, but a thank you isn’t necessary."
     green "You’re a great guy!"
+    show but happy at right with dissolve
     butler "Thank you, my esteemed guest."
 
     menu:
         advmc "(Ugh. These two are getting on my nerves. I should change the topic.)"
         "So how did it happen that bunch of ‘thieves’ took this place?":
+            show but temp at right with dissolve
             butler "It was the most unpleasant set of unfortunate events. The master of the house suddenly fell ill, forcing his young daughter to take over. Our young mistress did everything she believed to be correct."
             green "But it wasn’t enough?"
             butler "Humans’ hearts are cold. If they see an easy prey, they will find a way to take advantage of it anyway they can."
             advmc "(Yeah. I get that.)"
         "What was your former master like?":
+            show but temp at right with dissolve
             butler "The mistress was a beautiful and kind soul. She was suddenly forced into the role of the head of the house when she was young. But she never complained."
             advmc "(Mistress? Could she be the lady depicted in the portrait?)"
             green "That must have been hard for her."
             butler "If it was, she never let us know. She’s that kind of a gentle person."
 
     advmc "What happened to her?"
+    show but saddness at right with dissolve
     butler "She was tricked. Because she was so young, it was easy for those vultures to tear everything out of her hands."
     advmc "(So this mansion fell into ruin because of that? But at that point in time, there shouldn’t have been ghosts and this mansino shouldn’t have been abandoned. This clearly isn’t lining up.)"
     green "It must have been rough for her. Good thing you were there to help her, huh?"
@@ -409,6 +422,7 @@ label secgreen:
     green "It’s not about conveniency. Even if you want to help, there are limits to what you can do."
     advmc "That just means that you’re not trying hard enough. There’s always something you can do. Even if it’s biting off my own tails, I-"
     green "But that’s the case for you. Not everyone has that luxury."
+    show but temp at right with dissolve
     butler "It is exactly as my esteemed guest says. There was nothing that we, the servants, could do to save our mistress."
     advmc "(What’s with that kind of a weak response? I… don’t understand.)"
     butler "Your expression seems to be saying that you don’t understand. "
@@ -422,9 +436,11 @@ label secgreen:
     advmc "(Huh? Wait a minute.)"
     butler "My esteemed guests are so kind."
     advmc "(I completely forgot about him!)"
+    show but saddness at right with dissolve
     butler "If people as kind as you were around my Mistress, I’m sure this wouldn’t have been her fate. "
     advmc "So after she lost this mansion, what happened to her?"
     butler "She was silenced. We found out about it much too late. When we made our discontent known to the new owner, we were all killed."
+    show but annoyance at right with dissolve
     butler "What that person was after was the money behind our Mistress’s name. Our Mistress, the servants, and the physical mansion were of no consequence. "
     green "W-wait, everyone was killed?"
     butler "Yes. Bunch of ruffians were hired to set the mansion on fire with us inside. It was quite gruesome. Did you know that you’re more likely to die due to the smoke than you are to burn to death?"
@@ -538,7 +554,7 @@ label secgreen:
         alpha 0.8
 
     advmc "There you are! Don’t think you’ll get away!"
-    show but temp at center with dissolve
+    show but anger at center with dissolve
     butler "What a persistent guest you are!"
 
     hide but
@@ -554,7 +570,7 @@ label debug:
     show particleFog1:
         alpha 0.8
 
-    show but temp at center with dissolve
+    show but saddness at center with dissolve
     butler "Forgive me, my Mistress. Once again, I…"
     play audio "sfx/bone-crunch-fast.mp3"
     show dustparticle at center

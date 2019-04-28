@@ -109,9 +109,9 @@ define blanktxt = Character(None, kind=adv)
 # name of the character.
 define nvlmc = Character(None, kind=nvl)
 #for if we ever get sprites for Red
-#mcname = renpy.input("Enter your name")
+#$mcname = renpy.input("Enter your name")
 #define advmc = Character('[mcname]', kind=adv)
-define advmc = Character('Red', kind=adv)
+#define advmc = Character('Red', kind=adv)
 
 define green = Character('Green', color="#088329", callback=RaiseImage("g"), window_background="gui/textbox-green.png")
 define blue = Character('Blue', color="#0638A9", callback=RaiseImage("bl"), window_background="gui/textbox-blue.png")

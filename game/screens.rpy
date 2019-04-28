@@ -901,14 +901,14 @@ screen preferences():
                                 textbutton _("Test") action Play("sound", config.sample_sound)
 
 
-                    if config.has_voice:
-                        label _("Voice Volume")
+                    #if config.has_voice:
+                    #    label _("Voice Volume")
 
-                        hbox:
-                            bar value Preference("voice volume")
+                    #    hbox:
+                    #        bar value Preference("voice volume")
 
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
+                    #        if config.sample_voice:
+                    #            textbutton _("Test") action Play("voice", config.sample_voice)
 
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing

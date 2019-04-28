@@ -52,11 +52,12 @@ label thirdfloor: #3rd chapter start!
     window hide
 
     advmc "(Wait. Isn’t that...?)"
-    show w temp at center with fade
+    show w darkfrown at center with dissolve
     witch "Who let you in here?"
     advmc "Hm? Was this place supposed to be a secret? My, my, isn’t your guard too lax?"
     witch "How did you get in here?!"
     advmc "The willow the wisps led me. Quite loyal following you have here."
+    show w dark at center with dissolve
     witch "You... I’ll kick you out!"
     hide w
 
@@ -72,10 +73,11 @@ label retfinalfight1:
     play music "music/Lee_Rosevere_and_Daniel_Birch_-_09_-_Halo.mp3" fadein 1.0 fadeout 1.0
 
     advmc "(She backed off?)"
-    show w temp at center with fade
+    show w anger at center with dissolve
     witch "Get out. Get out. Get out! GET OUT!"
     advmc "(I see. She’s just trying to push me out of here. Guess whatever she’s hiding up here must be important.)"
     advmc "(Then I better destroy it.)"
+    show w darkfrown at center with dissolve
     witch "Don’t you dare!"
 
     play audio "sfx/thud-falling-on-wooden-floor.mp3"
@@ -96,7 +98,7 @@ label retfinalfight1:
 
     scene bg thirdhallbroke with fade
 
-    show w temp at center with fade
+    show w anger at center with dissolve
     witch "You saw too much! I was just going to kill you, but now I’m going to make you suffer first!"
     advmc "Hah! I’d love to see you try!"
     hide w
@@ -112,11 +114,13 @@ label retfinalfight2:
     scene bg thirdhallbroke with fade
     play music "music/Lee_Rosevere_and_Daniel_Birch_-_09_-_Halo.mp3" fadein 1.0 fadeout 1.0
 
-    show w temp at center with fade
+    show w annoyance at center with dissolve
     witch "You’re really annoying!"
     advmc "That’s my line! Just die already!"
+    show w complain at center with dissolve
     witch "I’m already dead, you dimwit!"
     advmc "Then stay dead like a good corpse!"
+    show w anger at center with dissolve
     witch "Like hell I can die when I haven’t accomplished anything yet!"
 
     #nvl set up
@@ -161,6 +165,7 @@ label retfinalfight2:
     nvl clear
     window hide
 
+    show w temp at center with dissolve
     witch "Looks like you’re finally out of comebacks!"
     advmc "No, I was just tired of goofing around. Why don’t we finish this?"
     witch "Gladly!"
@@ -177,7 +182,7 @@ label retfinalfight3:
     scene bg thirdhallbroke with fade
     play music "music/Lee_Rosevere_and_Daniel_Birch_-_09_-_Halo.mp3" fadein 1.0 fadeout 1.0
 
-    show w temp at center with fade
+    show w anger at center with dissolve
     witch "Noooo!"
     advmc "(Damn her! She keeps running before I can kill her!)"
     advmc "(No, no. That’s a good thing. I don’t know what her deal with the demon is. I should figure that out first, actually.)"
@@ -186,16 +191,21 @@ label retfinalfight3:
     advmc "Repeating yourself isn’t going to change what happened. Face it. I’m stronger than you."
     witch "Why do you keep getting in my way?!"
     advmc "Because you’re dead. Dead things should stay dead. "
+    show w darkfrown at center with dissolve
     witch "That’s something only those with privileged lives can say. If you didn’t get a chance to live, then why shouldn’t you get it after you’ve died?"
     advmc "What’s with that? If you lived a bad life, just live a better one in the next. There’s no need to drag others into your mess."
+    show w anger at center with dissolve
     witch "But that’s not fair! Why did it have to end like that? Why was it just us that suffered? Those bastards took everything and never once repented! So why is it just us?"
     advmc "Fair? Are you seriously complaining about fairness like some kid? What? Because it was ‘so unfair,’ you just had to make a deal with a demon?"
     witch "So what? What if it’s childish? What if I’m acting like a kid? They robbed all of that from me! So why can’t I do what I want now? If that means I’ll make a deal with a demon, then that’s my right!"
     advmc "Was that even worth it? Look around you. There’s nothing here. You’re literally standing on the graves of where you used to live. Isn’t that right, young Mistress?"
+    show w dark at center with dissolve
     witch "Mistress...? Ah... so you..."
     advmc "But really, what a waste of a deal with a demon. You seriously just asked to be brought back from the dead so you can be a spoiled brat?"
+    show w anger at center with dissolve
     witch "What the hell would you understand? "
     advmc "Hey, if I kill you, will you stay dead?"
+    show w crying at center with dissolve
     witch "You’re just like everyone else! You just want me to die! Why can’t anyone just try to understand?"
 
     menu:
@@ -246,7 +256,7 @@ label retfinalfight4:
     scene bg thirdhallbroke with fade
     play music "music/David_Hilowitz_-_10_-_Missed_Connections.mp3" fadein 1.0 fadeout 1.0
 
-    show w temp at center with fade
+    show w crying at center with dissolve
     witch "You’re... horrible... Ahhh... Why won’t anything... go my way?"
     advmc "Disappear silently. You’re not the only one who has ever suffered."
     play audio "sfx/bone-crunch-fast.mp3"

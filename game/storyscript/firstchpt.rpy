@@ -388,16 +388,17 @@ label introToWitch:
         alpha 0.5
 
     #gotta call everyone now
-    show w temp at center with dissolve
+    show w annoyance at center with dissolve
     prewitch "How frustrating. But you seem to be quite adept at this."
     advmc "As are you. You don't seem to be a normal spirit. Are you, by any chance, a witch?"
+    show w laughing at center with dissolve
     witch "My, my! How rude! To call a fragile maiden like myself a witch! But I can't deny it, I suppose."
 
     play audio "sfx/dropping-wood-2.mp3"
     show whiteflash zorder 50 with vpunch
 
     advmc "My, my! How rude! We weren't done talking, you know."
-    show w temp at center with dissolve
+    show w dark at center with dissolve
     witch "You... Did you just nullified my attacks? What the hell are you people?"
     advmc "(To think that it took her this long to get serious... What a monster.)"
     hide w
@@ -411,9 +412,11 @@ label introToWitch:
     hide bl
     hide g
 
-    show w temp at center with dissolve
+    show w darkfrown at center with dissolve
     witch "Investigators? "
+    show w laughing at center with dissolve
     witch "Ha... haha... Hahahahahaha!"
+    show w temp at center with dissolve
     witch "So you came to kill me? Is that it?"
     advmc "(Damn it! Can't you guys for once not create more problems for me?!)"
     advmc "Get back! She's going to-"
@@ -457,7 +460,6 @@ label introToWitch:
     nvlmc "I clutch the three jeweled necklace. Since this has a fairy's blessing, it should work."
     nvlmc "Without hesitation, I rush towards the spirit, the necklace clutched tightly in my hand. Seeing me move, the spirit turns her whole attention to me."
     nvlmc "Good."
-    nvlmc "I hope this doesn't hurt too much."
 
     play audio "sfx/dropping-wood-2.mp3"
     show whiteflash zorder 50 with vpunch
@@ -490,6 +492,7 @@ label introToWitch:
         alpha 0.5
 
     $quick_menu = True
+    show w temp at center with dissolve
     witch "You think a little form change is enough? "
     advmc "(It looks like she's gathering her energy for a bigger blast. Then I'll just cut her off before she releases!)"
 
@@ -519,6 +522,7 @@ label introToWitch:
 
     nvl clear
 
+    show w annoyance at center with dissolve
     nvlmc "Her screams of pain fill the air as I fall back into Green's hold. He helps steady me as Blue finishes his seal. Rookie seems too frazzled to properly move. We'll have to talk to him later to better protect himself in these situations."
     nvlmc "At least with the seal finally finished, she won't be able to run out of this mansion. If we finish her in here, that will be it. But the problem, obviously, would be killing her and making sure that she stays dead."
     nvlmc "I turn towards her. It looks like she's struggling to hold her form together. Just a little more push should be enough to kill-"
@@ -541,9 +545,10 @@ label introToWitch:
     blue "Rookie looks terrified, too. Tch. We need to run."
     hide bl
     hide g
-    show w temp at center with dissolve
+    show w laughing at center with dissolve
     witch "I won't let you!"
     advmc "Heh. Got you."
+    show w preplexed at center with dissolve
 
     play audio "sfx/dropping-wood-2.mp3"
     show whiteflash zorder 50 with vpunch
@@ -584,6 +589,8 @@ label introToWitch:
     advmc "Yeah. Just tired."
     green "Hey Rookie, aren't you our healer? Get to it."
     rookie "R-right."
+    #Make sure Red is healed!
+    $hp=300
     advmc "(He looks shaken. Was too much for his first mission?)"
     advmc "Hey, sorry if I scared you. You probably didn't expect that, right? I'm part... er... I suppose the best way to say is that I have some fox blood in me."
     advmc "Don't worry; I don't lose control or anything. That version is still me. Just... more powerful. Like taking off seals or limiters, you know?"

@@ -54,9 +54,23 @@ image r temp = "rookie/rookietemp.png"
 
 #witch
 image w temp = "witch/witchsprite.png"
+image w anger = "witch/witchsprite-anger.png"
+image w annoyance = "witch/witchsprite-annoyance.png"
+image w complain = "witch/witchsprite-complain.png"
+image w crying = "witch/witchsprite-crying.png"
+image w dark = "witch/witchsprite-dark.png"
+image w darkfrown = "witch/witchsprite-darkfrown.png"
+image w darksmile = "witch/witchsprite-darksmile.png"
+image w laughing = "witch/witchsprite-laughing.png"
+image w preplexed = "witch/witchsprite-preplexed.png"
+
 
 #butler
 image but temp = "enemy/butler.png"
+image but anger = "enemy/butler-anger.png"
+image but annoyance = "enemy/butler-annoyance.png"
+image but happy = "enemy/butler-happy.png"
+image but saddness = "enemy/butler-saddness.png"
 
 #Boss Battle Sprites
 image battlew full = "battlemode/witch_tut_beg.png"
