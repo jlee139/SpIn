@@ -332,7 +332,7 @@ label firstambushedcont:
 
     nvlmc "Almost as if understanding that standing in my way will get them eliminated, the ghosts hide."
     nvlmc "Do they think such a childish method will keep them safe from me? I honestly hate being underestimated like this. Although I wasn't planning on it, this is pretty much begging me to be petty. They clearly want to be completely eradicated, you know?"
-    nvlmc "Until I run out of space to look, I'll search through every nook and cranny until I've found them all."
+    nvlmc "Until I run out of space to look, I'll search through every nook and cranny until I've found them all. Then I'll swallow them whole and turn their miniscule life force into energy fuel."
     nvlmc "I have zero intention of letting any of them get away."
 
     #end nvl
@@ -363,7 +363,7 @@ label firstambushedcont:
     nvlmc "I have five moves I can make. The first is attack. It takes 1 energy to use, and I do flat damage."
     nvlmc "The second is defend. It also takes 1 energy, and it reduces all incoming attacks."
     nvlmc "The third is magical attack. It takes up 3 energy to use, but it does 3 times the damage my normal attack does."
-    nvlmc "The fourth is my 'beast' mode. It takes up 10 energy or all three of my jewels, so it's not something I can use without thought. But for a short while, I'll at least be able to do even more damage while taking less damage."
+    nvlmc "The fourth is my 'beast' mode. It takes up 20 energy or all three of my jewels, so it's not something I can use without thought. But for a short while, I'll at least be able to do even more damage while taking less damage."
     nvlmc "The last, obviously, is healing. Note that I can only use this if I have at least one jewel. By sacrificing one of my jewel, I can fully heal myself."
     nvl clear
     nvlmc "It's a lot to take in at once. So just try different things. No need to worry. I'm super strong and sturdy, so I won't go down that easily."
@@ -650,7 +650,7 @@ label storyendEmptyHands:
     $ persistent.badend1 = True
     scene end bad with fade
     pause 2.0
-    return
+    $ MainMenu(confirm=False)()
 
     #End EmptyHands
 

@@ -680,7 +680,7 @@ label debug:
         $ persistent.greenbadend = True
         scene end greenbad with fade
         pause 2.0
-        return
+        $ MainMenu(confirm=False)()
 
         #End Green Bad End
 

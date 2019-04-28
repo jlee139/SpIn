@@ -6,6 +6,7 @@ transform disappeardeath:
         linear 0.8 yoffset -100
     parallel:
         linear 0.8 alpha 0
+    yoffset +50
 
 transform celebrationchest:
     xalign 0.5
@@ -140,6 +141,15 @@ label endhuntreport:
     $calcchest = numchests*10
     nvlmc "You found [numchests] chest(s). That gives you [calcchest] more energy."
     $numturns = numwisps + calcghost + calcskele+calcchest
+
+    #If we have multiple Orbs, give us a boost in energy
+    if numOrb > 0:
+        $numturns = numturns+numturns
+        if orblangchange:
+            nvlmc "You draw upon the magic of the crushed orb in the air, giving you a boost in power. You may not know what this is, but it sure is convenient."
+        else:
+            nvlmc "The orb in your pocket glows, giving you a boost in power. No seriously, what is this thing?"
+
     nvlmc "You have total of [numturns] energy for the upcoming battle."
 
     #escape nvl mode

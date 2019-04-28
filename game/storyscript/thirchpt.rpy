@@ -65,7 +65,9 @@ label thirdfloor: #3rd chapter start!
     call huntmodestart
     play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
     scene bg atticdark with fade
-    #Mini Fight 1
+    call finalfight1
+
+label retfinalfight1:
     scene bg atticdark with fade
     play music "music/Lee_Rosevere_and_Daniel_Birch_-_09_-_Halo.mp3" fadein 1.0 fadeout 1.0
 
@@ -104,7 +106,9 @@ label thirdfloor: #3rd chapter start!
     call huntmodestart
     scene bg thirdhallbroke with fade
     play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
-    #Mini Fight 2
+    call finalfight2
+
+label retfinalfight2:
     scene bg thirdhallbroke with fade
     play music "music/Lee_Rosevere_and_Daniel_Birch_-_09_-_Halo.mp3" fadein 1.0 fadeout 1.0
 
@@ -151,6 +155,7 @@ label thirdfloor: #3rd chapter start!
         nvlmc "Tch. Wasted my time on nothing."
 
     nvlmc "Whatever that was won’t be any help to me now. Guess I better get serious. "
+    $orblangchange = True
 
     #escape nvl mode
     nvl clear
@@ -166,7 +171,9 @@ label thirdfloor: #3rd chapter start!
     call huntmodestart
     scene bg thirdhallbroke with fade
     play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
-    #Mini Fight 3
+    call finalfight3
+
+label retfinalfight3:
     scene bg thirdhallbroke with fade
     play music "music/Lee_Rosevere_and_Daniel_Birch_-_09_-_Halo.mp3" fadein 1.0 fadeout 1.0
 
@@ -209,14 +216,33 @@ label thirdeli:
     advmc "Save you? Don’t be stupid. What have you done that deserves saving?"
     witch "T-t-that’s-"
     advmc "\"Not fair?\" Why, my dear, what makes you think anything in this world is fair?"
-    hide w
 
-    play music "music/Chris_Zabriskie_-_07_-_Its_Always_Too_Late_to_Start_Over.mp3" fadein 1.0 fadeout 1.0
-    #Call Hunt Mode
-    call huntmodestart
-    scene bg thirdhallbroke with fade
-    play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
-    #Mini Fight 4 - Final
+    #If the witch has health to fight, go straight here.
+    if bosshp >0:
+        hide w
+        play music "music/Chris_Zabriskie_-_07_-_Its_Always_Too_Late_to_Start_Over.mp3" fadein 1.0 fadeout 1.0
+        #Call Hunt Mode
+        call huntmodestart
+        scene bg thirdhallbroke with fade
+        play music ["music/Ian_Alex_Mac_-_01_-_Battle_for_the_End_Zone.mp3", "music/Kevin_MacLeod_-_Broken_Reality.mp3"] fadein 1.0 fadeout 1.0
+        call finalfight4
+    else:
+        #nvl set up
+        nvl clear
+        window show
+
+        nvlmc "Our constant fights must have weakened her quite a bit."
+        nvlmc "She doesn't even put up a pretense to dodge when I lunge for her this time. Or is it that I've gotten faster?"
+        nvlmc "No, more likely, she's given up."
+        nvlmc "Something about this irks me, but I can't put a finger on it. Why does it bother me? Whether she defends herself or not isn't my problem. If this makes my job easier, then that's what I have to focus on."
+        nvlmc "My comrades are waiting for me."
+        nvlmc "Pushing aside this nagging feeling, I deal the final blow."
+
+        #escape nvl mode
+        nvl clear
+        window hide
+
+label retfinalfight4:
     scene bg thirdhallbroke with fade
     play music "music/David_Hilowitz_-_10_-_Missed_Connections.mp3" fadein 1.0 fadeout 1.0
 
@@ -384,7 +410,7 @@ label thirdeli:
         $ persistent.endingct =+1
         scene end greengood with fade
         pause 2.0
-        return
+        $ MainMenu(confirm=False)()
 
         #Green's Ending
 
@@ -410,7 +436,7 @@ label thirdeli:
         $ persistent.endingct =+1
         scene end one with fade
         pause 2.0
-        return
+        $ MainMenu(confirm=False)()
 
         #Bloodied Hands Ending
 

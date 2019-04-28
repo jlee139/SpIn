@@ -64,6 +64,7 @@ init python:
     blueOrb = False #Activated when player defeats Blue's Boss
     purpleOrb = False #Activated when player defeats Rookie's Boss
     numOrb = 0 #Number of Orbs collected
+    orblangchange = False #For when the Orb is broken
 
     #OnRoute Variables
     onGreenRoute = False #Activated when player is on Green's Route

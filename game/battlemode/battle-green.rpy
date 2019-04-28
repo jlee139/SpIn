@@ -55,13 +55,13 @@ screen battleuigreen():
                 hover "battlemode/beast_down.png"
                 hover_sound "sfx/click2.mp3"
                 activate_sound "sfx/menu-selection-click.mp3"
-                action If(numturns>10 or numjewels==3, Call('zerker'), None)
+                action If(numturns>20 or numjewels==3, Call('zerker'), None)
             imagebutton: #Heal Button
                 idle "battlemode/heal_up.png"
                 hover "battlemode/heal_down.png"
                 hover_sound "sfx/click2.mp3"
                 activate_sound "sfx/menu-selection-click.mp3"
-                action If(numjewels >=1, Call('healdmgg'), None)
+                action If(numjewels >=1, Call('healdmg'), None)
 
 
 #Start Battle Here
@@ -367,25 +367,6 @@ label magicdmgg:
     else:
         if butdef <9: #There's 10% chance he'll defend
             call butturn
-    return
-
-label healdmgg:
-    scene black
-    menu:
-        "You can crush 1 jewel to fully heal yourself."
-        "Crush jewel":
-            play audio "sfx/320655-rhodesmas-level-up-01.mp3"
-            show healing:
-                xalign 0.5 yalign 0.3
-
-        "Nevermind.":
-            $numturns +=1
-            return
-    "You're fully healed."
-    hide healing
-    $numjewels -= 1
-    $hp = 300
-    call butturn
     return
 
 label butdef:

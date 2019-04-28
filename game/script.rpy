@@ -18,10 +18,10 @@ label start:
     #scene bg greenroom with fade
     #show particleFog1:
     #    alpha 0.8
-    window hide
+    #window hide
     #call huntmodestart #Testing our hunt mode
     #call shootfix #Testing our hunt mode
-    #call debug #Testing our Battle Mode
+    #call finalfight1 #Testing our Battle Mode
     #jump breakpoint #for debugging
 
     #scene black

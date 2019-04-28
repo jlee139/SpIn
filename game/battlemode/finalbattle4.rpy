@@ -1,5 +1,5 @@
-#RPG Set up
-screen battleui():
+#Our First Mini Fight Against the Witch
+screen battleuifinal4():
     frame:
         xpadding 10
         ypadding 10
@@ -37,19 +37,19 @@ screen battleui():
                 hover "battlemode/attack_down.png"
                 hover_sound "sfx/click2.mp3"
                 activate_sound "sfx/menu-selection-click.mp3"
-                action Call('attackdmg')
+                action Call('attackdmgff4')
             imagebutton: #Defend Button
                 idle "battlemode/defend_up.png"
                 hover "battlemode/defend_down.png"
                 hover_sound "sfx/click2.mp3"
                 activate_sound "sfx/menu-selection-click.mp3"
-                action Call('defenddmg')
+                action Call('defenddmgff4')
             imagebutton: #Magic Attack Button
                 idle "battlemode/magic_up.png"
                 hover "battlemode/magic_down.png"
                 hover_sound "sfx/click2.mp3"
                 activate_sound "sfx/menu-selection-click.mp3"
-                action If(numturns >2, Call('magicdmg'), None)
+                action If(numturns >2, Call('magicdmgff4'), None)
             imagebutton: #Beserk Button
                 idle "battlemode/beast_up.png"
                 hover "battlemode/beast_down.png"
@@ -64,11 +64,9 @@ screen battleui():
                 action If(numjewels >=1, Call('healdmg'), None)
 
 
-#For Tutorial Battle
-label begin_TutRPG:
+#Start Battle Here
+label finalfight4:
     #$numturns = 20 #This is for debugging. Remember to turn this off!!
-    $bosshp = 80
-    $bossmaxhp = 80
     $turnnum = 0 #To determine whose turn it is
     #Set up variables for the upcoming battle
     $bossatk = 10
@@ -80,19 +78,15 @@ label begin_TutRPG:
     window hide
 
     #First place the enemy sprite in front of us
-    show battlew full at top
+    show battlew no at top
 
     #While we have turns, go through the battleui
     while numturns>0 and bosshp>0 and hp>0:
         #Change the Sprite accordingly
-        show battlew full at top
-        if bosshp<=40:
-            show battlew half at top
-        if bosshp<=20:
-            show battlew no at top
+        show battlew no at top
 
         #Checks happen here before we start the battles
-        #If witch's HP is 0, go straight to winning stance
+        #If butler's HP is 0, go straight to winning stance
         if bosshp <1 and showwincond==False:
             $showwincond = True
             jump wincondition
@@ -107,7 +101,7 @@ label begin_TutRPG:
             $beastmode = False
 
         #Display our health and numturns
-        call screen battleui
+        call screen battleuifinal4
         $numturns-=1
         $turnnum+=1
         #If we're in beastmode, put up the attack
@@ -120,19 +114,19 @@ label begin_TutRPG:
             $redatk = 10
             hide beastoverlay
 
-    #If witch's HP is 0, go straight to winning stance
+    #If butler's HP is 0, go straight to winning stance
     if bosshp <1 and showwincond==False:
         $showwincond = True
         jump wincondition
         return
 
-    #if we have ran out of turns, go straight to game over
+    #if we have ran out of turns...
     if numturns<1 and bosshp>0:
         jump turngameover
         return
     return
 
-label attackdmg:
+label attackdmgff4:
     $ witchdef = renpy.random.randint(1,10)
     if witchdef >=9: #There's 10% chance she'll defend
         call witchdef
@@ -149,17 +143,17 @@ label attackdmg:
         call witchturn
     return
 
-label defenddmg:
+label defenddmgff4:
     play audio "sfx/another-magic-wand-spell-tinkle.mp3"
     show shield:
         xalign 0.5 yalign 0.3
     "You brace for impact. Damage taken is reduced."
     hide shield
-    $bossatk = bossatk*0.7
-    call witchturn
+    $bossatk = bossatk*0.5
+    call witchturn4
     return
 
-label magicdmg:
+label magicdmgff4:
     $ witchdef = renpy.random.randint(1,10)
     if witchdef >=8: #There's 20% chance she'll defend
         call witchdef
@@ -178,52 +172,8 @@ label magicdmg:
         call witchturn
     return
 
-label healdmg:
-    menu:
-        "You can crush 1 jewel to fully heal yourself."
-        "Crush jewel":
-            play audio "sfx/320655-rhodesmas-level-up-01.mp3"
-            show healing:
-                xalign 0.5 yalign 0.3
-
-        "Nevermind.":
-            $numturns +=1
-            return
-    "You're fully healed."
-    hide healing
-    $numjewels -= 1
-    $hp = 300
-    call witchturn
-    return
-
-label zerker:
-    menu:
-        "Damage done is increased and damage received is decreased for the next 3 turns."
-        "Use 10 energy" if numturns>20:
-            $numturns -=19
-        "Use 3 jewels" if numjewels==3:
-            $numjewels = 0
-            $numturns +=1
-        "Nevermind.":
-            $numturns +=1
-            return
-
-    $beastmode = True
-    $turnnum = 0 #Once this turns 3, we need to turn off beastmode
-    return
-
-label witchdef:
-    "The witch braces for impact. Your attack does less damage."
-    play audio "sfx/fist-punch-3.mp3"
-    $redatk = redatk*0.7 #Reduce Red's attack to 7
-    return
-
-label witchturn:
-    show battlew full at top
-    if bosshp<=40:
-        show battlew half at top
-    if bosshp<=20:
-        show battlew no at top
+label witchturn4:
+    show battlew no at top
     $ witchmagic = renpy.random.randint(1,10)
     if witchmagic >=5: #There's 50% chance she'll use magic
         $bossatk = bossatk*1.5
@@ -236,39 +186,6 @@ label witchturn:
         play audio "sfx/thud.mp3"
         with vpunch
         $hp-=bossatk
-    return
-
-label healthgameover:
-    hide beastoverlay
-    scene black
-    "You ran out of health. You are unable to keep your promise of keeping your comrades safe and die."
-    "Keep a better eye on your health next time!"
-    play audio "sfx/bone-crunch-fast.mp3"
-    play audio "sfx/bone-snap-7.mp3"
-    play audio "sfx/bone-crunch-fast.mp3"
-    scene end dead with fade
-    pause 2.0
-    $ MainMenu(confirm=False)()
-
-label turngameover:
-    hide beastoverlay
-    scene black
-    "You have ran out of energy. You are unable to keep your promise of keeping your comrades safe and die."
-    "Budget your energy more carefully!"
-    play audio "sfx/bone-snap-7.mp3"
-    play audio "sfx/bone-crunch-fast.mp3"
-    play audio "sfx/bone-snap-7.mp3"
-    scene end dead with fade
-    pause 2.0
-    $ MainMenu(confirm=False)()
-
-label wincondition:
-    hide beastoverlay
-    $showwincond = True
-    scene black
-    play audio "sfx/jingle-achievement-00.mp3"
-    "You won!"
-    $quick_menu = True
     return
 
 return
