@@ -129,7 +129,7 @@ label finalfight4:
 label attackdmgff4:
     $ witchdef = renpy.random.randint(1,10)
     if witchdef >=9: #There's 10% chance she'll defend
-        call witchdef from _call_witchdef_7
+        call witchdef
     $bosshp -= redatk
     play audio "sfx/metal-sound-fighting-game.mp3"
     show scratch:
@@ -140,7 +140,7 @@ label attackdmgff4:
     if bosshp <1:
         jump wincondition
     if witchdef <9: #There's 90% chance she'll attack
-        call witchturn from _call_witchturn_10
+        call witchturn4
     return
 
 label defenddmgff4:
@@ -150,13 +150,13 @@ label defenddmgff4:
     "You brace for impact. Damage taken is reduced."
     hide shield
     $bossatk = bossatk*0.5
-    call witchturn4 from _call_witchturn4
+    call witchturn4
     return
 
 label magicdmgff4:
     $ witchdef = renpy.random.randint(1,10)
-    if witchdef >=8: #There's 20% chance she'll defend
-        call witchdef from _call_witchdef_8
+    if witchdef >=9: #There's 10% chance she'll defend
+        call witchdef
     $numturns-=2
     $redatk = redatk * 1.5
     play audio "sfx/fire-crackle-and-flames-002.mp3"
@@ -168,14 +168,14 @@ label magicdmgff4:
     #If witch's HP is 0, go straight to winning stance
     if bosshp <1:
         jump wincondition
-    if witchdef <8: #There's 80% chance she'll attack
-        call witchturn from _call_witchturn_11
+    if witchdef <9: #There's 90% chance she'll attack
+        call witchturn4
     return
 
 label witchturn4:
     show battlew no at top
     $ witchmagic = renpy.random.randint(1,10)
-    if witchmagic >=5: #There's 50% chance she'll use magic
+    if witchmagic >=1: #There's 90% chance she'll use magic
         $bossatk = bossatk*1.5
         "The witch fires a magic spell that does [bossatk] damage."
         play audio "sfx/sword-thud.mp3"

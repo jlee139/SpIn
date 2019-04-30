@@ -427,6 +427,8 @@ label introToWitch:
 
     #nvl set up
     scene bg fronthall with fade
+    show particleFog1:
+        alpha 0.5
     window show
 
     nvlmc "Not good. I underestimated her. I should have taken her seriously from the get-go."
