@@ -130,7 +130,7 @@ label finalfight1:
 
 label attackdmgff1:
     #In the first fight, the witch always defends
-    call witchdef
+    call witchdef from _call_witchdef_4
     $bosshp -= redatk
     play audio "sfx/metal-sound-fighting-game.mp3"
     show scratch:
@@ -149,12 +149,12 @@ label defenddmgff1:
     "You brace for impact. Damage taken is reduced."
     hide shield
     $bossatk = bossatk*0.5
-    call witchturn1
+    call witchturn1 from _call_witchturn1
     return
 
 label magicdmgff1:
     #Always defends
-    call witchdef
+    call witchdef from _call_witchdef_7
     $numturns-=2
     $redatk = redatk * 1.5
     play audio "sfx/fire-crackle-and-flames-002.mp3"
