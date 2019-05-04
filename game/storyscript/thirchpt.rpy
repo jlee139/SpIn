@@ -299,7 +299,7 @@ label retfinalfight4:
         green "Hm... Something like a little less snark and a lot more teary-eyed \"I miss you, boo!\""
         advmc "... You seriously don’t want me to do that."
         green "On second thought, yeah. You’re right."
-        show r temp at center with dissolve
+        show r temp at right with dissolve
         rookie "..."
         show bl temp at left with dissolve
         blue "In case you forgot, we're here, too."

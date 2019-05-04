@@ -5,13 +5,14 @@ label start:
     $mcname = renpy.input("Enter your name")
     define advmc = Character('[mcname]', kind=adv)
     #Then We start the story!
-    call prologue from _call_prologue      #Start us up with the prologue of the story
+    #call prologue from _call_prologue      #Start us up with the prologue of the story
 
 
     #Debugging each chapter
     #call firstfloor    #After the prologue, we go to the first floor
     #call secondfloor   #Then the 2nd floor
-    #$numOrb = 1
+    $numOrb = 1
+    $onGreenRoute= True
     #call thirdfloor    #Then the 3rd floor
 
     #Tada! Story is done!
@@ -24,7 +25,7 @@ label start:
     #call huntmodestart #Testing our hunt mode
     #call shootfix #Testing our hunt mode
     #call secgreen #Testing our Battle Mode
-    #jump breakpoint #for debugging
+    jump retfinalfight4 #for debugging
 
     #scene black
     #"That's the end of the demo. Thank you!"
